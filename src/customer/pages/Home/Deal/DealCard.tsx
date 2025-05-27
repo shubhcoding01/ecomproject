@@ -7,6 +7,8 @@ const DealCard = () => {
 
       <div>
         <p>Smart Watch</p>
+        <p>20% Off</p>
+        <p>Shop Now</p>
       </div>
     </div>
   )
