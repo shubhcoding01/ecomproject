@@ -2,7 +2,10 @@ import React from 'react'
 
 const ShopByCategoryCard = () => {
   return (
-    <div>ShopByCategoryCard</div>
+    <div className='flex gap-3 flex-col justify-center items-center group cursor-pointer'>
+
+        
+    </div>
   )
 }
 
