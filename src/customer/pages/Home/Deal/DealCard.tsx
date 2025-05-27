@@ -2,8 +2,9 @@ import React from 'react'
 
 const DealCard = () => {
   return (
-    <div className='w-[30rem] cursor-pointer'>
-      <img src="https://m.media-amazon.com/images/I/61-vRq2ulOL._AC_UY327_FMwebp_QL65_.jpg" alt="" />
+    <div className='w-[14rem] cursor-pointer'>
+      <img className='border-x-[7px] border-t-[7px] border-pink-500 w-full
+      h-[12rem] object-cover object-top' src="https://m.media-amazon.com/images/I/61-vRq2ulOL._AC_UY327_FMwebp_QL65_.jpg" alt="" />
 
       <div>
         <p className='text-lg font-semibold'>Smart Watch</p>
