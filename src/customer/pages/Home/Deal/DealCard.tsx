@@ -6,9 +6,9 @@ const DealCard = () => {
       <img src="https://m.media-amazon.com/images/I/61-vRq2ulOL._AC_UY327_FMwebp_QL65_.jpg" alt="" />
 
       <div>
-        <p>Smart Watch</p>
-        <p>20% Off</p>
-        <p>Shop Now</p>
+        <p className='text-lg font-semibold'>Smart Watch</p>
+        <p className='text-2xl font-bold'>20% Off</p>
+        <p className='text-balance text-lg'>Shop Now</p>
       </div>
     </div>
   )
