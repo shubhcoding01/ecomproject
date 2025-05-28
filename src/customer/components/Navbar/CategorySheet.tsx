@@ -5,6 +5,7 @@ import { electronicsLevelTwo } from '../../../data/category/level two/electronic
 import { furnitureLevelTwo } from '../../../data/category/level two/furnitureLevelTwo'
 import { menLevelThree } from '../../../data/category/level three/menLevelThree'
 import { womenLevelThree } from '../../../data/category/level three/womenLevelThree'
+import { electronicsLevelThree } from '../../../data/category/level three/electronicsLevelThree'
 
 const categoryTwo = {
     men:menLevelTwo,
@@ -16,7 +17,7 @@ const categoryTwo = {
 const categoryThree = {
     men:menLevelThree,
     women:womenLevelThree,
-    electronics:electronicsLevelTwo,
+    electronics:electronicsLevelThree,
     furniture:furnitureLevelTwo
 }
 
