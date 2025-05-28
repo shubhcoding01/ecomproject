@@ -25,7 +25,9 @@ const categoryThree = {
 
 const CategorySheet = () => {
   return (
-    <Box className="bg-white shadow-lg lg:h-[500px] overflow-y-auto">
+    <Box sx={
+        {zIndex:2}
+    } className="bg-white shadow-lg lg:h-[500px] overflow-y-auto">
         <div className='flex text-sm flex-wrap'>
             {
                 categoryTwo["men"]?.map((item) => <div>
