@@ -24,6 +24,11 @@ const categoryThree = {
 }
 
 const CategorySheet = () => {
+
+    const childCategory = (category:any,parentCategoryId:any) => {
+        return category.filter((child:any) => child.parentCategoryId == parentCategoryId)
+    }
+
   return (
     <Box sx={
         {zIndex:2}
