@@ -2,8 +2,9 @@ import React from 'react'
 import ElectricCategory from './ElectricCategory/ElectricCategory'
 import CategoryGrid from './CategoryGrid/CategoryGrid'
 import Deal from './Deal/Deal'
-import { Shop } from '@mui/icons-material'
+import { Shop, Storefront } from '@mui/icons-material'
 import ShopByCategory from './ShopByCategory/ShopByCategory'
+import { Button } from '@mui/material'
 
 const Home = () => {
   return (
@@ -33,6 +34,12 @@ const Home = () => {
                 <h1>Sell Your Product</h1>
                 <p className='text-lg md:text-2xl'>With</p>
                 <p className='logo'>Desi Bazaar</p>
+
+                <div className='pt-6 flex justify-center'>
+                  <Button startIcon={<Storefront/>} variant='contained' size='large'>
+                    Become a Seller
+                  </Button>
+                </div>
               </div>
             </section>
             
