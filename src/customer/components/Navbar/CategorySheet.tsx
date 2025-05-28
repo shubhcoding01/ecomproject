@@ -33,8 +33,9 @@ const CategorySheet = () => {
                 categoryTwo["men"]?.map((item) => <div>
                     <p className='text-primary-color mb-5 font-semibold'>{item.name}</p>
                     <ul className='space-y-3'>
-                        <li>
-
+                        
+                        <li className='hover:text-primary-color cursor-pointer'>
+                            {item.name}
                         </li>
                     </ul>
                 </div>)
