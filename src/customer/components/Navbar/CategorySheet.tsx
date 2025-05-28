@@ -39,9 +39,14 @@ const CategorySheet = () => {
                     <p className='text-primary-color mb-5 font-semibold'>{item.name}</p>
                     <ul className='space-y-3'>
                         
-                        <li className='hover:text-primary-color cursor-pointer'>
+                        {childCategory(categoryThree["men"],item.categoryId).map
+                        ((item:any) => <div>
+                             <li className='hover:text-primary-color cursor-pointer'>
                             {item.name}
                         </li>
+                        </div>)}
+
+                       
                     </ul>
                 </div>)
             }
