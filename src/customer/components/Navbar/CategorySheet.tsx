@@ -28,7 +28,7 @@ const CategorySheet = () => {
     <Box sx={
         {zIndex:2}
     } className="bg-white shadow-lg lg:h-[500px] overflow-y-auto">
-        <div className=' flep text-sm flex-wrap'>
+        <div className=' flex gap-10 text-sm flex-wrap'>
             {
                 categoryTwo["men"]?.map((item) => <div>
                     <p className='text-primary-color mb-5 font-semibold'>{item.name}</p>
