@@ -3,7 +3,8 @@ import React, { use } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { AddShoppingCart, FavoriteBorder, Storefront } from '@mui/icons-material';
+import { AddShoppingCart, Category, FavoriteBorder, Storefront } from '@mui/icons-material';
+import CategorySheet from './CategorySheet';
 
 const Navbar = () => {
     const theme = useTheme();
@@ -59,6 +60,9 @@ const Navbar = () => {
                         Become Seller
                     </Button>}
                 </div>
+            </div>
+            <div className='categorySheet absolute top-[4.41rem] left-20 right-20 border bg-slate-400'>
+                <CategorySheet/>
             </div>
         </Box>
     </>
