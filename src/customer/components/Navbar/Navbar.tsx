@@ -11,7 +11,7 @@ const Navbar = () => {
     const isLarge= useMediaQuery(theme.breakpoints.up('lg'));
   return (
     <>
-        <Box>
+        <Box className="sticky top-0 left-0 right-0 bg-white" sx={{zIndex: 2}}>
             <div className='flex justify-between items-center px-5 lg:px-20 h-[70px] border-b'>
                 <div className='flex items-center gap-9'>
                     <div className='flex items-center gap-2'>
