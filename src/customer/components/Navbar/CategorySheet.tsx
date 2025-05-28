@@ -26,7 +26,7 @@ const categoryThree = {
 const CategorySheet = () => {
   return (
     <Box className="bg-white shadow-lg lg:h-[500px] overflow-y-auto">
-        
+        <div className='flex text-sm flex-wrap'></div>
 
     </Box>
   )
