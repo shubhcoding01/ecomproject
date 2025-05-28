@@ -15,7 +15,7 @@ const Home = () => {
             
             <div className='pt-20'>
               <h1 className='text-lg lg:text-4xl font-bold text-center
-               text-primary-color pb-5 lg:pb-20'>Today's Deals</h1>
+               text-primary-color pb-5 lg:pb-10'>Today's Deals</h1>
               <Deal/>
             </div>
 
