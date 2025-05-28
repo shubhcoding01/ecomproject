@@ -13,7 +13,13 @@ const Home = () => {
             <ElectricCategory/>
             <CategoryGrid/>
             <Deal/>
-            <ShopByCategory/>
+
+            <div className='pt-20'>
+              <h1 className='text-lg lg:text-4xl font-bold text-center
+               text-primary-color pb-5 lg:pb-20'>Shop By Category</h1>
+              <ShopByCategory/>
+            </div>
+            
         </div>
     </>
   )
