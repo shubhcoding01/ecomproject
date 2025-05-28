@@ -1,4 +1,5 @@
 import React from 'react'
+import './ShopByCategory.css'; // Assuming you have a CSS file for styles
 
 const ShopByCategoryCard = () => {
   return (
