@@ -7,6 +7,7 @@ import { menLevelThree } from '../../../data/category/level three/menLevelThree'
 import { womenLevelThree } from '../../../data/category/level three/womenLevelThree'
 import { electronicsLevelThree } from '../../../data/category/level three/electronicsLevelThree'
 import { furnitureLevelThree } from '../../../data/category/level three/furnitureLevelThree'
+import { Box } from '@mui/material'
 
 const categoryTwo = {
     men:menLevelTwo,
@@ -24,7 +25,10 @@ const categoryThree = {
 
 const CategorySheet = () => {
   return (
-    <div>CategorySheet</div>
+    <Box className="bg-white shadow-lg lg:h-[500px] overflow-y-auto">
+        
+
+    </Box>
   )
 }
 
