@@ -29,7 +29,7 @@ const Home = () => {
               <img className='w-full h-full absolute top-0 left-0 object-cover object-center rounded-lg' 
               src="https://m.media-amazon.com/images/G/01/sell/images/posters/seller-581784080.webp" alt="" />
               <div className='absolute top-1/2 left-4 lg:left-[15rem] 
-              transform translate-y-1/2 font-semibold lg-text-4xl space-y-3'>
+              transform-translate-y-1/2 font-semibold lg-text-4xl space-y-3'>
                 <h1>Sell Your Product</h1>
                 <p className='text-lg md:text-2xl'>With</p>
                 <p className='logo'>Desi Bazaar</p>
