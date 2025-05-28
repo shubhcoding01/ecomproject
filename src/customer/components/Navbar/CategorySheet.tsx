@@ -6,6 +6,7 @@ import { furnitureLevelTwo } from '../../../data/category/level two/furnitureLev
 import { menLevelThree } from '../../../data/category/level three/menLevelThree'
 import { womenLevelThree } from '../../../data/category/level three/womenLevelThree'
 import { electronicsLevelThree } from '../../../data/category/level three/electronicsLevelThree'
+import { furnitureLevelThree } from '../../../data/category/level three/furnitureLevelThree'
 
 const categoryTwo = {
     men:menLevelTwo,
@@ -18,7 +19,7 @@ const categoryThree = {
     men:menLevelThree,
     women:womenLevelThree,
     electronics:electronicsLevelThree,
-    furniture:furnitureLevelTwo
+    furniture:furnitureLevelThree
 }
 
 const CategorySheet = () => {
