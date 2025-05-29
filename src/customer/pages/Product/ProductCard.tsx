@@ -51,7 +51,7 @@ const ProductCard = () => {
                     style={{transform:`translateX(${(index-currentImage)*100}%)`}}
                     />)}
 
-                   { <div className='indicator flex flex-col items-center space-y-2'>
+                   {isHovered && <div className='indicator flex flex-col items-center space-y-2'>
                         <div className='flex gap-3'>
                             <Button variant='contained' color='secondary' >
                                 <Favorite sx={{color:pink[500]}}/>
