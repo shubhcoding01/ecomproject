@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './ProductCard.css'; // Assuming you have a CSS file for styling
+import { Button } from '@mui/material';
+import { Favorite } from '@mui/icons-material';
 
 const images = [
         "https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg",
@@ -47,6 +49,13 @@ const ProductCard = () => {
                     style={{transform:`translateX(${(index-currentImage)*100}%)`}}
                     />)}
 
+                    <div>
+                        <div>
+                            <Button variant='contained'>
+                                <Favorite/>
+                            </Button>
+                        </div>
+                    </div>
             </div>
         </div>
     </>
