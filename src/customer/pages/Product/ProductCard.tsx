@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './ProductCard.css'; // Assuming you have a CSS file for styling
 
 const images = [
@@ -12,6 +12,19 @@ const images = [
 const ProductCard = () => {
     const [currentImage, setCurrentImage] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
+
+    useEffect(() => {
+
+    let interval:any
+        if (isHovered) {
+            interval=setInterval(()=>{ // Don't change image if hovered
+        setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    }, 1000); 
+}
+    else if(interval){
+        clearInterval(interval);
+        interval = null;}
+    },[isHovered])
 
   return (
     <>
