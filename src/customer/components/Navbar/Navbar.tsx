@@ -61,8 +61,9 @@ const Navbar = () => {
                     </Button>}
                 </div>
             </div>
-            <div className='categorySheet absolute top-[4.41rem] left-20 right-20 border bg-slate-400'>
-                <CategorySheet/>
+            <div className='categorySheet absolute top-[4.41rem] left-20
+             right-20 border bg-slate-400'>
+                <CategorySheet selectedCategory="men"/>
             </div>
         </Box>
     </>
