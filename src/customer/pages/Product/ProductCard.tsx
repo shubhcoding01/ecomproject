@@ -6,6 +6,7 @@ const ProductCard = () => {
         "https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg",
         "https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg",
         "https://m.media-amazon.com/images/I/51P1YW2yAGL._SY741_.jpg",
+        "https://m.media-amazon.com/images/I/61OgwPCLMsL._SY741_.jpg",
         "https://m.media-amazon.com/images/I/61U0B7tRy+L._SY741_.jpg"
     ];
   return (
