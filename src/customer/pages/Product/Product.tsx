@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import FilterSection from './FilterSection'
 import ProductCard from './ProductCard'
 import { Box, FormControl, IconButton, InputLabel, MenuItem, Select, useMediaQuery, useTheme } from '@mui/material'
@@ -7,6 +7,10 @@ import { FilterAlt } from '@mui/icons-material'
 const Product = () => {
     const theme = useTheme();
     const isLarge = useMediaQuery(theme.breakpoints.up('lg'));
+    const [sort, setSort] = useState();
+    const handleSortChange = (event:any) => {
+        setSort(event.target.value);
+    }
   return (
     <div className='-z-10 mt-10'>
         <div>
