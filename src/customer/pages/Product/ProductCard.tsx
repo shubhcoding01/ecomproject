@@ -13,6 +13,7 @@ const ProductCard = () => {
                 {images.map((item) => <img className='card-media object-top'
                     src={item}
                     alt=""/>)}
+                    
             </div>
         </div>
     </>
