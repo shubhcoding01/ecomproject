@@ -1,14 +1,17 @@
 import { Avatar, Box, Button, IconButton, useMediaQuery, useTheme } from '@mui/material'
-import React, { use } from 'react'
+import React, { use, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { AddShoppingCart, Category, FavoriteBorder, Storefront } from '@mui/icons-material';
 import CategorySheet from './CategorySheet';
+import { mainCategory } from '../../../data/category/mainCategory';
 
 const Navbar = () => {
     const theme = useTheme();
     const isLarge= useMediaQuery(theme.breakpoints.up('lg'));
+    const [selectedCategory, setSelectedCategory] = useState("men");
+    const [showCategorySheet, setShowCategorySheet] = useState(false);
   return (
     <>
         <Box className="sticky top-0 left-0 right-0 bg-white" sx={{zIndex: 2}}>
@@ -23,15 +26,19 @@ const Navbar = () => {
                         </h1>
                     </div>
                     <ul className='flex items-center gap-2 text-gray-800'>
-                        {["Men",
-                            "Women",
-                            "Home & Furniture",
-                            "Electronics",
-                        ].map((item) => <li 
+                        {mainCategory.map((item) => <li 
+                        onMouseLeave={() => setShowCategorySheet(false)}
+                        onMouseEnter={() => {
+                            setSelectedCategory(item.categoryId);
+                            setShowCategorySheet(true);
+                        }}
                         className='mainCategory
                          text-sm md:text-base cursor-pointer
-                          hover:text-[#3a8cde] transition-all duration-300 ease-in-out hover:border-b-2 h-[70px] px-4 border-primary-color flex items-center' key={item}>
-                            {item}
+                          hover:text-[#3a8cde] transition-all 
+                          duration-300 ease-in-out hover:border-b-2 h-[70px] px-4
+                           border-primary-color flex items-center' 
+                          >
+                            {item.name}
                         </li>)}
                         
                     </ul>
