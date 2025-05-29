@@ -35,7 +35,8 @@ const CategorySheet = () => {
     } className="bg-white shadow-lg lg:h-[500px] overflow-y-auto">
         <div className=' flex gap-10 text-sm flex-wrap'>
             {
-                categoryTwo["men"]?.map((item) => <div>
+                categoryTwo["men"]?.map((item,index) => <div 
+                className={`p-8 lg:w-[20%] ${index%2===0? "bg-slate-50":"bg-white"}`}>
                     <p className='text-primary-color mb-5 font-semibold'>{item.name}</p>
                     <ul className='space-y-3'>
                         
