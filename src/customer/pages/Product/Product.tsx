@@ -1,7 +1,8 @@
 import React from 'react'
 import FilterSection from './FilterSection'
 import ProductCard from './ProductCard'
-import { Box, useMediaQuery, useTheme } from '@mui/material'
+import { Box, IconButton, useMediaQuery, useTheme } from '@mui/material'
+import { FilterAlt } from '@mui/icons-material'
 
 const Product = () => {
     const theme = useTheme();
@@ -26,6 +27,11 @@ const Product = () => {
                 <div className=''>
 
                     <div className='relative w-[50%]'>
+                        {
+                        !isLarge && (<IconButton>
+                            <FilterAlt />
+                            </IconButton>)
+                        }
                         {
                         !isLarge && (<Box>
                             <FilterSection />
