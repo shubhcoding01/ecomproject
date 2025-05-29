@@ -2,7 +2,13 @@ import React from 'react'
 
 const Product = () => {
   return (
-    <div>Product</div>
+    <div className='-z-10 mt-10'>
+        <div>
+            <h1 className="text-3xl text-center font-bold text-gray-600 pb-5 px-9
+            uppercase space-x-2">Women Saree</h1>
+        </div>
+        <div className=''></div>
+    </div>
   )
 }
 
