@@ -28,7 +28,7 @@ const Product = () => {
 
             <div className='w-full lg:w-[80%] space-y-5'>
 
-                <div className=''>
+                <div className='flex items-center justify-between px-9 h-[40px]'>
 
                     <div className='relative w-[50%]'>
                         {
