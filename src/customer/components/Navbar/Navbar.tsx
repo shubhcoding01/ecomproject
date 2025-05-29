@@ -68,9 +68,12 @@ const Navbar = () => {
                     </Button>}
                 </div>
             </div>
-            <div className='categorySheet absolute top-[4.41rem] left-20
+            <div 
+            onMouseLeave={() => setShowCategorySheet(false)}
+            onMouseEnter={() => setShowCategorySheet(true)}
+            className='categorySheet absolute top-[4.41rem] left-20
              right-20 border bg-slate-400'>
-                <CategorySheet selectedCategory="furniture"/>
+                <CategorySheet selectedCategory={selectedCategory}/>
             </div>
         </Box>
     </>

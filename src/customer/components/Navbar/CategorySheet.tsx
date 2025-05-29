@@ -13,14 +13,14 @@ const categoryTwo:{[key:string]:any[]} = {
     men:menLevelTwo,
     women:womenLevelTwo,
     electronics:electronicsLevelTwo,
-    furniture:furnitureLevelTwo
+    home_furniture:furnitureLevelTwo
 }
 
 const categoryThree:{[key:string]:any[]} = {
     men:menLevelThree,
     women:womenLevelThree,
     electronics:electronicsLevelThree,
-    furniture:furnitureLevelThree
+    home_furniture:furnitureLevelThree
 }
 
 const CategorySheet = ({selectedCategory,setShowSheetId}:any) => {
