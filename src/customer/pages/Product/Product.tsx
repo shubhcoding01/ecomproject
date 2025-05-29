@@ -1,7 +1,7 @@
 import React from 'react'
 import FilterSection from './FilterSection'
 import ProductCard from './ProductCard'
-import { Box, IconButton, useMediaQuery, useTheme } from '@mui/material'
+import { Box, FormControl, IconButton, InputLabel, MenuItem, Select, useMediaQuery, useTheme } from '@mui/material'
 import { FilterAlt } from '@mui/icons-material'
 
 const Product = () => {
@@ -40,13 +40,13 @@ const Product = () => {
                     </div>
 
                     <FormControl fullWidth>
-  <InputLabel id="demo-simple-select-label">Age</InputLabel>
+  <InputLabel id="demo-simple-select-label">Sort</InputLabel>
   <Select
     labelId="demo-simple-select-label"
     id="demo-simple-select"
-    value={age}
-    label="Age"
-    onChange={handleChange}
+    value={sort}
+    label="Sort"
+    onChange={handleSortChange}
   >
     <MenuItem value={10}>Ten</MenuItem>
     <MenuItem value={20}>Twenty</MenuItem>
