@@ -51,8 +51,8 @@ const ProductCard = () => {
                     style={{transform:`translateX(${(index-currentImage)*100}%)`}}
                     />)}
 
-                    <div>
-                        <div>
+                   { <div className='indicator flex flex-col items-center space-y-2'>
+                        <div className='flex gap-3'>
                             <Button variant='contained' color='secondary' >
                                 <Favorite sx={{color:pink[500]}}/>
                             </Button>
@@ -61,6 +61,7 @@ const ProductCard = () => {
                             </Button>
                         </div>
                     </div>
+                    }
             </div>
         </div>
     </>
