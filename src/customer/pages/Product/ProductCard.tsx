@@ -63,6 +63,24 @@ const ProductCard = () => {
                     </div>
                     }
             </div>
+            <div className='details pt-3 space-y-1 group-hover-effect rounded-md'>
+                    <div className='name'>
+                        <h1>Nike</h1>
+                        <p>Stylish Shirt</p>
+                    </div>
+                    <div className='price flex items-center gap-3'>
+                        <span className='font-sans text-gray-800'>
+                            ₹ 400
+                            </span>
+                            <span className='thin-line-through text-gray-400'>
+                            ₹ 999
+                            </span>
+                            <span className='text-primary-color font-semibold'>
+                            60% off
+
+                            </span>
+                    </div>
+            </div>
         </div>
     </>
   )
