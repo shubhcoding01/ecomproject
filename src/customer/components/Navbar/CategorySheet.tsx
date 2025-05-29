@@ -23,7 +23,7 @@ const categoryThree = {
     furniture:furnitureLevelThree
 }
 
-const CategorySheet = () => {
+const CategorySheet = ({selectedCategory,setShowSheetId}:any) => {
 
     const childCategory = (category:any,parentCategoryId:any) => {
         return category.filter((child:any) => child.parentCategoryId == parentCategoryId)
