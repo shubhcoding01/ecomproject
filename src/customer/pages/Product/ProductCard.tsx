@@ -53,7 +53,7 @@ const ProductCard = () => {
 
                     <div>
                         <div>
-                            <Button variant='contained' bg-color='white' >
+                            <Button variant='contained' color='secondary' >
                                 <Favorite sx={{color:pink[500]}}/>
                             </Button>
                             <Button variant='contained' color='secondary' >
