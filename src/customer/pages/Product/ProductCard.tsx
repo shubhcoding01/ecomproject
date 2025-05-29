@@ -15,15 +15,18 @@ const ProductCard = () => {
 
     useEffect(() => {
 
-    let interval:any
+        let interval:any
+
         if (isHovered) {
-            interval=setInterval(()=>{ // Don't change image if hovered
-        setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 1000); 
-}
+            interval = setInterval(() => {
+        setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 1000); // Change image every 3 seconds
+        }
     else if(interval){
         clearInterval(interval);
-        interval = null;}
+        interval = null;
+    }
+    return () => clearInterval(interval);
     },[isHovered])
 
   return (
@@ -35,7 +38,7 @@ const ProductCard = () => {
                 className='card-media object-top'
                     src={item}
                     alt=""
-                    style={{transform:`translateX(${(index-currentImage)*100}%)`}}
+                    style={{transform:`translateX(${(index-1)*100}%)`}}
                     />)}
 
             </div>
