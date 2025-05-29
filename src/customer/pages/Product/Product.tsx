@@ -1,8 +1,11 @@
 import React from 'react'
 import FilterSection from './FilterSection'
 import ProductCard from './ProductCard'
+import { useMediaQuery, useTheme } from '@mui/material'
 
 const Product = () => {
+    const theme = useTheme();
+    const isLarge = useMediaQuery(theme.breakpoints.up('lg'));
   return (
     <div className='-z-10 mt-10'>
         <div>
@@ -21,6 +24,10 @@ const Product = () => {
             <div className='w-full lg:w-[80%] space-y-5'>
 
                 <div className=''>
+
+                    <div className='relative w-[50%]'>
+
+                    </div>
 
                 </div>
 
