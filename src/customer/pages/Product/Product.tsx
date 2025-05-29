@@ -43,7 +43,7 @@ const Product = () => {
                         }   
                     </div>
 
-                    <FormControl fullWidth>
+                    <FormControl size='small' sx={{width:"200px"}}>
   <InputLabel id="demo-simple-select-label">Sort</InputLabel>
   <Select
     labelId="demo-simple-select-label"
