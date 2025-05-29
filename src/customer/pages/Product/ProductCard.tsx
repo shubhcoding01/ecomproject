@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import './ProductCard.css'; // Assuming you have a CSS file for styling
 import { Button } from '@mui/material';
-import { Favorite } from '@mui/icons-material';
+import { Favorite, ModeComment } from '@mui/icons-material';
+import { pink, teal } from '@mui/material/colors';
+import { dark } from '@mui/material/styles/createPalette';
 
 const images = [
         "https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg",
@@ -51,8 +53,11 @@ const ProductCard = () => {
 
                     <div>
                         <div>
-                            <Button variant='contained'>
-                                <Favorite/>
+                            <Button variant='contained' bg-color='white' >
+                                <Favorite sx={{color:pink[500]}}/>
+                            </Button>
+                            <Button variant='contained' color='secondary' >
+                                <ModeComment sx={{color:teal[500]}}/>
                             </Button>
                         </div>
                     </div>
