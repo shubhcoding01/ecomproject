@@ -35,7 +35,7 @@ const ProductCard = () => {
                 className='card-media object-top'
                     src={item}
                     alt=""
-                    style={{transform:`translateX(${(index-1)*100}%)`}}
+                    style={{transform:`translateX(${(index-currentImage)*100}%)`}}
                     />)}
 
             </div>
