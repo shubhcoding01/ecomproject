@@ -12,33 +12,39 @@ const images = [
 const ProductCard = () => {
     const [currentImage, setCurrentImage] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
+    // const intervalRef = useRef<any>(null);
 
     useEffect(() => {
 
         let interval:any
 
-        if (isHovered) {
-            interval = setInterval(() => {
-        setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 1000); // Change image every 3 seconds
+        if (isHovered) 
+        {
+            interval = setInterval(() => 
+            {
+                setCurrentImage((prev) => (prev + 1) % images.length);
+            }, 1000); 
         }
-    else if(interval){
-        clearInterval(interval);
-        interval = null;
-    }
-    return () => clearInterval(interval);
+            else if(interval) 
+            {
+                clearInterval(interval);
+                interval = null;
+            }
+        return () => clearInterval(interval);
     },[isHovered])
 
   return (
     <>
         <div className="group px-4 relative">
-            <div className='card'>
+            <div className='card'
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}>
 
                 {images.map((item,index) => <img 
                 className='card-media object-top'
                     src={item}
                     alt=""
-                    style={{transform:`translateX(${(index-1)*100}%)`}}
+                    style={{transform:`translateX(${(index-currentImage)*100}%)`}}
                     />)}
 
             </div>
