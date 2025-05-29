@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import FilterSection from './FilterSection'
 import ProductCard from './ProductCard'
-import { Box, FormControl, IconButton, InputLabel, MenuItem, Select, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Divider, FormControl, IconButton, InputLabel, MenuItem, Select, useMediaQuery, useTheme } from '@mui/material'
 import { FilterAlt } from '@mui/icons-material'
 
 const Product = () => {
@@ -52,14 +52,14 @@ const Product = () => {
     label="Sort"
     onChange={handleSortChange}
   >
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={"price_low"}>Price: Low - High</MenuItem>
+    <MenuItem value={"price_high"}>Price: High - Low</MenuItem>
     <MenuItem value={30}>Thirty</MenuItem>
   </Select>
 </FormControl>
 
                 </div>
-
+                        <Divider/>
                 <section className="products_section ">
                 
                     <ProductCard />
