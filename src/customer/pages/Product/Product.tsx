@@ -69,7 +69,7 @@ const Product = () => {
           </div>
           <Divider />
           <section className="products_section ">
-            <ProductCard />
+            {[1,1,1,1,1,,1,1,1,1,1,1,1,1].map((item)=><ProductCard />)}
           </section>
         </div>
       </div>
