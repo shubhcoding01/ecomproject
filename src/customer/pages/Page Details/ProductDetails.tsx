@@ -66,12 +66,17 @@ const ProductDetails = () => {
 
               <div className="flex items-center gap-4">
                   <Shield sx={{color:teal[500]}}/>
-                  <p>Price </p>
+                  <p>100% money back gurantee </p>
               </div>
 
               <div className="flex items-center gap-4">
                   <Shield sx={{color:teal[500]}}/>
-                  <p>Authenic & Quality Assured</p>
+                  <p>Free Shiping & Return</p>
+              </div>
+
+              <div className="flex items-center gap-4">
+                  <Shield sx={{color:teal[500]}}/>
+                  <p>Pay on delivery might be available</p>
               </div>
 
             </div>
