@@ -1,5 +1,7 @@
 import React from "react";
 import StarIcon from '@mui/icons-material/Star';
+import { teal } from "@mui/material/colors";
+import { Divider } from "@mui/material";
 
 const ProductDetails = () => {
   const images = [
@@ -42,7 +44,12 @@ const ProductDetails = () => {
           <div className="flext justify-between items-center py-2 border w-[180px] px-3 pt-5">
             <div className="flex gap-1 items-center">
               <span>4</span>
+              <StarIcon sx={{color:teal[500],fontSize:"17px"}}/>
             </div>
+            <Divider orientation="vertical" flexItem/>
+            <span>
+              234 Ratings
+            </span>
 
           </div>
         </section>
