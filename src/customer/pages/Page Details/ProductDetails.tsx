@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import StarIcon from "@mui/icons-material/Star";
 import { teal } from "@mui/material/colors";
 import { Button, Divider } from "@mui/material";
-import { Add, LocalShipping, Remove, Shield, Wallet, WorkspacePremium } from "@mui/icons-material";
+import { Add, AddShoppingCart, LocalShipping, Remove, Shield, Wallet, WorkspacePremium } from "@mui/icons-material";
 
 const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
@@ -95,6 +95,18 @@ const ProductDetails = () => {
                       <Add/>
                     </Button>
                 </div>
+            </div>
+
+            <div className="mt-12 flex items-center gap-5">
+
+              <Button 
+              variant="contained"
+              startIcon={<AddShoppingCart/>}
+              sx={{py:"1rem"}}>
+                Add To Bag
+
+              </Button>
+
             </div>
 
         </section>
