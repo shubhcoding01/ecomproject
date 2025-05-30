@@ -1,4 +1,5 @@
 import React from "react";
+import StarIcon from '@mui/icons-material/Star';
 
 const ProductDetails = () => {
   const images = [
