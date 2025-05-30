@@ -52,6 +52,7 @@ const ProductDetails = () => {
             <span className="line-through text-gray-400">₹ 999</span>
             <span className="text-primary-color font-semibold">60% off</span>
           </div>
+          <p>Inclusive of all taxes. Free Shipping above ₹1500</p>
         </section>
       </div>
     </div>
