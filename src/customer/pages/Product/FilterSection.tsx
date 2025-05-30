@@ -17,6 +17,16 @@ const FilterSection = () => {
   const handleColorToggle = () =>{
     setExpendColor(!expandColor);
   };
+
+  const updateFilterParams = (e: any) =>{
+    const {value, name } = e.target;
+    if(value) {
+      searchParams.set(name, value);
+    } else {
+      searchParams.delete(name);
+    }
+    setSearchParams(searchParams);
+  };
   return (
     <div className="z-50 space-y-5 bg-white">
       <div className="flex items-start justify-between h-[40px] px-9 lg:border-r">
