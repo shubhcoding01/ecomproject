@@ -10,6 +10,7 @@ import {
 import React, { useState } from "react";
 import { colors } from "../../../data/Filter/color";
 import { useSearchParams } from "react-router-dom";
+import { price } from "../../../data/Filter/price";
 
 const FilterSection = () => {
   const [expandColor,setExpendColor]=useState(false);
@@ -67,9 +68,11 @@ const FilterSection = () => {
             aria-labelledby="color"
             defaultValue=""
             name="color"
+            onChange={updateFilterParams}
           >
-            {colors.slice(0,expandColor?colors.length:5).map((item)=><FormControlLabel
-              value="female"
+            {colors.slice(0,expandColor?colors.length:5).map((item)=>
+            <FormControlLabel
+              value={item.name}
               control={<Radio />}
               label={<div className="flex items-center gap-3">
                 <p>{item.name}</p>
@@ -91,6 +94,42 @@ const FilterSection = () => {
             {expandColor?"hide":`+${colors.length-5}more`}
           </button>
         </div>
+      </section>
+
+      <section>
+        <FormControl>
+          <FormLabel 
+          sx={{
+            fontSize:"16px",
+            fontWeight:"bold",
+            color:"gray-500",
+            ml:"10px",
+            mb:"0",
+            mr:"10px"
+          }}
+          className="text-2xl font-semibold" id="price">
+            Price
+          </FormLabel>
+          <RadioGroup
+            aria-labelledby="price"
+            defaultValue=""
+            name="price"
+            onChange={updateFilterParams}
+          >
+            {price.map((item,index)=>
+            <FormControlLabel
+              key={item.name}
+              value={item.value}
+              control={<Radio size="small" />}
+              label={item.name}
+
+                 
+            />)}
+            
+            
+          </RadioGroup>
+        </FormControl>
+        
       </section>
       </div>
     </div>
