@@ -78,7 +78,7 @@ const Product = () => {
           md:grid-cols-3 lg:grid-cols-4  gap-y-5 px-5 justify-center">
             {[1,1,1,1,1,,1,1,1,1,1,1,1,1].map((item)=><ProductCard />)}
           </section>
-          <div>
+          <div className="flex justify-center py-10">
                 <Pagination 
                 onChange={(e,value) =>handlePageChange(value)}
                 count={10} variant="outlined" 
