@@ -38,9 +38,9 @@ const FilterSection = () => {
             Color
           </FormLabel>
           <RadioGroup
-            aria-labelledby="demo-radio-buttons-group-label"
-            defaultValue="female"
-            name="radio-buttons-group"
+            aria-labelledby="color"
+            defaultValue=""
+            name="color"
           >
             <FormControlLabel
               value="female"
