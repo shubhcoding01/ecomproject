@@ -4,12 +4,12 @@ const SimilarProductCard = () => {
   return (
     <div>
         <div className="group px-4 relative">
-            <div className='card'
+            <div className='card'>
                 
 
                  <img 
                 className='card-media object-top'
-                    src={"https://m.media-amazon.com/images/I/81j27szi3cL._SY741_.jpg"}
+                    src="https://m.media-amazon.com/images/I/81j27szi3cL._SY741_.jpg"
                     alt=""/>
 
                    
@@ -33,8 +33,8 @@ const SimilarProductCard = () => {
                     </div>
             </div>
         </div>
-    
-  )
+    </div>
+  );
 }
 
 export default SimilarProductCard
