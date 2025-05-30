@@ -1,5 +1,5 @@
 import React from "react";
-import StarIcon from '@mui/icons-material/Star';
+import StarIcon from "@mui/icons-material/Star";
 import { teal } from "@mui/material/colors";
 import { Divider } from "@mui/material";
 
@@ -18,7 +18,7 @@ const ProductDetails = () => {
             {/* {[1,1,1,1].map((item)=><img 
               className='lg:w-full w-[50px] cursor-pointer rounded-md'
               src='https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg' alt=''/>)} */}
-            {images.map((item,i) => (
+            {images.map((item, i) => (
               <img
                 key={i}
                 className="lg:w-full w-[50px] cursor-pointer rounded-md"
@@ -37,20 +37,20 @@ const ProductDetails = () => {
         </section>
 
         <section>
-          <h1 className="font-bold text-lg text-primary-color">
-            R Clothing
-          </h1>
+          <h1 className="font-bold text-lg text-primary-color">R Clothing</h1>
           <p className="text-gray-600 font-semibold">Men Stylish Shirt</p>
           <div className="flex justify-between items-center py-2 border w-[180px] px-3 mt-5">
             <div className="flex gap-1 items-center">
               <span>4</span>
-              <StarIcon sx={{color:teal[500],fontSize:"17px"}}/>
+              <StarIcon sx={{ color: teal[500], fontSize: "17px" }} />
             </div>
-            <Divider orientation="vertical" flexItem/>
-            <span>
-              234 Ratings
-            </span>
-
+            <Divider orientation="vertical" flexItem />
+            <span>234 Ratings</span>
+          </div>
+          <div className="price flex items-center gap-3">
+            <span className="font-sans text-gray-800">₹ 400</span>
+            <span className="thin-line-through text-gray-400">₹ 999</span>
+            <span className="text-primary-color font-semibold">60% off</span>
           </div>
         </section>
       </div>
