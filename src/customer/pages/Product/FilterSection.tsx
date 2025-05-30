@@ -8,6 +8,7 @@ import {
   RadioGroup,
 } from "@mui/material";
 import React from "react";
+import { colors } from "../../../data/Filter/color";
 
 const FilterSection = () => {
   return (
@@ -42,13 +43,13 @@ const FilterSection = () => {
             defaultValue=""
             name="color"
           >
-            <FormControlLabel
+            {colors.map((item)=><FormControlLabel
               value="female"
               control={<Radio />}
               label="Female"
-            />
-            <FormControlLabel value="male" control={<Radio />} label="Male" />
-            <FormControlLabel value="other" control={<Radio />} label="Other" />
+            />)}
+            
+            
           </RadioGroup>
         </FormControl>
       </section>
