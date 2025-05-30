@@ -7,10 +7,11 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { colors } from "../../../data/Filter/color";
 
 const FilterSection = () => {
+  const [expandColor,setExpendColor]=useState(false);
   return (
     <div className="z-50 space-y-5 bg-white">
       <div className="flex items-start justify-between h-[40px] px-9 lg:border-r">
