@@ -9,9 +9,11 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { colors } from "../../../data/Filter/color";
+import { useSearchParams } from "react-router-dom";
 
 const FilterSection = () => {
   const [expandColor,setExpendColor]=useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
   const handleColorToggle = () =>{
     setExpendColor(!expandColor);
   };
