@@ -33,7 +33,18 @@ const ProductDetails = () => {
           </div>
         </section>
 
-        <section></section>
+        <section>
+          <h1 className="font-bold text-lg text-primary-color">
+            R Clothing
+          </h1>
+          <p className="text-gray-600 font-semibold">Men Stylish Shirt</p>
+          <div className="flext justify-between items-center py-2 border w-[180px] px-3 pt-5">
+            <div className="flex gap-1 items-center">
+              <span>4</span>
+            </div>
+
+          </div>
+        </section>
       </div>
     </div>
   );
