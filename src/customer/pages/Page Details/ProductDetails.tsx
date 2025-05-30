@@ -40,7 +40,7 @@ const ProductDetails = () => {
 
         <section>
           <h1 className="font-bold text-lg text-primary-color">R Clothing</h1>
-          <p className="text-gray-600 font-semibold">Men Stylish Shirt</p>
+          <p className="text-gray-600 font-bold a-size-large">Men's Irregular Geometric Pattern and Alphabet Print Sports Collar Tshirt (Rizim Temu Print Polo-Blue)</p>
           <div className="flex justify-between items-center py-2 border w-[180px] px-3 mt-5">
             <div className="flex gap-1 items-center">
               <span>4</span>
@@ -87,11 +87,11 @@ const ProductDetails = () => {
                   Quantity
                 </h1>
                 <div className="flex items-center gap-2 w-[140px] justify-between">
-                    <Button>
+                    <Button disabled={quantity==1} onClick={()=>setQuantity(quantity-1)}>
                       <Remove/>
                     </Button>
                     <span>{quantity}</span>
-                    <Button>
+                    <Button onClick={()=>setQuantity(quantity+1)}>
                       <Add/>
                     </Button>
                 </div>
