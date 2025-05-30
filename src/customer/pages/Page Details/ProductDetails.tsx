@@ -9,7 +9,9 @@ const ProductDetails = () => {
 
           </div>
           <div className='w-full lg:w-[85%]'>
-              <img src="https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg" alt="" />
+              <img 
+              className='w-full rounded-md'
+              src="https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg" alt="" />
           </div>
         </section>
       </div>
