@@ -25,7 +25,18 @@ const FilterSection = () => {
 
       <section>
         <FormControl>
-          <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
+          <FormLabel 
+          sx={{
+            fontSize:"16px",
+            fontWeight:"bold",
+            color:"gray-500",
+            ml:"10px",
+            mb:"0",
+            mr:"10px"
+          }}
+          className="text-2xl font-semibold">
+            Color
+          </FormLabel>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="female"
