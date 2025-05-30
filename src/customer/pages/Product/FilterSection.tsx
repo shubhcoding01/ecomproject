@@ -1,4 +1,4 @@
-import { Button } from '@mui/material'
+import { Button, Divider } from '@mui/material'
 import React from 'react'
 
 const FilterSection = () => {
@@ -12,6 +12,11 @@ const FilterSection = () => {
             Clear all
           </Button>
       </div>
+      <Divider />
+
+      <section>
+        
+      </section>
     </div>
   )
 }
