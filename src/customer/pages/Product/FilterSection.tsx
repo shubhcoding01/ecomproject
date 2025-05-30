@@ -24,7 +24,8 @@ const FilterSection = () => {
       </div>
       <Divider />
 
-      <section>
+      <div className="px-9 space-y-6">
+        <section>
         <FormControl>
           <FormLabel 
           sx={{
@@ -46,12 +47,12 @@ const FilterSection = () => {
             {colors.map((item)=><FormControlLabel
               value="female"
               control={<Radio />}
-              label={<div>
+              label={<div className="flex items-center gap-3">
                 <p>{item.name}</p>
-                <span style={{backgroundColor:item.hex}} className={`h-5 w-5 rounded-full ${item.name==="White"?
+                <p style={{backgroundColor:item.hex}} className={`h-5 w-5 rounded-full ${item.name==="White"?
                   "border":""}`}>
 
-                  </span>
+                  </p>
               </div>}
             />)}
             
@@ -59,6 +60,7 @@ const FilterSection = () => {
           </RadioGroup>
         </FormControl>
       </section>
+      </div>
     </div>
   );
 };
