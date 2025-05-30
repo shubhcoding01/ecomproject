@@ -3,6 +3,7 @@ import StarIcon from "@mui/icons-material/Star";
 import { teal } from "@mui/material/colors";
 import { Button, Divider } from "@mui/material";
 import { Add, AddShoppingCart, FavoriteBorder, LocalShipping, Remove, Shield, Wallet, WorkspacePremium } from "@mui/icons-material";
+import SimilarProduct from "./SimilarProduct";
 
 const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
@@ -14,6 +15,7 @@ const ProductDetails = () => {
   ];
   return (
     <div className="px-5 lg:px-20 pt-20">
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <section className="flex flex-col lg:flex-row gap-5">
           <div className="w-full lg:w-[15%] flex flex-wrap lg:flex-col gap-3">
@@ -124,6 +126,16 @@ const ProductDetails = () => {
             </div>
 
         </section>
+      </div>
+
+      <div className="mt-20">
+        <h1 className="text-lg font-bold">
+          Similar Product
+        </h1>
+        <div className="pt-5">
+          <SimilarProduct/>
+        </div>
+        
       </div>
     </div>
   );
