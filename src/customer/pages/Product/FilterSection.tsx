@@ -27,6 +27,14 @@ const FilterSection = () => {
     }
     setSearchParams(searchParams);
   };
+
+  const clearAllFilters = () => {
+    console.log("clearAllFilters",searchParams)
+    searchParams.forEach((value:any,key:any) => {
+      searchParams.delete(key);
+    });
+    setSearchParams(searchParams);
+  }
   return (
     <div className="z-50 space-y-5 bg-white">
       <div className="flex items-start justify-between h-[40px] px-9 lg:border-r">
