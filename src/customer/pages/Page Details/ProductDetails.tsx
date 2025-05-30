@@ -2,7 +2,7 @@ import React from "react";
 import StarIcon from "@mui/icons-material/Star";
 import { teal } from "@mui/material/colors";
 import { Divider } from "@mui/material";
-import { Shield } from "@mui/icons-material";
+import { LocalShipping, Shield, Wallet, WorkspacePremium } from "@mui/icons-material";
 
 const ProductDetails = () => {
   const images = [
@@ -65,17 +65,17 @@ const ProductDetails = () => {
               </div>
 
               <div className="flex items-center gap-4">
-                  <Shield sx={{color:teal[500]}}/>
+                  <WorkspacePremium sx={{color:teal[500]}}/>
                   <p>100% money back gurantee </p>
               </div>
 
               <div className="flex items-center gap-4">
-                  <Shield sx={{color:teal[500]}}/>
+                  <LocalShipping sx={{color:teal[500]}}/>
                   <p>Free Shiping & Return</p>
               </div>
 
               <div className="flex items-center gap-4">
-                  <Shield sx={{color:teal[500]}}/>
+                  <Wallet sx={{color:teal[500]}}/>
                   <p>Pay on delivery might be available</p>
               </div>
 
