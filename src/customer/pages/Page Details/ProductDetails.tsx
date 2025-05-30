@@ -16,7 +16,12 @@ const ProductDetails = () => {
               src="https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg" alt="" />
           </div>
         </section>
+
+        <section>
+          
+        </section>
       </div>
+      
     </div>
   )
 }
