@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import StarIcon from "@mui/icons-material/Star";
 import { teal } from "@mui/material/colors";
-import { Divider } from "@mui/material";
-import { LocalShipping, Shield, Wallet, WorkspacePremium } from "@mui/icons-material";
+import { Button, Divider } from "@mui/material";
+import { Add, LocalShipping, Remove, Shield, Wallet, WorkspacePremium } from "@mui/icons-material";
 
 const ProductDetails = () => {
+  const [quantity, setQuantity] = useState(1);
   const images = [
     "https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg",
     "https://m.media-amazon.com/images/I/61XSVitox-L._SY741_.jpg",
@@ -79,6 +80,21 @@ const ProductDetails = () => {
                   <p>Pay on delivery might be available</p>
               </div>
 
+            </div>
+
+            <div className="mt-7 space-y-2">
+                <h1>
+                  Quantity
+                </h1>
+                <div className="flex items-center gap-2 w-[140px] justify-between">
+                    <Button>
+                      <Remove/>
+                    </Button>
+                    <span>{quantity}</span>
+                    <Button>
+                      <Add/>
+                    </Button>
+                </div>
             </div>
 
         </section>
