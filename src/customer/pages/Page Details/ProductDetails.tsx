@@ -47,9 +47,9 @@ const ProductDetails = () => {
             <Divider orientation="vertical" flexItem />
             <span>234 Ratings</span>
           </div>
-          <div className="price flex items-center gap-3">
+          <div className="price flex items-center gap-3 mt-5 text-2xl">
             <span className="font-sans text-gray-800">₹ 400</span>
-            <span className="thin-line-through text-gray-400">₹ 999</span>
+            <span className="line-through text-gray-400">₹ 999</span>
             <span className="text-primary-color font-semibold">60% off</span>
           </div>
         </section>
