@@ -46,7 +46,13 @@ const FilterSection = () => {
             {colors.map((item)=><FormControlLabel
               value="female"
               control={<Radio />}
-              label="Female"
+              label={<div>
+                <p>{item.name}</p>
+                <span className={`h-5 w-5 rounded-full ${item.name==="White"?
+                  "border":""}`}>
+                    
+                  </span>
+              </div>}
             />)}
             
             
