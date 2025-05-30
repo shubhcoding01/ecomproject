@@ -2,6 +2,7 @@ import React from "react";
 import StarIcon from "@mui/icons-material/Star";
 import { teal } from "@mui/material/colors";
 import { Divider } from "@mui/material";
+import { Shield } from "@mui/icons-material";
 
 const ProductDetails = () => {
   const images = [
@@ -56,8 +57,23 @@ const ProductDetails = () => {
           <p className="text-sm">Inclusive of all taxes. Free Shipping above ₹1500</p>
           </div>
 
-            <div>
-              
+            <div className="mt-7 space-y-3">
+
+              <div className="flex items-center gap-4">
+                  <Shield sx={{color:teal[500]}}/>
+                  <p>Authenic & Quality Assured</p>
+              </div>
+
+              <div className="flex items-center gap-4">
+                  <Shield sx={{color:teal[500]}}/>
+                  <p>Price </p>
+              </div>
+
+              <div className="flex items-center gap-4">
+                  <Shield sx={{color:teal[500]}}/>
+                  <p>Authenic & Quality Assured</p>
+              </div>
+
             </div>
 
         </section>
