@@ -12,6 +12,9 @@ import { colors } from "../../../data/Filter/color";
 
 const FilterSection = () => {
   const [expandColor,setExpendColor]=useState(false);
+  const handleColorToggle = () =>{
+    setExpendColor(!expandColor);
+  };
   return (
     <div className="z-50 space-y-5 bg-white">
       <div className="flex items-start justify-between h-[40px] px-9 lg:border-r">
@@ -45,7 +48,7 @@ const FilterSection = () => {
             defaultValue=""
             name="color"
           >
-            {colors.map((item)=><FormControlLabel
+            {colors.slice(0,expandColor?colors.length:5).map((item)=><FormControlLabel
               value="female"
               control={<Radio />}
               label={<div className="flex items-center gap-3">
@@ -60,6 +63,14 @@ const FilterSection = () => {
             
           </RadioGroup>
         </FormControl>
+        <div>
+          <button
+          onClick={handleColorToggle}
+          className="text-primary-color cursor-pointer hover:text-teal-400
+          flex items-center">
+            {expandColor?"hide":`+${colors.length-5}more`}
+          </button>
+        </div>
       </section>
       </div>
     </div>
