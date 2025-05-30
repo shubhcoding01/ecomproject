@@ -81,7 +81,8 @@ const Product = () => {
           <div>
                 <Pagination 
                 onChange={(e,value) =>handlePageChange(value)}
-                count={10} variant="outlined" />
+                count={10} variant="outlined" 
+                color="primary"/>
               </div>
         </div>
 
