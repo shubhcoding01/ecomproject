@@ -47,12 +47,19 @@ const ProductDetails = () => {
             <Divider orientation="vertical" flexItem />
             <span>234 Ratings</span>
           </div>
-          <div className="price flex items-center gap-3 mt-5 text-2xl">
+          <div>
+            <div className="price flex items-center gap-3 mt-5 text-2xl">
             <span className="font-sans text-gray-800">₹ 400</span>
             <span className="line-through text-gray-400">₹ 999</span>
             <span className="text-primary-color font-semibold">60% off</span>
           </div>
-          <p>Inclusive of all taxes. Free Shipping above ₹1500</p>
+          <p className="text-sm">Inclusive of all taxes. Free Shipping above ₹1500</p>
+          </div>
+
+            <div>
+              
+            </div>
+
         </section>
       </div>
     </div>
