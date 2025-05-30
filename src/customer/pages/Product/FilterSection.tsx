@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import { colors } from "../../../data/Filter/color";
 import { useSearchParams } from "react-router-dom";
 import { price } from "../../../data/Filter/price";
+import { discount } from "../../../data/Filter/discount";
 
 const FilterSection = () => {
   const [expandColor,setExpendColor]=useState(false);
@@ -40,7 +41,8 @@ const FilterSection = () => {
     <div className="z-50 space-y-5 bg-white">
       <div className="flex items-start justify-between h-[40px] px-9 lg:border-r">
         <p className="text-lg font-semibold">Filter</p>
-        <Button
+        <Button 
+          onClick={clearAllFilters}
           size="small"
           className="text-blue-500 cursor-pointer font-semibold"
         >
@@ -117,6 +119,42 @@ const FilterSection = () => {
             onChange={updateFilterParams}
           >
             {price.map((item,index)=>
+            <FormControlLabel
+              key={item.name}
+              value={item.value}
+              control={<Radio size="small" />}
+              label={item.name}
+
+                 
+            />)}
+            
+            
+          </RadioGroup>
+        </FormControl>
+        
+      </section>
+
+      <section>
+        <FormControl>
+          <FormLabel 
+          sx={{
+            fontSize:"16px",
+            fontWeight:"bold",
+            color:"gray-500",
+            ml:"10px",
+            mb:"0",
+            mr:"10px"
+          }}
+          className="text-2xl font-semibold" id="brand">
+            Discount
+          </FormLabel>
+          <RadioGroup
+            aria-labelledby="brand"
+            defaultValue=""
+            name="discount"
+            onChange={updateFilterParams}
+          >
+            {discount.map((item,index)=>
             <FormControlLabel
               key={item.name}
               value={item.value}
