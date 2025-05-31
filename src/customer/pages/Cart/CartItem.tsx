@@ -1,7 +1,12 @@
+import { Add, Remove } from "@mui/icons-material";
 import { Button, Divider } from "@mui/material";
 import React from "react";
 
 const CartItem = () => {
+  const handleUpdateQuantity = () => {
+    // Logic to update the quantity of the item in the cart
+    console.log("Update quantity");
+  }
   return (
     <div className="border rounded-md relative">
       <div className="p-5 flex gap-3">
@@ -20,20 +25,28 @@ const CartItem = () => {
           T-shirt
         </p>
         <p className="text-gray-400 text-xs">
-          <strong>Sold by:</strong> Kaff Apparels  
+          <strong>Sold by:</strong> Kaff Apparels
         </p>
         <p className="text-sm">10 days Return & Exchange</p>
-        <p className="text-sm text-gray-500"><strong>Quantiy : </strong>5</p>
+        <p className="text-sm text-gray-500">
+          <strong>Quantiy : </strong>5
+        </p>
       </div>
 
-      <Divider/>
+      <Divider />
       <div className="px-5 py-3 flex justify-between items-center">
         <div className="flex items-center gap-3 w-[140px]">
-          <Button size="small" variant="outlined" color="error">
-
+          <Button
+            disabled={true}
+            
+          >
+            <Remove />
+          </Button>
+          <span>{5}</span>
+          <Button onClick={handleUpdateQuantity}>
+            <Add />
           </Button>
         </div>
-
       </div>
     </div>
   );
