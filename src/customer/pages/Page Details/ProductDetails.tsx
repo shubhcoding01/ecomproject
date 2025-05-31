@@ -4,6 +4,7 @@ import { teal } from "@mui/material/colors";
 import { Button, Divider } from "@mui/material";
 import { Add, AddShoppingCart, FavoriteBorder, LocalShipping, Remove, Shield, Wallet, WorkspacePremium } from "@mui/icons-material";
 import SimilarProduct from "./SimilarProduct";
+import ReviewCard from "../Review/ReviewCard";
 
 const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
@@ -123,6 +124,10 @@ const ProductDetails = () => {
 
             <div className="mt-5">
               <p>Stay stylish and comfortable with this geometric-patterned polo T-shirt made from soft cotton. Designed with a flat collar, short sleeves, and a regular fit, it’s perfect for casual wear. Easy to maintain with regular machine wash. Made in India by KAFF Apparels.</p>
+            </div>
+
+            <div className="mt-7">
+              <ReviewCard/>
             </div>
 
         </section>
