@@ -34,7 +34,8 @@ const CartItem = () => {
       </div>
 
       <Divider />
-      <div className="px-5 py-3 flex justify-between items-center">
+      <div className="flex justify-between items-center ">
+        <div className="px-5 py-3 flex justify-between items-center">
         <div className="flex items-center gap-3 w-[140px]">
           <Button
             disabled={true}
@@ -47,6 +48,11 @@ const CartItem = () => {
             <Add />
           </Button>
         </div>
+      </div>
+
+      <div className="pr-5">
+        <p className="text-gray-700 font-bold">₹799.00</p>
+      </div>
       </div>
     </div>
   );
