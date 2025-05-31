@@ -1,5 +1,6 @@
 import React from 'react'
 import ReviewCard from './ReviewCard'
+import { Divider } from '@mui/material'
 
 const Review = () => {
   return (
@@ -23,7 +24,10 @@ const Review = () => {
       </section>
 
       <section>
-        <ReviewCard />
+        {[1,1,1,1,1,1].map((item, idx) => <div key={idx} className='space-y-3'>
+          <ReviewCard />
+          <Divider className='my-5' />
+        </div> )}
       </section>
       
     </div>
