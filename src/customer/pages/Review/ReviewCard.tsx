@@ -35,7 +35,7 @@ const ReviewCard = () => {
         </Grid>
 
         </Grid>
-        <div className='flex items-center justify-center'>
+        <div >
           <IconButton>
             <Delete />
           </IconButton>
