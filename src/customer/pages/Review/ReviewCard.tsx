@@ -7,11 +7,11 @@ import React from 'react'
 const ReviewCard = () => {
   return (
     <div className='flex justify-between'>
-        <Grid container spacing={8}  >
+        <Grid container spacing={9}  >
           <Grid  size={{xs:1}}>
             <Box >
               <Avatar className='text-white' sx={{width:56,height:56, bgcolor:"#1976d2"}}>
-                z
+                S
               </Avatar>
             </Box>
           </Grid>
@@ -34,12 +34,12 @@ const ReviewCard = () => {
           </div>
         </Grid>
 
-          <IconButton>
-            <Delete/>
-          </IconButton>
-
         </Grid>
-        
+        <div className='flex items-center justify-center'>
+          <IconButton>
+            <Delete />
+          </IconButton>
+          </div>        
     </div>
   )
 }
