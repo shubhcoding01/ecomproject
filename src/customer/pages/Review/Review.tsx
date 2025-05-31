@@ -1,4 +1,5 @@
 import React from 'react'
+import ReviewCard from './ReviewCard'
 
 const Review = () => {
   return (
@@ -19,6 +20,10 @@ const Review = () => {
           </div>
           </div>
         </div>
+      </section>
+
+      <section>
+        <ReviewCard />
       </section>
       
     </div>
