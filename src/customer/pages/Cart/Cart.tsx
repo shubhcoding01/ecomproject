@@ -10,8 +10,10 @@ const Cart = () => {
             <div className='cartItemSection lg:col-span-2 space-y-3'>
                 {[1,1,1,1,1,1].map((item) => <CartItem/> )}
             </div>
-            <div>
-
+            <div className='col-span-1 text-sm space-y-3'>
+                <div>
+                    
+                </div>
             </div>
         </div>
     </div>
