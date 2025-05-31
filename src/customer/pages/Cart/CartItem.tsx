@@ -1,3 +1,4 @@
+import { Button, Divider } from "@mui/material";
 import React from "react";
 
 const CartItem = () => {
@@ -21,8 +22,18 @@ const CartItem = () => {
         <p className="text-gray-400 text-xs">
           <strong>Sold by:</strong> Kaff Apparels  
         </p>
-        <p>10 days Return & Exchange</p>
-        <p><strong>Quantiy : </strong>5</p>
+        <p className="text-sm">10 days Return & Exchange</p>
+        <p className="text-sm text-gray-500"><strong>Quantiy : </strong>5</p>
+      </div>
+
+      <Divider/>
+      <div className="px-5 py-3 flex justify-between items-center">
+        <div className="flex items-center gap-3 w-[140px]">
+          <Button size="small" variant="outlined" color="error">
+
+          </Button>
+        </div>
+
       </div>
     </div>
   );
