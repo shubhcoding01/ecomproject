@@ -80,7 +80,7 @@ const Addressform = () => {
                             value={formik.values.address}
                             onChange={formik.handleChange}
                             error={formik.touched.address && Boolean(formik.errors.address)}
-                            helperText={formik.touched.name && formik.errors.address}
+                            helperText={formik.touched.address && formik.errors.address}
                             className="w-full p-2 border rounded-md"
                             required
                         />
