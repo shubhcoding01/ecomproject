@@ -15,7 +15,7 @@ const CartItem = () => {
           src="https://m.media-amazon.com/images/I/61HS4sTDnPL._AC_AA152_.jpg"
           alt=""
         />
-      </div>
+      
       <div className="space-y-2 ">
         <h1 className="font-semibold text-lg">
           Men's Irregular Geometric Pattern
@@ -31,6 +31,7 @@ const CartItem = () => {
         <p className="text-sm text-gray-500">
           <strong>Quantiy : </strong>5
         </p>
+      </div>
       </div>
 
       <Divider />
@@ -55,7 +56,7 @@ const CartItem = () => {
       </div>
       </div>
       <div className="absolute top-2 right-2">
-        <IconButton>
+        <IconButton color="primary" size="small">
           <Close />
         </IconButton>
       </div>
