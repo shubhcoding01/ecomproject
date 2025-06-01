@@ -1,7 +1,25 @@
-import { Box, Grid } from '@mui/material'
+import { Box, Grid, TextField } from '@mui/material'
+import { useFormik } from 'formik'
 import React from 'react'
 
 const Addressform = () => {
+    const formik= useFormik(
+        {
+            initialValues: {
+                name: '',
+                mobile: '',
+                pincode: '',
+                address: '',
+                city: '',
+                state: '',
+                locality: ''
+            },
+            validationSchema:  {},
+            onSubmit: (values) => {
+                console.log('Form submitted:', values);
+            }
+        }
+    )
   return (
     <Box sx={{minWidhth:600, max:"auto"}}>
 
@@ -10,9 +28,14 @@ const Addressform = () => {
             <form>
                 <Grid container spacing={8}>
                     <Grid size={{xs:12}}>
-                        <input
-                            type="text"
-                            placeholder="First Name"
+                        <TextField
+                            fullWidth
+                            label="Name"
+                            name='name'
+                            value={formik.values.name}
+                            onChange={formik.handleChange}
+                            error={formik.touched.name && Boolean(formik.errors.name)}
+                            helperText={formik.touched.name && formik.errors.name}
                             className="w-full p-2 border rounded-md"
                             required
                         />
