@@ -105,7 +105,7 @@ const Addressform = () => {
                     <Grid size={{xs:12}}>
                         <TextField
                             fullWidth
-                            label="state"
+                            label="State"
                             name='state'
                             value={formik.values.state}
                             onChange={formik.handleChange}
