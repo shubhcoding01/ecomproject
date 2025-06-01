@@ -1,5 +1,5 @@
-import { Add, Remove } from "@mui/icons-material";
-import { Button, Divider } from "@mui/material";
+import { Add, Close, Remove } from "@mui/icons-material";
+import { Button, Divider, IconButton } from "@mui/material";
 import React from "react";
 
 const CartItem = () => {
@@ -53,6 +53,11 @@ const CartItem = () => {
       <div className="pr-5">
         <p className="text-gray-700 font-bold">₹799.00</p>
       </div>
+      </div>
+      <div className="absolute top-2 right-2">
+        <IconButton>
+          <Close />
+        </IconButton>
       </div>
     </div>
   );
