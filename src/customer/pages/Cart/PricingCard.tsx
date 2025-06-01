@@ -24,6 +24,13 @@ const PricingCard = () => {
           <span className='text-red-600 font-semibold'>Free</span>
         </div>
 
+        <div className='flex justify-between items-center'>
+          <span>Platform Fee</span>
+          <span className='font-semibold'>₹0.00</span>
+        </div>
+
+
+
         <hr />
 
         <div className='flex justify-between items-center font-semibold text-lg'>
