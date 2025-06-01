@@ -95,7 +95,7 @@ const Addressform = () => {
                             value={formik.values.city}
                             onChange={formik.handleChange}
                             error={formik.touched.city && Boolean(formik.errors.city)}
-                            helperText={formik.touched.name && formik.errors.name}
+                            helperText={formik.touched.city && formik.errors.city}
                             className="w-full p-2 border rounded-md"
                             required
                         />
