@@ -27,9 +27,9 @@ const Cart = () => {
                     </div>
                     <span>Apply Copons</span>
                     </div>
-                    <div>
+                    <div className='flex justify-between items-center'>
                       <TextField onChange={handleChange} id="outlined-basic" placeholder='coupon code' size='small' variant="outlined" />
-                      <Button size='small'>
+                      <Button  size='small'>
                         Apply
                       </Button>
                     </div>
