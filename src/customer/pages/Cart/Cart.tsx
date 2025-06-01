@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import CartItem from './CartItem'
-import { LocalOffer } from '@mui/icons-material'
+import { Close, LocalOffer } from '@mui/icons-material'
 import { teal } from '@mui/material/colors'
-import { Button, TextField } from '@mui/material'
+import { Button, IconButton, TextField } from '@mui/material'
 
 const Cart = () => {
   const [couponCode, setCouponCode] = useState("")
@@ -27,13 +27,25 @@ const Cart = () => {
                     </div>
                     <span>Apply Copons</span>
                     </div>
-                    <div className='flex justify-between items-center'>
+                    {false? <div className='flex justify-between items-center'>
                       <TextField onChange={handleChange} id="outlined-basic" placeholder='coupon code' size='small' variant="outlined" />
                       <Button  size='small'>
                         Apply
                       </Button>
                     </div>
-                  </div>
+                    : <div className='flex'>
+                      <div className='p-1 pl-5 pr-3 border rounded-md flex gap-2
+                       items-center'>
+                        <span className=''>Shubh30</span>
+                        <IconButton size='small'>
+                          <Close className='text-red-600' />
+                        </IconButton>
+
+                      </div>
+
+                    </div> }
+                
+                </div>
                     
                 
             </div>
