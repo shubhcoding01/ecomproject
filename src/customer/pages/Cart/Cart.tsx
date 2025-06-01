@@ -27,7 +27,7 @@ const Cart = () => {
                     </div>
                     <span>Apply Copons</span>
                     </div>
-                    {false? <div className='flex justify-between items-center'>
+                    {true? <div className='flex justify-between items-center'>
                       <TextField onChange={handleChange} id="outlined-basic" placeholder='coupon code' size='small' variant="outlined" />
                       <Button  size='small'>
                         Apply
@@ -36,7 +36,7 @@ const Cart = () => {
                     : <div className='flex'>
                       <div className='p-1 pl-5 pr-3 border rounded-md flex gap-2
                        items-center'>
-                        <span className=''>Shubh30</span>
+                        <span className=''>Shubh30 Applied</span>
                         <IconButton size='small'>
                           <Close className='text-red-600' />
                         </IconButton>
