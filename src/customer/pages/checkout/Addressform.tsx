@@ -60,7 +60,7 @@ const Addressform = () => {
                     <Grid size={{xs:12}}>
                         <TextField
                             fullWidth
-                            label="pincode"
+                            label="Pincode"
                             name='pincode'
                             value={formik.values.pincode}
                             onChange={formik.handleChange}
