@@ -21,7 +21,7 @@ const Addressform = () => {
         }
     )
   return (
-    <Box sx={{minWidhth:600, max:"auto"}}>
+    <Box sx={{ max:"auto"}}>
 
         <p className='text-xl font-bold text-center pb-5'>Contact Details</p>
 
