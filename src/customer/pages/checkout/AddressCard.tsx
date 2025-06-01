@@ -34,3 +34,35 @@ const AddressCard = () => {
 };
 
 export default AddressCard;
+
+
+// import { Button, Radio } from '@mui/material'
+// import React from 'react'
+
+// const AddressCard = () => {
+//     const handleChange = (event: any) => {
+//         // Handle radio button change
+//         console.log(event.target.value);
+//     };
+//   return (
+//     <div>
+        
+//         <div className='border rounded-md p-5 space-y-3 flex'>
+//             <div>
+//             <Radio 
+//             checked={true}
+//             onChange={handleChange}
+//             value=""
+//             name='radio-buttons'
+//             />
+//         </div>
+//                         <p className='text-lg font-semibold'>Shubh</p>
+//                         <p className='text-gray-600'>123, Street Name, City, State, 123456</p>
+//                         <p className='text-gray-500'>Mobile: +91 9876543210</p>
+//                         <Button variant='outlined' size='small'>Edit</Button>
+//                     </div>
+//     </div>
+//   )
+// }
+
+// export default AddressCard
