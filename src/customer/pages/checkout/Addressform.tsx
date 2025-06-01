@@ -40,26 +40,92 @@ const Addressform = () => {
                             required
                         />
                     </Grid>
+                </Grid>
+                <Grid container spacing={8}>
                     <Grid size={{xs:12}}>
-                        <input
-                            type="text"
-                            placeholder="Last Name"
+                        <TextField
+                            fullWidth
+                            label="Name"
+                            name='name'
+                            value={formik.values.name}
+                            onChange={formik.handleChange}
+                            error={formik.touched.name && Boolean(formik.errors.name)}
+                            helperText={formik.touched.name && formik.errors.name}
                             className="w-full p-2 border rounded-md"
                             required
                         />
                     </Grid>
+                </Grid>
+                <Grid container spacing={8}>
                     <Grid size={{xs:12}}>
-                        <input
-                            type="email"
-                            placeholder="Email Address"
+                        <TextField
+                            fullWidth
+                            label="Name"
+                            name='name'
+                            value={formik.values.name}
+                            onChange={formik.handleChange}
+                            error={formik.touched.name && Boolean(formik.errors.name)}
+                            helperText={formik.touched.name && formik.errors.name}
                             className="w-full p-2 border rounded-md"
                             required
                         />
                     </Grid>
+                </Grid>
+                <Grid container spacing={8}>
                     <Grid size={{xs:12}}>
-                        <input
-                            type="tel"
-                            placeholder="Mobile Number"
+                        <TextField
+                            fullWidth
+                            label="Name"
+                            name='name'
+                            value={formik.values.name}
+                            onChange={formik.handleChange}
+                            error={formik.touched.name && Boolean(formik.errors.name)}
+                            helperText={formik.touched.name && formik.errors.name}
+                            className="w-full p-2 border rounded-md"
+                            required
+                        />
+                    </Grid>
+                </Grid>
+                <Grid container spacing={8}>
+                    <Grid size={{xs:12}}>
+                        <TextField
+                            fullWidth
+                            label="Name"
+                            name='name'
+                            value={formik.values.name}
+                            onChange={formik.handleChange}
+                            error={formik.touched.name && Boolean(formik.errors.name)}
+                            helperText={formik.touched.name && formik.errors.name}
+                            className="w-full p-2 border rounded-md"
+                            required
+                        />
+                    </Grid>
+                </Grid>
+                <Grid container spacing={8}>
+                    <Grid size={{xs:12}}>
+                        <TextField
+                            fullWidth
+                            label="Name"
+                            name='name'
+                            value={formik.values.name}
+                            onChange={formik.handleChange}
+                            error={formik.touched.name && Boolean(formik.errors.name)}
+                            helperText={formik.touched.name && formik.errors.name}
+                            className="w-full p-2 border rounded-md"
+                            required
+                        />
+                    </Grid>
+                </Grid>
+                <Grid container spacing={8}>
+                    <Grid size={{xs:12}}>
+                        <TextField
+                            fullWidth
+                            label="Name"
+                            name='name'
+                            value={formik.values.name}
+                            onChange={formik.handleChange}
+                            error={formik.touched.name && Boolean(formik.errors.name)}
+                            helperText={formik.touched.name && formik.errors.name}
                             className="w-full p-2 border rounded-md"
                             required
                         />
