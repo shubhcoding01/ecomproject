@@ -64,7 +64,7 @@ const Addressform = () => {
                             name='pincode'
                             value={formik.values.pincode}
                             onChange={formik.handleChange}
-                            error={formik.touched.name && Boolean(formik.errors.pincode)}
+                            error={formik.touched.pincode && Boolean(formik.errors.pincode)}
                             helperText={formik.touched.pincode && formik.errors.pincode}
                             className="w-full p-2 border rounded-md"
                             required
