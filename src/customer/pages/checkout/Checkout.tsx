@@ -1,6 +1,7 @@
 import { Box, Button, Modal } from "@mui/material";
 import React from "react";
 import AddressCard from "./AddressCard";
+import Addressform from "./Addressform";
 
 const style = {
   position: 'absolute',
@@ -51,7 +52,7 @@ const Checkout = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          Model
+          <Addressform />
         </Box>
       </Modal>
     </>
