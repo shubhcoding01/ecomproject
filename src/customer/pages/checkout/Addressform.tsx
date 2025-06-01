@@ -120,12 +120,12 @@ const Addressform = () => {
                     <Grid size={{xs:12}}>
                         <TextField
                             fullWidth
-                            label="Name"
-                            name='name'
-                            value={formik.values.name}
+                            label="locality"
+                            name='locality'
+                            value={formik.values.locality}
                             onChange={formik.handleChange}
-                            error={formik.touched.name && Boolean(formik.errors.name)}
-                            helperText={formik.touched.name && formik.errors.name}
+                            error={formik.touched.locality && Boolean(formik.errors.locality)}
+                            helperText={formik.touched.locality && formik.errors.locality}
                             className="w-full p-2 border rounded-md"
                             required
                         />
