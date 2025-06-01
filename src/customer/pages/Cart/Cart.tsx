@@ -3,6 +3,7 @@ import CartItem from './CartItem'
 import { Close, LocalOffer } from '@mui/icons-material'
 import { teal } from '@mui/material/colors'
 import { Button, IconButton, TextField } from '@mui/material'
+import PricingCard from './PricingCard'
 
 const Cart = () => {
   const [couponCode, setCouponCode] = useState("")
@@ -46,7 +47,9 @@ const Cart = () => {
                     </div> }
                 
                 </div>
-                    
+                    <div className='border rounded-md p-5 space-y-3'>
+                      <PricingCard />
+                    </div>
                 
             </div>
         </div>
