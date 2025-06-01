@@ -15,6 +15,11 @@ const style = {
 };
 
 const Checkout = () => {
+
+    const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
       <div className="pt-10 px-5 sm:px-10 md:px-60 min-h-screen">
