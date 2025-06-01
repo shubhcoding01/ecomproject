@@ -1,3 +1,4 @@
+import { Divider } from '@mui/material'
 import React from 'react'
 
 const PricingCard = () => {
@@ -31,7 +32,7 @@ const PricingCard = () => {
 
 
 
-        <hr />
+        <Divider />
 
         <div className='flex justify-between items-center font-semibold text-lg'>
           <span>Total Amount</span>
