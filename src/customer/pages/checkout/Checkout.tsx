@@ -12,7 +12,18 @@ const Checkout = () => {
                         Add New Address
                     </Button>
                 </div>
-                
+                <div className='text-xs font-medium space-y-5'>
+                    <p>Saved Address</p>
+                    <div className='border rounded-md p-5 space-y-3'>
+                        <p className='text-lg font-semibold'>Shubh</p>
+                        <p className='text-gray-600'>123, Street Name, City, State, 123456</p>
+                        <p className='text-gray-500'>Mobile: +91 9876543210</p>
+                        <Button variant='outlined' size='small'>Edit</Button>
+                    </div>
+                </div>
+                <div className='py-4 px-5 border rounded-md space-y-3'>
+                    <Button>Add New Address</Button>
+                </div>
                 
                 
             </div>
