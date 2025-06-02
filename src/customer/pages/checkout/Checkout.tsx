@@ -1,24 +1,30 @@
-import { Box, Button, FormControlLabel, Modal, Radio, RadioGroup } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControlLabel,
+  Modal,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
 import React from "react";
 import AddressCard from "./AddressCard";
 import Addressform from "./Addressform";
 import PricingCard from "../Cart/PricingCard";
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
-  
+  bgcolor: "background.paper",
+
   boxShadow: 24,
   p: 4,
 };
 
 const Checkout = () => {
-
-    const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -44,31 +50,48 @@ const Checkout = () => {
             </div>
           </div>
           <div>
-            <div className='border rounded-md p-5 space-y-3'>
+            <div className="border rounded-md p-5 space-y-3">
               <div>
                 <RadioGroup
-        row
-        aria-labelledby="demo-row-radio-buttons-group-label"
-        name="row-radio-buttons-group"
-      >
-        <FormControlLabel value="female" control={<Radio />} label="Female" />
-        <FormControlLabel value="male" control={<Radio />} label="Male" />
-        <FormControlLabel value="other" control={<Radio />} label="Other" />
-        <FormControlLabel
-          value="disabled"
-          disabled
-          control={<Radio />}
-          label="other"
-        />
-      </RadioGroup>
+                  row
+                  aria-labelledby="demo-row-radio-buttons-group-label"
+                  name="row-radio-buttons-group"
+                >
+                  <FormControlLabel
+                    value="female"
+                    control={<Radio />}
+                    label="Female"
+                  />
+                  <FormControlLabel
+                    value="male"
+                    control={<Radio />}
+                    label="Male"
+                  />
+                  <FormControlLabel
+                    value="other"
+                    control={<Radio />}
+                    label="Other"
+                  />
+                  <FormControlLabel
+                    value="disabled"
+                    disabled
+                    control={<Radio />}
+                    label="other"
+                  />
+                </RadioGroup>
               </div>
-                      <PricingCard />
-                      <div className='p-3'>
-                        <Button variant='contained' sx={{py:"11px"}} color='primary' fullWidth>
-                          Checkout
-                        </Button>
-                      </div>
-                    </div>
+              <PricingCard />
+              <div className="p-3">
+                <Button
+                  variant="contained"
+                  sx={{ py: "11px" }}
+                  color="primary"
+                  fullWidth
+                >
+                  Checkout
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
