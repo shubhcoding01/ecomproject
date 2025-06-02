@@ -29,7 +29,7 @@ const Account = () => {
                 {menu.map((item) => (
                     <div onClick={() => handleClick(item)} key={item.name} 
                     className={`${item.path === location.pathname ? "bg-purple-600 text-white" : "text-gray-700"}
-                         py-2 px-3 hover:text-white rounded-md 
+                         py-2 px-3 hover:text-white rounded-md border-b
                         cursor-pointer hover:bg-purple-600`}>
                             <p>{item.name}</p>
                             </div>
