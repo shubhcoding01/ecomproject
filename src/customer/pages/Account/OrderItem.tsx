@@ -19,7 +19,7 @@ const OrderItem = () => {
       </div>
       <div className='p-5 bg-teal-50 flex gap-3'>
         <div>
-          <img src="https://m.media-amazon.com/images/I/71aTghUQfqL._AC_UL480_FMwebp_QL65_.jpg" alt="" />
+          <img className='w-[70px]' src="https://m.media-amazon.com/images/I/71aTghUQfqL._AC_UL480_FMwebp_QL65_.jpg" alt="" />
         </div>
       </div>
     </div>
