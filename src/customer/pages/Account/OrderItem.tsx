@@ -21,8 +21,8 @@ const OrderItem = () => {
         <div>
           <img className='w-[70px]' src="https://m.media-amazon.com/images/I/71aTghUQfqL._AC_UL480_FMwebp_QL65_.jpg" alt="" />
         </div>
-        <div>
-          <h1>Shubh Shop</h1>
+        <div className='w-full space-y-2'>
+          <h1 className='font-bold'>Shubh Shop</h1>
           <p>NoiseFit Halo 1.43" AMOLED Display, Bluetooth Calling Round Dial Smart Watch, Premium Metallic Build, Always on Display, Smart Gesture Control, 100 Sports Modes (Vintage Brown)</p>
           <p>
             <strong>Size : </strong>
