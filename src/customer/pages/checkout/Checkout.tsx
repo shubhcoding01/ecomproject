@@ -65,7 +65,8 @@ const Checkout = () => {
           </div>
           <div>
             <div>
-              <div>
+              <div className="space-y-3 border p-5 rounded-md">
+                <h1 className="text-primary-color font-medium  text-center">Choose Payment Method</h1>
                 <RadioGroup
                   row
                   aria-labelledby="demo-row-radio-buttons-group-label"
