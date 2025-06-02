@@ -41,6 +41,11 @@ const Checkout = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [paymentMethod, setPaymentMethod] = React.useState("razorpay");
+
+  const handlePaymentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPaymentMethod((event.target as HTMLInputElement).value);
+  };
 
   return (
     <>
@@ -72,6 +77,7 @@ const Checkout = () => {
                   aria-labelledby="demo-row-radio-buttons-group-label"
                   name="row-radio-buttons-group"
                   className="flex justify-between pr-0"
+
                 >
                   {paymentGateway.map((gateway) => (
                     <FormControlLabel
