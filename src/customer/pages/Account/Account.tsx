@@ -24,7 +24,7 @@ const Account = () => {
             <section className='col-span-1 lg:border-r lg:pr-5 py-5 h-full'>
                 {menu.map((item) => (
                     <div key={item.name} 
-                    className='py-2 px-3 hover:bg-gray-100 rounded-md cursor-pointer'>
+                    className='py-2 px-3 hover:text-white rounded-md cursor-pointer hover:bg-purple-600'>
                             <a href="{item.path}">{item.name}</a>
                             </div>
                 ))}
