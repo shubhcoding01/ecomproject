@@ -2,6 +2,7 @@ import { Box, Button, Modal } from "@mui/material";
 import React from "react";
 import AddressCard from "./AddressCard";
 import Addressform from "./Addressform";
+import PricingCard from "../Cart/PricingCard";
 
 const style = {
   position: 'absolute',
@@ -41,6 +42,16 @@ const Checkout = () => {
             <div className="py-4 px-5 border rounded-md space-y-3">
               <Button onClick={handleOpen}>Add New Address</Button>
             </div>
+          </div>
+          <div>
+            <div className='border rounded-md p-5 space-y-3'>
+                      <PricingCard />
+                      <div className='p-3'>
+                        <Button variant='contained' sx={{py:"11px"}} color='primary' fullWidth>
+                          Checkout
+                        </Button>
+                      </div>
+                    </div>
           </div>
         </div>
       </div>
