@@ -15,7 +15,8 @@ const menu = [
 ]
 
 const Account = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const handleClick = (item:any) => navigate(item.path);
   return (
     <div className='pt-10 px-5 sm:px-10 md:px-60 min-h-screen'>
         <div>
@@ -25,7 +26,7 @@ const Account = () => {
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 pt-5 lg:min-h-[78vh]'>
             <section className='col-span-1 lg:border-r lg:pr-5 py-5 h-full'>
                 {menu.map((item) => (
-                    <div key={item.name} 
+                    <div onClick={() => handleClick(item)} key={item.name} 
                     className='py-2 px-3 hover:text-white rounded-md cursor-pointer hover:bg-purple-600'>
                             <p>{item.name}</p>
                             </div>
