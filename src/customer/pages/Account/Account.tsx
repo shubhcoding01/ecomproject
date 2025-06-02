@@ -1,6 +1,7 @@
 import { Divider } from '@mui/material'
 import path from 'path'
-import React from 'react'
+import React, { use } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const menu = [
     
@@ -14,6 +15,7 @@ const menu = [
 ]
 
 const Account = () => {
+    const navigate = useNavigate()
   return (
     <div className='pt-10 px-5 sm:px-10 md:px-60 min-h-screen'>
         <div>
@@ -25,7 +27,7 @@ const Account = () => {
                 {menu.map((item) => (
                     <div key={item.name} 
                     className='py-2 px-3 hover:text-white rounded-md cursor-pointer hover:bg-purple-600'>
-                            <a href="{item.path}">{item.name}</a>
+                            <p>{item.name}</p>
                             </div>
                 ))}
             </section>
