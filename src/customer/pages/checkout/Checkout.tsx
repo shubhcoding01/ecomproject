@@ -26,7 +26,7 @@ const style = {
 const paymentGateway = [
   {
     value:"Razorpay",
-    image:"https://www.razorpay.com/assets/images/logo/razorpay-logo.svg",
+    image:"https://images.prismic.io/contrary-research/65ced9109be9a5b998b5e6ce_razorpaycover.png?auto=format,compress",
     label:"Razorpay"
   },
   
