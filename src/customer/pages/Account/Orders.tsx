@@ -37,7 +37,7 @@ const orders: Order[] = [
     shopName: 'Urban Style Co.',
     product: 'Roadster Men Solid Round Neck Pure Cotton T-Shirt (Navy Blue)',
     size: 'M',
-    imageUrl: 'https://m.media-amazon.com/images/I/81vxSbFgGbL._AC_UL480_FMwebp_QL65_.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/71DCnkvsK0L._SY879_.jpg',
   },
   {
     id: 3,
