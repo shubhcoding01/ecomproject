@@ -17,9 +17,10 @@ const OrderItem = () => {
           <p>Order details or description can go here.</p>
         </div>
       </div>
-      <div>
-        <p className='text-gray-500'>Order ID: 123456789</p>
-        <p className='text-gray-500'>Placed on: 2023-10-01</p>
+      <div className='p-5 bg-teal-50 flex gap-3'>
+        <div>
+          <img src="https://m.media-amazon.com/images/I/71aTghUQfqL._AC_UL480_FMwebp_QL65_.jpg" alt="" />
+        </div>
       </div>
     </div>
   );
