@@ -2,6 +2,7 @@ import { Divider } from '@mui/material'
 import path from 'path'
 import React, { use } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import Orders from './Orders'
 
 const menu = [
     
@@ -35,8 +36,8 @@ const Account = () => {
                             </div>
                 ))}
             </section>
-            <section className='right'>
-                right
+            <section className='right lg:col-span-2 lg:pl-5 space-y-5'>
+                <Orders />
             </section>
         </div>
     </div>
