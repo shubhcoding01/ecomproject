@@ -64,7 +64,7 @@ const Checkout = () => {
             </div>
           </div>
           <div>
-            <div className="border rounded-md p-5 space-y-3">
+            <div>
               <div>
                 <RadioGroup
                   row
@@ -99,6 +99,9 @@ const Checkout = () => {
                   
                 </RadioGroup>
               </div>
+            </div>
+            <div className="border rounded-md p-5 space-y-3">
+              
               <PricingCard />
               <div className="p-3">
                 <Button
