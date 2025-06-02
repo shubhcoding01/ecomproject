@@ -1,7 +1,7 @@
 import { Divider } from '@mui/material'
 import path from 'path'
 import React, { use } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const menu = [
     
@@ -16,6 +16,7 @@ const menu = [
 
 const Account = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const handleClick = (item:any) => navigate(item.path);
   return (
     <div className='pt-10 px-5 sm:px-10 md:px-60 min-h-screen'>
