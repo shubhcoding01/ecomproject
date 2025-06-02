@@ -56,6 +56,7 @@ const Checkout = () => {
                   row
                   aria-labelledby="demo-row-radio-buttons-group-label"
                   name="row-radio-buttons-group"
+                  className="flex justify-between pr-0"
                 >
                   <FormControlLabel
                     value="female"
