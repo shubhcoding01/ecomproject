@@ -72,27 +72,30 @@ const Checkout = () => {
                   name="row-radio-buttons-group"
                   className="flex justify-between pr-0"
                 >
+                  {paymentGateway.map((gateway) => (
+                    <FormControlLabel
+                      key={gateway.value}
+                      value={gateway.value}
+                      control={<Radio />}
+                      label={
+                        <div className="flex items-center gap-2">
+                          <img
+                            src={gateway.image}
+                            alt={gateway.label}
+                            className="w-8 h-8"
+                          />
+                          {gateway.label}
+                        </div>
+                      }
+                    />
+                  ))}
                   <FormControlLabel
-                    value="female"
+                    value="cod"
                     control={<Radio />}
-                    label="Female"
+                    label="Cash on Delivery"
                   />
-                  <FormControlLabel
-                    value="male"
-                    control={<Radio />}
-                    label="Male"
-                  />
-                  <FormControlLabel
-                    value="other"
-                    control={<Radio />}
-                    label="Other"
-                  />
-                  <FormControlLabel
-                    value="disabled"
-                    disabled
-                    control={<Radio />}
-                    label="other"
-                  />
+                  
+                  
                 </RadioGroup>
               </div>
               <PricingCard />
