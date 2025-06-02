@@ -23,6 +23,20 @@ const style = {
   p: 4,
 };
 
+const paymentGateway = [
+  {
+    value:"Razorpay",
+    image:"https://www.razorpay.com/assets/images/logo/razorpay-logo.svg",
+    label:"Razorpay"
+  },
+  
+  {
+    value:"Stripe",
+    image:"https://stripe.com/img/v3/home/twitter.png",
+    label:"Stripe"
+  }
+];
+
 const Checkout = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
