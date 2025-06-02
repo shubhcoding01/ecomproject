@@ -1,5 +1,17 @@
 import { Divider } from '@mui/material'
+import path from 'path'
 import React from 'react'
+
+const menu = [
+    
+        {name: "Orders", path: "/account/orders"},
+        {name: "profile", path: "/account/profile"},
+        {name: "Address", path: "/account/address"},
+        {name: "Wishlist", path: "/account/wishlist"},
+        {name: "Payment Methods", path: "/account/payment-methods"},
+        {name: "Settings", path: "/account/settings"},
+        {name: "Logout", path: "/account/logout"},
+]
 
 const Account = () => {
   return (
