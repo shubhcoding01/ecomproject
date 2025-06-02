@@ -12,6 +12,7 @@ import Review from './customer/pages/Review/Review';
 import Cart from './customer/pages/Cart/Cart';
 import { Check } from '@mui/icons-material';
 import Checkout from './customer/pages/checkout/Checkout';
+import Account from './customer/pages/Account/Account';
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
           {/* <ProductDetails/> */}
           {/* <Review /> */}
           {/* <Cart /> */}
-          <Checkout />
+          {/* <Checkout /> */}
+          <Account />
         </div>
         
       </ThemeProvider>
