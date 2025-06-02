@@ -1,3 +1,4 @@
+import { Divider } from '@mui/material'
 import React from 'react'
 
 const Account = () => {
@@ -6,6 +7,7 @@ const Account = () => {
         <div>
             <h1 className='text-xl font-bold pb-5'>Shubh</h1>
         </div>
+        <Divider/>
     </div>
   )
 }
