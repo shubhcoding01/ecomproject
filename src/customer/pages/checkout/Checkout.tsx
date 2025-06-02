@@ -45,6 +45,23 @@ const Checkout = () => {
           </div>
           <div>
             <div className='border rounded-md p-5 space-y-3'>
+              <div>
+                <RadioGroup
+        row
+        aria-labelledby="demo-row-radio-buttons-group-label"
+        name="row-radio-buttons-group"
+      >
+        <FormControlLabel value="female" control={<Radio />} label="Female" />
+        <FormControlLabel value="male" control={<Radio />} label="Male" />
+        <FormControlLabel value="other" control={<Radio />} label="Other" />
+        <FormControlLabel
+          value="disabled"
+          disabled
+          control={<Radio />}
+          label="other"
+        />
+      </RadioGroup>
+              </div>
                       <PricingCard />
                       <div className='p-3'>
                         <Button variant='contained' sx={{py:"11px"}} color='primary' fullWidth>
