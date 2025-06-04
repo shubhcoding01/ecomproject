@@ -74,12 +74,14 @@ const OrderStepper = ({ orderStatus }: any) => {
             <div className="{`ml-2 w-full`}">
             <div
               className={`
-                ${step.value === orderStatus ? "bg-primary-color text-white font-medium" : ""}
+                ${step.value === orderStatus 
+                ? "bg-primary-color text-white font-medium rounded-md -translate-y-3" : ""}
                 ${orderStatus === "CANCELLED" && step.value === "CANCELLED" ? "bg-red-500 text-white" : ""}
-              `}
+              w-full `}
             >
               <p className="text-sm">{step.name}</p>
-              <p className="text-xs text-gray-500">{step.description}</p>
+              <p className={`${step.value === orderStatus
+                ? "text-gray-200" : "text-gray-500"} text-xs`}>{step.description}</p>
             </div>
           </div>
           </>
