@@ -23,6 +23,7 @@ const canceledSteps = [
 const currentStep = 2;
 
 const OrderStepper = ({ orderStatus }: any) => {
+  const [statusSteps, setStatusSteps] = useState(steps);
 
   useEffect(() => {
     if (orderStatus === "CANCELLED") {
