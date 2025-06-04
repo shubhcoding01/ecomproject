@@ -33,7 +33,7 @@ const OrderStepper = ({ orderStatus }: any) => {
     }
   }, [orderStatus]);
 
-  const currentStep = statusSteps.findIndex((step) => step.value === orderStatus);
+  // const currentStep = statusSteps.findIndex((step) => step.value === orderStatus);
 
   return (
     <Box className="w-full max-w-4xl mx-auto my-10">
