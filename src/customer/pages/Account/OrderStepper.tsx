@@ -57,7 +57,9 @@ const OrderStepper = ({ orderStatus }: any) => {
 
             {index < statusSteps.length - 1 && (
               <div 
-              className={`border h-20 w-[2px] `}></div>
+              className={`border h-20 w-[2px] ${index <currentStep 
+                ? "bg-teal-500" 
+              : "bg-gray-300 text-gray-600"}`}></div>
             )}
 
             {/* Step icon */}
