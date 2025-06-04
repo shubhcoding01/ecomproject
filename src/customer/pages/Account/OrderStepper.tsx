@@ -36,7 +36,7 @@ const OrderStepper = ({ orderStatus }: any) => {
   // const currentStep = statusSteps.findIndex((step) => step.value === orderStatus);
 
   return (
-    <Box className="w-full max-w-4xl mx-auto my-10">
+    <Box className=" mx-auto my-10">
       <div className="flex justify-between items-start">
         {statusSteps.map((step, index) => (
           <div key={index} className="flex-1 px-2 flex flex-col items-center relative">
