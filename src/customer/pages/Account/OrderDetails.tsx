@@ -66,7 +66,7 @@ const OrderDetails: React.FC = () => {
           </p>
         </div>
 
-        <section>
+        <section className='border- p-5'>
           <OrderStepper />
         </section>
       </div>
