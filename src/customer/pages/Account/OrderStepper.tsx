@@ -63,16 +63,17 @@ const OrderStepper = ({ orderStatus }: any) => {
             )}
 
             {/* Step icon */}
-            <Box
+            {/* <Box
               className={`z-10 w-8 h-8 rounded-full flex items-center justify-center 
                 ${index <= currentStep ? "bg-teal-500 text-white" : "bg-gray-300 text-gray-600"}`}
             >
               {index <= currentStep ? <CheckCircleIcon fontSize="small" /> : <FiberManualRecordIcon fontSize="small" />}
-            </Box>
+            </Box> */}
 
             {/* Step content */}
+            <div className="{`ml-2 w-full`}">
             <div
-              className={`text-center mt-3 p-2 w-full rounded-md
+              className={`
                 ${step.value === orderStatus ? "bg-primary-color text-white font-medium" : ""}
                 ${orderStatus === "CANCELLED" && step.value === "CANCELLED" ? "bg-red-500 text-white" : ""}
               `}
