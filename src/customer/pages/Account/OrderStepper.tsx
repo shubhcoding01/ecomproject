@@ -37,7 +37,7 @@ const OrderStepper = ({ orderStatus }: any) => {
 
   return (
     <Box className=" mx-auto my-10">
-      <div className="flex justify-between items-start">
+      {/* <div className="flex justify-between items-start"> */}
         {statusSteps.map((step, index) => (
           <div key={index} className="flex-1 px-2 flex flex-col items-center relative">
             {/* Line connecting steps */}
@@ -65,7 +65,7 @@ const OrderStepper = ({ orderStatus }: any) => {
             </div>
           </div>
         ))}
-      </div>
+      {/* </div> */}
     </Box>
   );
 };
