@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Box, Divider } from "@mui/material";
+import { Box } from "@mui/material";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { Description } from "@mui/icons-material";
 
 const steps = [
   { name: "Order Placed", description: "on Thu, 11 Jul", value: "PLACED" },
@@ -17,10 +16,7 @@ const canceledSteps = [
   { name: "Order Cancelled", description: "on Thu, 11 Jul", value: "CANCELLED" },
 ];
 
-// const OrderStepper = ({ orderStatus }: { orderStatus: string }) => {
-//   const [statusSteps, setStatusSteps] = useState(steps);
-
-const currentStep = 2;
+const currentStep = 2; // You can dynamically calculate this based on orderStatus if needed
 
 const OrderStepper = ({ orderStatus }: any) => {
   const [statusSteps, setStatusSteps] = useState(steps);
@@ -33,60 +29,50 @@ const OrderStepper = ({ orderStatus }: any) => {
     }
   }, [orderStatus]);
 
-  // const currentStep = statusSteps.findIndex((step) => step.value === orderStatus);
-
   return (
-    <Box className=" mx-auto my-10">
-      {/* <div className="flex justify-between items-start"> */}
-        {statusSteps.map((step, index) => (
-          <>
-          <div key={index} className={`flex px-4 `}>
-            <div className="flex flex-col items-center">
-            <Box sx={{zIndex: -1}} 
-            className={`w-8 h-8 rounded-full flex items-center justify-center
-             z-10 ${index <= currentStep ? 
-             "bg-gray-200 text-teal-500" 
-             : "bg-gray-300 text-gray-600"}`}>
-              
-              {step.value === "orderStatus" ? (
-              <CheckCircleIcon fontSize="small" />
-            ) : (
-              <FiberManualRecordIcon sx={{zIndex:-1}}/>
-            )}
+    <Box className="mx-auto my-10">
+      {statusSteps.map((step, index) => (
+        <div key={index} className="flex px-4">
+          <div className="flex flex-col items-center">
+            {/* Step Circle Icon */}
+            <Box
+              className={`w-8 h-8 rounded-full flex items-center justify-center z-10 
+                ${index <= currentStep ? "bg-gray-200 text-teal-500" : "bg-gray-300 text-gray-600"}`}
+            >
+              {index <= currentStep ? (
+                <CheckCircleIcon fontSize="small" />
+              ) : (
+                <FiberManualRecordIcon />
+              )}
             </Box>
 
+            {/* Connecting Line */}
             {index < statusSteps.length - 1 && (
-              <div 
-              className={`border h-20 w-[2px] ${index <currentStep 
-                ? "bg-primary-color" 
-              : "bg-gray-300 text-gray-600"}`}></div>
+              <div
+                className={`border h-20 w-[2px] 
+                  ${index < currentStep ? "bg-teal-500" : "bg-gray-300 text-gray-600"}`}
+              ></div>
             )}
+          </div>
 
-            {/* Step icon */}
-            {/* <Box
-              className={`z-10 w-8 h-8 rounded-full flex items-center justify-center 
-                ${index <= currentStep ? "bg-teal-500 text-white" : "bg-gray-300 text-gray-600"}`}
-            >
-              {index <= currentStep ? <CheckCircleIcon fontSize="small" /> : <FiberManualRecordIcon fontSize="small" />}
-            </Box> */}
-
-            {/* Step content */}
-            <div className="{`ml-2 w-full`}">
+          {/* Step Text Content */}
+          <div className="ml-2 w-full">
             <div
-              className={`
-                ${step.value === orderStatus 
-                ? "bg-primary-color text-white font-medium rounded-md -translate-y-3" : ""}
-                ${orderStatus === "CANCELLED" && step.value === "CANCELLED" ? "bg-red-500 text-white" : ""}
-              w-full `}
+              className={`p-2 rounded-md 
+                ${step.value === orderStatus ? "bg-teal-500 text-white font-medium -translate-y-1" : ""}
+                ${orderStatus === "CANCELLED" && step.value === "CANCELLED" ? "bg-red-500 text-white" : ""}`}
             >
               <p className="text-sm">{step.name}</p>
-              <p className={`${step.value === orderStatus
-                ? "text-gray-200" : "text-gray-500"} text-xs`}>{step.description}</p>
+              <p
+                className={`text-xs 
+                  ${step.value === orderStatus ? "text-gray-200" : "text-gray-500"}`}
+              >
+                {step.description}
+              </p>
             </div>
           </div>
-          </>
-        ))}
-      {/* </div> */}
+        </div>
+      ))}
     </Box>
   );
 };
