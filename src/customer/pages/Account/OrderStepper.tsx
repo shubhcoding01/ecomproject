@@ -42,7 +42,8 @@ const OrderStepper = ({ orderStatus }: any) => {
           <>
           <div key={index} className={`flex px-4 `}>
             <div className="flex flex-col items-center">
-            {/* Line connecting steps */}
+            <Box sx={{zIndex -1}} 
+            className={`w-8`}>
             {index < statusSteps.length - 1 && (
               <div className="absolute top-4 left-1/2 w-full h-0.5 bg-gray-300 z-0"></div>
             )}
