@@ -17,8 +17,12 @@ const canceledSteps = [
   { name: "Order Cancelled", description: "on Thu, 11 Jul", value: "CANCELLED" },
 ];
 
-const OrderStepper = ({ orderStatus }: { orderStatus: string }) => {
-  const [statusSteps, setStatusSteps] = useState(steps);
+// const OrderStepper = ({ orderStatus }: { orderStatus: string }) => {
+//   const [statusSteps, setStatusSteps] = useState(steps);
+
+const currentStep = 2;
+
+const OrderStepper = ({ orderStatus }: any) => {
 
   useEffect(() => {
     if (orderStatus === "CANCELLED") {
