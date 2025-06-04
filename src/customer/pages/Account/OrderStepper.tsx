@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Box, Divider } from "@mui/material";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { Description } from "@mui/icons-material";
 
 const steps = [
   { name: "Order Placed", description: "on Thu, 11 Jul", value: "PLACED" },
