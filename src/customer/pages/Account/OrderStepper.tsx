@@ -45,8 +45,9 @@ const OrderStepper = ({ orderStatus }: any) => {
             <Box sx={{zIndex -1}} 
             className={`w-8 h-8 rounded-full flex items-center justify-center
              z-10 ${index <= currentStep ? 
-             "bg-teal-500 text-white" : "bg-gray-300 text-gray-600"}`}>
-              {index <= currentStep ? <CheckCircleIcon fontSize="small" /> : <FiberManualRecordIcon fontSize="small" />}
+             "bg-gray-200 text-teal-500" 
+             : "bg-gray-300 text-gray-600"}`}>
+              
             {index < statusSteps.length - 1 && (
               <div className="absolute top-4 left-1/2 w-full h-0.5 bg-gray-300 z-0"></div>
             )}
