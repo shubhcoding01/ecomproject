@@ -67,7 +67,7 @@ const OrderDetails: React.FC = () => {
         </div>
 
         <section className='border- p-5'>
-          <OrderStepper />
+          <OrderStepper orderStatus={"PENDING"} />
         </section>
       </div>
     </div>
