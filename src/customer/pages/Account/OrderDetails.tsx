@@ -2,6 +2,7 @@ import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import { teal } from '@mui/material/colors';
+import OrderStepper from './OrderStepper';
 
 const OrderDetails: React.FC = () => {
   const order = {
@@ -64,6 +65,10 @@ const OrderDetails: React.FC = () => {
             <strong>Delivered on:</strong> {order.deliveryDate}
           </p>
         </div>
+
+        <section>
+          <OrderStepper />
+        </section>
       </div>
     </div>
   );
