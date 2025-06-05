@@ -286,10 +286,7 @@ const OrderDetails: React.FC = () => {
           </div>
         </div>
 
-        {/* Order Stepper */}
-        <section className="border p-4 rounded-md bg-gray-50">
-          <OrderStepper orderStatus={order.status} />
-        </section>
+        
 
         {/* Product Details */}
         <div className="flex flex-col sm:flex-row gap-6">
@@ -312,6 +309,11 @@ const OrderDetails: React.FC = () => {
             </p>
           </div>
         </div>
+
+        {/* Order Stepper */}
+        <section className="border p-4 rounded-md bg-gray-50">
+          <OrderStepper orderStatus={order.status} />
+        </section>
 
         {/* Shop & Delivery */}
         <div className="text-sm space-y-1 text-gray-700">
