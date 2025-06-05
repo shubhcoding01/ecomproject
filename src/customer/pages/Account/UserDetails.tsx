@@ -27,7 +27,7 @@ const UserDetails = () => {
                 <ProfileFieldCard keys="Email" value="example1@mail.in" />
                 <ProfileFieldCard keys="Phone" value="+91 1234567890" />
                 <ProfileFieldCard keys="Address" value="123 Main St, City, Country" />
-                <ProfileFieldCard key="Date of Birth" value="01 Jan 1990" />
+                <ProfileFieldCard keys="Date of Birth" value="01 Jan 1990" />
 
             </div>
 
