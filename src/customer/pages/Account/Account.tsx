@@ -42,7 +42,7 @@ const Account = () => {
             <section className='right lg:col-span-2 lg:pl-5 space-y-5'>
                 {/* <Orders /> */}
                 {/* <OrderDetails /> */}
-                <UserDetails />
+                {/* <UserDetails /> */}
             </section>
         </div>
     </div>
