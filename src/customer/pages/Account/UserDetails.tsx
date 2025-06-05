@@ -15,6 +15,7 @@ const UserDetails = () => {
                 <p className='text-gray-700'>Phone: +1234567890</p>
                 <p className='text-gray-700'>Address: 123 Main St, City, Country</p>
             </div>
+        </div>
 
         <div className='w-full lg:w-[70%]'>
             <div className='flex items-center pb-3 justify-between'>
