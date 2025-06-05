@@ -29,6 +29,7 @@ const UserDetails = () => {
                 <ProfileFieldCard keys="Email" value="example1@mail.in" />
                 <Divider orientation="horizontal" flexItem />
                 <ProfileFieldCard keys="Phone" value="+91 1234567890" />
+                <Divider orientation="horizontal" flexItem />
                 <ProfileFieldCard keys="Address" value="123 Main St, City, Country" />
                 <ProfileFieldCard keys="Date of Birth" value="01 Jan 1990" />
 
