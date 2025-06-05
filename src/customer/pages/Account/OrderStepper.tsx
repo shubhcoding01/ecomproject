@@ -16,7 +16,7 @@ const canceledSteps = [
   { name: "Order Cancelled", description: "on Thu, 11 Jul", value: "CANCELLED" },
 ];
 
-const currentStep = 2; // You can dynamically calculate this based on orderStatus if needed
+const currentStep = 3; // You can dynamically calculate this based on orderStatus if needed
 
 const OrderStepper = ({ orderStatus }: any) => {
   const [statusSteps, setStatusSteps] = useState(steps);
