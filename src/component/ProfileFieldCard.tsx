@@ -2,7 +2,9 @@ import React from 'react'
 
 const ProfileFieldCard = () => {
   return (
-    <div>ProfileFieldCard</div>
+    <div className='p-5 flex items-center bg-slate-50'>
+        <p>{key}</p>
+    </div>
   )
 }
 
