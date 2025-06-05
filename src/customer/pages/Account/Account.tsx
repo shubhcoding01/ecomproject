@@ -10,6 +10,7 @@ const menu = [
     
         {name: "Orders", path: "/account/orders"},
         {name: "profile", path: "/account/profile"},
+        {name: "Saved Cards", path: "/account/saved-cards"},
         {name: "Address", path: "/account/address"},
         {name: "Wishlist", path: "/account/wishlist"},
         {name: "Payment Methods", path: "/account/payment-methods"},
