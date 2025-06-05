@@ -1,5 +1,6 @@
 import React from 'react'
 import ProfileFieldCard from '../../../component/ProfileFieldCard'
+import { Divider } from '@mui/material'
 
 const UserDetails = () => {
   return (
@@ -24,6 +25,7 @@ const UserDetails = () => {
             </div>
             <div className='space-y-3'>
                 <ProfileFieldCard keys="Name" value={"John Doe"} />
+                <Divider orientation="horizontal" flexItem />
                 <ProfileFieldCard keys="Email" value="example1@mail.in" />
                 <ProfileFieldCard keys="Phone" value="+91 1234567890" />
                 <ProfileFieldCard keys="Address" value="123 Main St, City, Country" />
