@@ -349,7 +349,7 @@ const OrderDetails: React.FC = () => {
         {/* Cancel Order */}
         {order.status !== 'CANCELLED' && (
           <button
-            className="mt-4 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+            className="w-full mt-4 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
             onClick={() => alert('Order Cancelled')}
           >
             Cancel Order
