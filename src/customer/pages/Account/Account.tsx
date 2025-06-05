@@ -44,7 +44,7 @@ const Account = () => {
                 {/* <Orders /> */}
                 {/* <OrderDetails /> */}
                 {/* <UserDetails /> */}
-                <SavedCards />
+                {/* <SavedCards /> */}
             </section>
         </div>
     </div>
