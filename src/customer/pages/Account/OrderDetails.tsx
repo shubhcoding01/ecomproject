@@ -1,80 +1,80 @@
-import React from 'react';
-import Avatar from '@mui/material/Avatar';
-import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
-import { teal } from '@mui/material/colors';
-import OrderStepper from './OrderStepper';
+// import React from 'react';
+// import Avatar from '@mui/material/Avatar';
+// import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
+// import { teal } from '@mui/material/colors';
+// import OrderStepper from './OrderStepper';
 
-const OrderDetails: React.FC = () => {
-  const order = {
-    id: 101,
-    status: 'DELIVERED',
-    shopName: 'Techify Mart',
-    product: 'EchoDot 4th Gen Smart Speaker with Alexa (Black)',
-    description:
-      'Smart speaker with improved bass, LED display showing time, temperature, and timers. Compatible with Alexa voice assistant.',
-    size: 'Compact',
-    quantity: 1,
-    price: 3499,
-    deliveryDate: 'May 31, 2025',
-    imageUrl:
-      'https://m.media-amazon.com/images/I/61EXU8BuGZL._AC_UL480_FMwebp_QL65_.jpg',
-  };
+// const OrderDetails: React.FC = () => {
+//   const order = {
+//     id: 101,
+//     status: 'DELIVERED',
+//     shopName: 'Techify Mart',
+//     product: 'EchoDot 4th Gen Smart Speaker with Alexa (Black)',
+//     description:
+//       'Smart speaker with improved bass, LED display showing time, temperature, and timers. Compatible with Alexa voice assistant.',
+//     size: 'Compact',
+//     quantity: 1,
+//     price: 3499,
+//     deliveryDate: 'May 31, 2025',
+//     imageUrl:
+//       'https://m.media-amazon.com/images/I/61EXU8BuGZL._AC_UL480_FMwebp_QL65_.jpg',
+//   };
 
-  return (
-    <div className="min-h-screen p-6 bg-gray-50">
-      <div className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md space-y-6">
-        {/* Header */}
-        <div className="flex items-center gap-4">
-          <Avatar sx={{ bgcolor: teal[500] }}>
-            <ElectricBoltIcon />
-          </Avatar>
-          <div>
-            <h2 className="text-xl font-bold text-gray-800">Order #{order.id}</h2>
-            <p className="text-sm text-green-600 font-medium">{order.status}</p>
-          </div>
-        </div>
+//   return (
+//     <div className="min-h-screen p-6 bg-gray-50">
+//       <div className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md space-y-6">
+//         {/* Header */}
+//         <div className="flex items-center gap-4">
+//           <Avatar sx={{ bgcolor: teal[500] }}>
+//             <ElectricBoltIcon />
+//           </Avatar>
+//           <div>
+//             <h2 className="text-xl font-bold text-gray-800">Order #{order.id}</h2>
+//             <p className="text-sm text-green-600 font-medium">{order.status}</p>
+//           </div>
+//         </div>
 
-        {/* Product Summary */}
-        <div className="flex gap-6">
-          <img
-            src={order.imageUrl}
-            alt={order.product}
-            className="w-32 h-32 object-contain rounded-md"
-          />
-          <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-gray-800">{order.product}</h3>
-            <p className="text-gray-600 text-sm">{order.description}</p>
-            <p>
-              <strong>Size:</strong> {order.size}
-            </p>
-            <p>
-              <strong>Quantity:</strong> {order.quantity}
-            </p>
-            <p>
-              <strong>Price:</strong> ₹{order.price}
-            </p>
-          </div>
-        </div>
+//         {/* Product Summary */}
+//         <div className="flex gap-6">
+//           <img
+//             src={order.imageUrl}
+//             alt={order.product}
+//             className="w-32 h-32 object-contain rounded-md"
+//           />
+//           <div className="space-y-2">
+//             <h3 className="text-lg font-semibold text-gray-800">{order.product}</h3>
+//             <p className="text-gray-600 text-sm">{order.description}</p>
+//             <p>
+//               <strong>Size:</strong> {order.size}
+//             </p>
+//             <p>
+//               <strong>Quantity:</strong> {order.quantity}
+//             </p>
+//             <p>
+//               <strong>Price:</strong> ₹{order.price}
+//             </p>
+//           </div>
+//         </div>
 
-        {/* Delivery Info */}
-        <div className="border-t pt-4 text-sm text-gray-700 space-y-1">
-          <p>
-            <strong>Shop:</strong> {order.shopName}
-          </p>
-          <p>
-            <strong>Delivered on:</strong> {order.deliveryDate}
-          </p>
-        </div>
+//         {/* Delivery Info */}
+//         <div className="border-t pt-4 text-sm text-gray-700 space-y-1">
+//           <p>
+//             <strong>Shop:</strong> {order.shopName}
+//           </p>
+//           <p>
+//             <strong>Delivered on:</strong> {order.deliveryDate}
+//           </p>
+//         </div>
 
-        <section className='border- p-5'>
-          <OrderStepper orderStatus={"PENDING"} />
-        </section>
-      </div>
-    </div>
-  );
-};
+//         <section className='border- p-5'>
+//           <OrderStepper orderStatus={"PENDING"} />
+//         </section>
+//       </div>
+//     </div>
+//   );
+// };
 
-export default OrderDetails;
+// export default OrderDetails;
 
 
 // import React from 'react';
@@ -232,3 +232,109 @@ export default OrderDetails;
 // };
 
 // export default OrderDetails;
+
+import React from 'react';
+import Avatar from '@mui/material/Avatar';
+import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
+import { teal } from '@mui/material/colors';
+import OrderStepper from './OrderStepper';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+
+const OrderDetails: React.FC = () => {
+  const order = {
+    id: 101,
+    status: 'DELIVERED', // Change this to test: 'PLACED', 'SHIPPED', 'CANCELLED'
+    shopName: 'Techify Mart',
+    product: 'EchoDot 4th Gen Smart Speaker with Alexa (Black)',
+    description:
+      'Smart speaker with improved bass, LED display showing time, temperature, and timers. Compatible with Alexa voice assistant.',
+    size: 'Compact',
+    quantity: 1,
+    price: 3499,
+    deliveryDate: 'May 31, 2025',
+    imageUrl:
+      'https://m.media-amazon.com/images/I/61EXU8BuGZL._AC_UL480_FMwebp_QL65_.jpg',
+    address: {
+      name: 'Rahul Sharma',
+      phone: '9876543210',
+      line1: '221B Baker Street',
+      line2: 'Near Central Mall',
+      city: 'Mumbai',
+      state: 'Maharashtra',
+      zip: '400001',
+    },
+    timeline: {
+      placed: 'May 28, 2025',
+      shipped: 'May 29, 2025',
+      delivered: 'May 31, 2025',
+    },
+  };
+
+  return (
+    <div className="min-h-screen p-6 bg-gray-100">
+      <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 space-y-8">
+        {/* Order Header */}
+        <div className="flex items-center gap-4">
+          <Avatar sx={{ bgcolor: teal[500] }}>
+            <ElectricBoltIcon />
+          </Avatar>
+          <div>
+            <h2 className="text-2xl font-bold text-gray-800">Order #{order.id}</h2>
+            <p className={`text-sm font-semibold ${order.status === 'CANCELLED' ? 'text-red-500' : 'text-green-600'}`}>
+              {order.status}
+            </p>
+          </div>
+        </div>
+
+        {/* Order Stepper */}
+        <section className="border p-4 rounded-md bg-gray-50">
+          <OrderStepper orderStatus={order.status} />
+        </section>
+
+        {/* Product Details */}
+        <div className="flex flex-col sm:flex-row gap-6">
+          <img
+            src={order.imageUrl}
+            alt={order.product}
+            className="w-full sm:w-32 h-32 object-contain rounded-md"
+          />
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold text-gray-800">{order.product}</h3>
+            <p className="text-sm text-gray-600">{order.description}</p>
+            <p className="text-sm">
+              <strong>Size:</strong> {order.size}
+            </p>
+            <p className="text-sm">
+              <strong>Quantity:</strong> {order.quantity}
+            </p>
+            <p className="text-sm">
+              <strong>Total Price:</strong> ₹{order.price}
+            </p>
+          </div>
+        </div>
+
+        {/* Shop & Delivery */}
+        <div className="text-sm space-y-1 text-gray-700">
+          <p><strong>Sold by:</strong> {order.shopName}</p>
+          {order.status === 'DELIVERED' && (
+            <p className="flex items-center gap-1 text-green-700 font-medium">
+              <LocalShippingIcon fontSize="small" /> Delivered on {order.deliveryDate}
+            </p>
+          )}
+        </div>
+
+        {/* Address Details */}
+        <div className="bg-gray-50 p-4 rounded-md">
+          <h4 className="font-semibold text-gray-800 mb-2">Delivery Address</h4>
+          <p>{order.address.name}</p>
+          <p>{order.address.line1}</p>
+          <p>{order.address.line2}</p>
+          <p>{order.address.city}, {order.address.state} - {order.address.zip}</p>
+          <p>Phone: {order.address.phone}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default OrderDetails;
