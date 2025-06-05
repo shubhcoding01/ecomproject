@@ -334,6 +334,27 @@ const OrderDetails: React.FC = () => {
           <p>{order.address.city}, {order.address.state} - {order.address.zip}</p>
           <p>Phone: {order.address.phone}</p>
         </div>
+
+        {/* Payment Detail */}
+        <div className="bg-gray-50 p-4 rounded-md">
+          <h4 className="font-semibold text-gray-800 mb-2">Payment Details</h4>
+          <p>Payment Method: Credit Card</p>
+          <p>Total Amount: ₹{order.price}</p>
+          <p>Status: {order.status === 'CANCELLED' ? 'Refunded' : 'Paid'}</p>
+        </div>
+        
+
+      
+
+        {/* Cancel Order */}
+        {order.status !== 'CANCELLED' && (
+          <button
+            className="mt-4 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+            onClick={() => alert('Order Cancelled')}
+          >
+            Cancel Order
+          </button>
+        )}
       </div>
     </div>
   );

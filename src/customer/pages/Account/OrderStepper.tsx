@@ -71,6 +71,7 @@ const OrderStepper = ({ orderStatus }: any) => {
               </p>
             </div>
           </div>
+          
         </div>
       ))}
     </Box>
