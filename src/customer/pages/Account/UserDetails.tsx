@@ -23,7 +23,7 @@ const UserDetails = () => {
                 <h1 className='text-2xl font-bold text-gray-700'>Personal Details</h1>
             </div>
             <div className='space-y-3'>
-                <ProfileFieldCard key="Name" value={"John Doe"} />
+                <ProfileFieldCard keys="Name" value={"John Doe"} />
                 <ProfileFieldCard key="Email" value="example1@mail.in" />
                 <ProfileFieldCard key="Phone" value="+91 1234567890" />
                 <ProfileFieldCard key="Address" value="123 Main St, City, Country" />
