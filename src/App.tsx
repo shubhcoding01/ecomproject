@@ -22,7 +22,7 @@ function App() {
 
       <ThemeProvider theme={customeTheme}>
         <div>
-          {/* <Navbar /> */}
+          
           {/* <Home /> */}
           {/* <Product /> */}
           {/* <ProductDetails/> */}
@@ -31,6 +31,7 @@ function App() {
           {/* <Checkout /> */}
           {/* <Account /> */}
 
+          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product" element={<Product />} />
