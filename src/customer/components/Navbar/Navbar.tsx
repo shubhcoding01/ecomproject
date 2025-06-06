@@ -23,7 +23,7 @@ const Navbar = () => {
                         {!isLarge &&<IconButton>
                             <MenuIcon />
                         </IconButton>}
-                        <h1 onClick={()=>navigate} className='logo cursor-pointer text-lg md:text-2xl  dark:text-[#3a8cde]'>
+                        <h1 onClick={()=>navigate("/")} className='logo cursor-pointer text-lg md:text-2xl  dark:text-[#3a8cde]'>
                             E-Commerce Store
                         </h1>
                     </div>
