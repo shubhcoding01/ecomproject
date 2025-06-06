@@ -13,6 +13,7 @@ import Cart from './customer/pages/Cart/Cart';
 import { Check } from '@mui/icons-material';
 import Checkout from './customer/pages/checkout/Checkout';
 import Account from './customer/pages/Account/Account';
+import { Routes } from 'react-router-dom';
 
 
 function App() {
@@ -29,6 +30,10 @@ function App() {
           {/* <Cart /> */}
           {/* <Checkout /> */}
           {/* <Account /> */}
+
+          <Routes>
+            
+          </Routes>
         </div>
         
       </ThemeProvider>
