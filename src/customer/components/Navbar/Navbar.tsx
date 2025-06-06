@@ -6,12 +6,14 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { AddShoppingCart, Category, FavoriteBorder, Storefront } from '@mui/icons-material';
 import CategorySheet from './CategorySheet';
 import { mainCategory } from '../../../data/category/mainCategory';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
     const theme = useTheme();
     const isLarge= useMediaQuery(theme.breakpoints.up('lg'));
     const [selectedCategory, setSelectedCategory] = useState("men");
     const [showCategorySheet, setShowCategorySheet] = useState(false);
+    const navigate = useNavigate();
   return (
     <>
         <Box className="sticky top-0 left-0 right-0 bg-white" sx={{zIndex: 2}}>
