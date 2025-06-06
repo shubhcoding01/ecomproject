@@ -7,6 +7,7 @@ import OrderDetails from './OrderDetails'
 import UserDetails from './UserDetails'
 import SavedCards from './SavedCards'
 import Address from './Address'
+import Wishlist from './Wishlist'
 
 const menu = [
     
@@ -46,7 +47,8 @@ const Account = () => {
                 {/* <OrderDetails /> */}
                 {/* <UserDetails /> */}
                 {/* <SavedCards /> */}
-                <Address />
+                {/* <Address /> */}
+                <Wishlist />
             </section>
         </div>
     </div>
