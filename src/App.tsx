@@ -28,7 +28,7 @@ function App() {
           {/* <Review /> */}
           {/* <Cart /> */}
           {/* <Checkout /> */}
-          <Account />
+          {/* <Account /> */}
         </div>
         
       </ThemeProvider>
