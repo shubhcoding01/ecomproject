@@ -13,7 +13,7 @@ import Cart from './customer/pages/Cart/Cart';
 import { Check } from '@mui/icons-material';
 import Checkout from './customer/pages/checkout/Checkout';
 import Account from './customer/pages/Account/Account';
-import { Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 
 function App() {
@@ -32,7 +32,14 @@ function App() {
           {/* <Account /> */}
 
           <Routes>
-            
+            <Route path="/" element={<Home />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/review" element={<Review />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/account/*" element={<Account />} />
+            {/* Add more routes as needed */}
           </Routes>
         </div>
         
