@@ -21,7 +21,7 @@ function App() {
 
       <ThemeProvider theme={customeTheme}>
         <div>
-          <Navbar />
+          {/* <Navbar /> */}
           {/* <Home /> */}
           {/* <Product /> */}
           {/* <ProductDetails/> */}
