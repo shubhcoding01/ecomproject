@@ -51,7 +51,7 @@ const Cart = () => {
                     <div className='border rounded-md p-5 space-y-3'>
                       <PricingCard />
                       <div className='p-3'>
-                        <Button onClick={()=>Navigate} variant='contained' sx={{py:"11px"}} color='primary' fullWidth>
+                        <Button onClick={()=>Navigate("/checkout")} variant='contained' sx={{py:"11px"}} color='primary' fullWidth>
                           Proceed to Checkout
                         </Button>
                       </div>
