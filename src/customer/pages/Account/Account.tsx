@@ -1,7 +1,7 @@
 import { Divider } from '@mui/material'
 import path from 'path'
 import React, { use } from 'react'
-import { Routes, useLocation, useNavigate } from 'react-router-dom'
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import Orders from './Orders'
 import OrderDetails from './OrderDetails'
 import UserDetails from './UserDetails'
@@ -44,7 +44,7 @@ const Account = () => {
             </section>
             <section className='right lg:col-span-2 lg:pl-5 space-y-5'>
                 <Routes>
-                    
+                    <Route path='/' element={<UserDetails />} />
                 </Routes>
                 {/* <Orders /> */}
                 {/* <OrderDetails /> */}
