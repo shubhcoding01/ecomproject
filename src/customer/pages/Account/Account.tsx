@@ -44,7 +44,7 @@ const Account = () => {
             </section>
             <section className='right lg:col-span-2 lg:pl-5 space-y-5'>
                 <Routes>
-                    <Route path='/' element={<UserDetails />} />
+                    <Route path='/profile' element={<UserDetails />} />
                     <Route path='/orders' element={<Orders />} />
                     <Route path='/orders/:orderId/:orderItemId' element={<OrderDetails />} />
                     <Route path='/address' element={<Address />} />
