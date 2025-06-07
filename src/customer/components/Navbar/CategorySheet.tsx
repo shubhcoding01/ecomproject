@@ -45,7 +45,7 @@ const CategorySheet = ({selectedCategory,setShowSheetId}:any) => {
                         
                         {childCategory(categoryThree[selectedCategory],item.categoryId).map
                         ((item:any) => <div>
-                             <li onClick={()=>navigate("/products/"+item.categoryId)} className='hover:text-primary-color cursor-pointer'>
+                             <li onClick={()=>navigate("/product/"+item.categoryId)} className='hover:text-primary-color cursor-pointer'>
                             {item.name}
                         </li>
                         </div>)}
