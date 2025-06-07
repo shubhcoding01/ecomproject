@@ -47,6 +47,8 @@ const Account = () => {
                     <Route path='/' element={<UserDetails />} />
                     <Route path='/orders' element={<Orders />} />
                     <Route path='/orders/:orderId/:orderItemId' element={<OrderDetails />} />
+                    <Route path='/address' element={<Address />} />
+                    <Route path='/saved-cards' element={<SavedCards />} />
                 </Routes>
                 {/* <Orders /> */}
                 {/* <OrderDetails /> */}
