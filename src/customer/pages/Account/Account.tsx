@@ -12,7 +12,7 @@ import Wishlist from './Wishlist'
 const menu = [
     
         {name: "Orders", path: "/account/orders"},
-        {name: "profile", path: "/account/profile"},
+        {name: "profile", path: "/account"},
         {name: "Saved Cards", path: "/account/saved-cards"},
         {name: "Address", path: "/account/address"},
         {name: "Wishlist", path: "/account/wishlist"},
