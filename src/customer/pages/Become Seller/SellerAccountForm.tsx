@@ -1,4 +1,4 @@
-import { Step, StepLabel, Stepper } from '@mui/material';
+import { Button, Step, StepLabel, Stepper } from '@mui/material';
 import React, { useState } from 'react'
 
 const steps = [
@@ -8,7 +8,7 @@ const steps = [
     "Business Details",
 ]
 const SellerAccountForm = () => {
-    const [activeStep, setActiveStep] = useState(1);
+    const [activeStep, setActiveStep] = useState(0);
 
   return (
     <div>
@@ -22,6 +22,14 @@ const SellerAccountForm = () => {
                     </Step>
                 ))}
             </Stepper>
+            <section>
+
+            </section>
+            <div className='flex items-center justify-between mt-6'>
+                    <Button>
+                        
+                    </Button>
+            </div>
     </div>
   )
 }
