@@ -2,6 +2,7 @@ import { Button, Step, StepLabel, Stepper } from '@mui/material';
 import React, { act, useState } from 'react'
 import BecomeSellerFormStep1 from './BecomeSellerFormStep1';
 import { useFormik } from 'formik';
+import { m } from 'framer-motion';
 
 const steps = [
     "Tax Details & Mobile",
@@ -26,7 +27,22 @@ const SellerAccountForm = () => {
     const formik = useFormik({
         initialValues: {
             mobile: '',
-            GSTIN: '',
+            otp: '',
+            gstin: '',
+            pickupAddress: {
+                name: '',
+                mobile: '',
+                pincode: '',
+                address: '',
+                city: '',
+                state: '',
+                locality: '',
+            },
+            bankDetails: {
+                accountNumber: '',
+                ifscCode: '',
+                accountHolderName: '',
+            },
         },
         onSubmit: (values) => {
             console.log("Form Values:", values);
