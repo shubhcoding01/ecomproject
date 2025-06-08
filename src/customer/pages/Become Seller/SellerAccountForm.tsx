@@ -1,6 +1,7 @@
 import { Button, Step, StepLabel, Stepper } from '@mui/material';
 import React, { act, useState } from 'react'
 import BecomeSellerFormStep1 from './BecomeSellerFormStep1';
+import { useFormik } from 'formik';
 
 const steps = [
     "Tax Details & Mobile",
@@ -21,6 +22,16 @@ const SellerAccountForm = () => {
         // Logic to create account goes here
         console.log("Account created");
     }
+
+    const formik = useFormik({
+        initialValues: {
+            mobile: '',
+            GSTIN: '',
+        },
+        onSubmit: (values) => {
+            console.log("Form Values:", values);
+        },
+    });
 
   return (
     <div>
