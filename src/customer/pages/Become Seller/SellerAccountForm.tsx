@@ -34,8 +34,8 @@ const SellerAccountForm = () => {
                         Back
                     </Button>
 
-                    <Button variant='contained' disabled={activeStep === 0} onClick={handleStep(-1)}>
-                        Back
+                    <Button variant='contained' disabled={activeStep === (steps.length-1)} onClick={handleStep(1)}>
+                        Continue
                     </Button>
             </div>
     </div>
