@@ -12,6 +12,7 @@ const SellerAccountForm = () => {
 
     const handleStep = (value:number) =>()=> {
         setActiveStep(activeStep + value);
+        activeStep + value === steps.length -1 && handleCreateAccount();
     }
 
     const handleCreateAccount = () => {
