@@ -30,7 +30,7 @@ const SellerAccountForm = () => {
 
             </section>
             <div className='flex items-center justify-between mt-6'>
-                    <Button variant='contained' disabled={activeStep === 0} onClick={() => setActiveStep((prev) => prev - 1)}>
+                    <Button variant='contained' disabled={activeStep === 0} onClick={handleStep(-1)}>
 
                     </Button>
             </div>
