@@ -1,3 +1,4 @@
+import { Stepper } from '@mui/material';
 import React, { useState } from 'react'
 
 const steps = [
@@ -10,7 +11,14 @@ const SellerAccountForm = () => {
     const [activeStep, setActiveStep] = useState(1);
 
   return (
-    <div>SellerAccountForm</div>
+    <div>
+        <Stepper
+            activeStep={activeStep}
+            alternativeLabel
+            className='mb-6'>
+                
+            </Stepper>
+    </div>
   )
 }
 
