@@ -1,4 +1,4 @@
-import { Stepper } from '@mui/material';
+import { Step, StepLabel, Stepper } from '@mui/material';
 import React, { useState } from 'react'
 
 const steps = [
@@ -16,7 +16,11 @@ const SellerAccountForm = () => {
             activeStep={activeStep}
             alternativeLabel
             className='mb-6'>
-                
+                {steps.map((label, index) => (
+                    <Step key={label}>
+                        <StepLabel>{label}</StepLabel>
+                    </Step>
+                ))}
             </Stepper>
     </div>
   )
