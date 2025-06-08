@@ -29,7 +29,7 @@ const BecomeSeller = () => {
             <div className='flex flex-col items-center justify-center space-y-4'>
                 <h1 className='text-2xl font-bold'>Become a Seller</h1>
                 <p className='text-gray-600 text-center'>Join our community of sellers and start selling your products today!</p>
-                <img src="/images/seller.png" alt="Seller" className='w-3/4 h-auto' />
+                <img src="https://m.media-amazon.com/images/G/31/amazonservices/NSI_Hero_.webp" alt="Seller" className='w-3/4 h-auto' />
             </div>
              
         </section>
