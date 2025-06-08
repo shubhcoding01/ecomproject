@@ -19,6 +19,17 @@ const BecomeSellerFormStep1 = ({formik}:any) => {
                           helperText={formik.touched.mobile && formik.errors.mobile}
                           required
                         />
+            <TextField
+                          fullWidth
+                          label="GSTIN"
+                          name="GSTIN"
+                          value={formik.values.GSTIN}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={formik.touched.GSTIN && Boolean(formik.errors.GSTIN)}
+                          helperText={formik.touched.GSTIN && formik.errors.GSTIN}
+                          required
+                        />            
 
         </div>
     </Box>
