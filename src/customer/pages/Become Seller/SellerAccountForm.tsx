@@ -11,8 +11,9 @@ const SellerAccountForm = () => {
     const [activeStep, setActiveStep] = useState(0);
 
     const handleStep = (value:number) =>()=> {
-        (activeStep > 0 || activeStep < steps.length - 1) && setActiveStep(activeStep + value);
+        (activeStep < steps.length - 1 || (activeStep > 0 && value == -1)) && setActiveStep(activeStep + value);
         activeStep + value === steps.length -1 && handleCreateAccount();
+        console.log("Current Step:", activeStep);
     }
 
     const handleCreateAccount = () => {
