@@ -26,8 +26,8 @@ const SellerAccountForm = () => {
 
             </section>
             <div className='flex items-center justify-between mt-6'>
-                    <Button>
-                        
+                    <Button variant='contained' disabled={activeStep === 0} onClick={() => setActiveStep((prev) => prev - 1)}>
+
                     </Button>
             </div>
     </div>
