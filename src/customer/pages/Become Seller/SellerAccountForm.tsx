@@ -43,9 +43,20 @@ const SellerAccountForm = () => {
                 ifscCode: '',
                 accountHolderName: '',
             },
+            sellerName: '',
+            email: '',
+            businessDetails:{
+                businessName: '',
+                businessEmail: '',
+                businessMobile: '',
+                logo: '',
+                banner: '',
+                businessAddress: "",
+            },
+            password: '',
         },
         onSubmit: (values) => {
-            console.log("Form Values:", values);
+            console.log(values, "Form Submitted");
         },
     });
 
