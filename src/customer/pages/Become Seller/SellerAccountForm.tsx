@@ -14,6 +14,11 @@ const SellerAccountForm = () => {
         setActiveStep(activeStep + value);
     }
 
+    const handleCreateAccount = () => {
+        // Logic to create account goes here
+        console.log("Account created");
+    }
+
   return (
     <div>
         <Stepper
@@ -35,7 +40,7 @@ const SellerAccountForm = () => {
                     </Button>
 
                     <Button variant='contained'  onClick={handleStep(1)}>
-                        {activeStep === steps.length-1 ?'Create Account' : 'Continue'}  
+                        {activeStep === steps.length-1 ? 'Create Account' : 'Continue'}  
                     </Button>
             </div>
     </div>
