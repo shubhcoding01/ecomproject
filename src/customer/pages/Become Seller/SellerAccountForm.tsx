@@ -1,5 +1,5 @@
 import { Button, Step, StepLabel, Stepper } from '@mui/material';
-import React, { useState } from 'react'
+import React, { act, useState } from 'react'
 
 const steps = [
     "Tax Details & Mobile",
@@ -9,6 +9,10 @@ const steps = [
 ]
 const SellerAccountForm = () => {
     const [activeStep, setActiveStep] = useState(0);
+
+    const handleStep = (value:number) =>()=> {
+        setActiveStep(activeStep + value);
+    }
 
   return (
     <div>
