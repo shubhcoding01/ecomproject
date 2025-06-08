@@ -73,7 +73,7 @@ const SellerAccountForm = () => {
                 ))}
             </Stepper>
             <section>
-                {activeStep === 0 && <BecomeSellerFormStep1 formik={{values: {}, handleChange: () => {}, handleBlur: () => {}, touched: {}, errors: {}}} />}
+                {activeStep === 0 && <BecomeSellerFormStep1 formik={formik} />}
                 {activeStep === 1 && <p>Step 2: Pickup Address</p>}
                 {activeStep === 2 && <p>Step 3: Bank Details</p>}
                 {activeStep === 3 && <p>Step 4: Business Details</p>}
