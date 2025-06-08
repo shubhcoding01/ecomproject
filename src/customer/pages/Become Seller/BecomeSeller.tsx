@@ -14,6 +14,10 @@ const BecomeSeller = () => {
         <section className='lg:col-span-1 md:col-span-2 col-span-3 p-10 shadow-lg rounded-b-md bg-white'>
 
             {isLogin ? <SellerAccountForm /> : <SellerLoginForm />}
+
+            <div className='mt-10 space-y-2'>
+
+            </div>
         </section>
 
     </div>
