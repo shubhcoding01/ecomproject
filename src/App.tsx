@@ -14,6 +14,7 @@ import { Check } from '@mui/icons-material';
 import Checkout from './customer/pages/checkout/Checkout';
 import Account from './customer/pages/Account/Account';
 import { Route, Routes } from 'react-router-dom';
+import BecomeSeller from './customer/pages/Become Seller/BecomeSeller';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/account/*" element={<Account />} />
+            <Route path="/become-seller" element={<BecomeSeller/>} />
             {/* Add more routes as needed */}
           </Routes>
         </div>
