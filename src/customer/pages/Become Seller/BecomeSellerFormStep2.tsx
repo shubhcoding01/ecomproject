@@ -8,7 +8,7 @@ const BecomeSellerFormStep2 = ({formik}:any) => {
 
   return (
     <Box sx={{ maxWidth: 600, mx: 'auto', p: 3 }}>
-      <p className='text-xl font-bold text-center pb-5'>Contact Details</p>
+      <p className='text-xl font-bold text-center pb-5'>Pickup Address</p>
 
       <form onSubmit={formik.handleSubmit}>
         <Grid container spacing={2}>
