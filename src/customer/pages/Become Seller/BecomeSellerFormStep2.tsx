@@ -3,7 +3,7 @@ import { Box, Grid, TextField, Button } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-const BecomeSellerFormStep2 = () => {
+const BecomeSellerFormStep2 = ({formik}:any) => {
   
 
   return (
