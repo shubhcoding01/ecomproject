@@ -7,10 +7,10 @@ const BecomeSellerFormStep2 = ({formik}:any) => {
   
 
   return (
-    <Box sx={{ maxWidth: 600, mx: 'auto', p: 3 }}>
+    <Box >
       <p className='text-xl font-bold text-center pb-5'>Pickup Address</p>
 
-      <form onSubmit={formik.handleSubmit}>
+      <>
         <Grid container spacing={2}>
           <Grid size={{xs:12}}>
             <TextField
@@ -112,7 +112,7 @@ const BecomeSellerFormStep2 = ({formik}:any) => {
 
           
         </Grid>
-      </form>
+      </>
     </Box>
   );
 };
