@@ -110,11 +110,7 @@ const BecomeSellerFormStep2 = ({formik}:any) => {
             />
           </Grid>
 
-          <Grid size={{xs:12}} className='text-center'>
-            <Button type="submit" variant="contained" color="primary">
-              Submit
-            </Button>
-          </Grid>
+          
         </Grid>
       </form>
     </Box>
