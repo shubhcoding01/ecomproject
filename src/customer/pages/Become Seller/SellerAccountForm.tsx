@@ -5,6 +5,7 @@ import { useFormik } from 'formik';
 import { m } from 'framer-motion';
 import BecomeSellerFormStep2 from './BecomeSellerFormStep2';
 import BecomeSellerFormStep3 from './BecomeSellerFormStep3';
+import BecomeSellerFormStep4 from './BecomeSellerFormStep4';
 
 const steps = [
     "Tax Details & Mobile",
@@ -75,10 +76,10 @@ const SellerAccountForm = () => {
                 ))}
             </Stepper>
             <section>
-                {activeStep === 0 && <BecomeSellerFormStep1 formik={formik} />}
-                {activeStep === 1 && <BecomeSellerFormStep2 formik={formik} />}
-                {activeStep === 2 && <BecomeSellerFormStep3 formik={formik} />}
-                {activeStep === 3 && <p>Step 4: Business Details</p>}
+                {activeStep === 0 ? <BecomeSellerFormStep1 formik={formik} />:
+                activeStep === 1 ? <BecomeSellerFormStep2 formik={formik} />:
+                activeStep === 2 ? <BecomeSellerFormStep3 formik={formik} />:
+                <BecomeSellerFormStep4 formik={formik} />}
             </section>
             <div className='flex items-center justify-between mt-6'>
                     <Button variant='contained' disabled={activeStep === 0} onClick={handleStep(-1)}>
