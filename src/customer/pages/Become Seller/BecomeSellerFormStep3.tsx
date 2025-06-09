@@ -4,9 +4,11 @@ interface BecomeSellerFormStep2Props {
     formik: any;
     }
 
-const BecomeSellerFormStep3 = () => {
+const BecomeSellerFormStep3:React.FC<BecomeSellerFormStep2Props> = ({formik}) => {
   return (
-    <div>BecomeSellerFormStep3</div>
+    <div className='space-y-9'>
+
+    </div>
   )
 }
 
