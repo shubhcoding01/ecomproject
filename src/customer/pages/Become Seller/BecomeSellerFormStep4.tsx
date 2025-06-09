@@ -32,7 +32,7 @@ const BecomeSellerFormStep4 =({formik}:BecomeSellerFormStep2Props) => {
             helperText={formik.touched.sellerName && formik.errors.sellerName}
             required
         />
-        
+
         <TextField
             fullWidth
             label="Business Email"
@@ -42,6 +42,19 @@ const BecomeSellerFormStep4 =({formik}:BecomeSellerFormStep2Props) => {
             onBlur={formik.handleBlur}
             error={formik.touched.businessDetails?.businessEmail && Boolean(formik.errors.businessDetails?.businessEmail)}
             helperText={formik.touched.businessDetails?.businessEmail && formik.errors.businessDetails?.businessEmail}
+            required
+        />
+
+        <TextField
+            fullWidth
+            label="Password"
+            name="password"
+            type="password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.password && Boolean(formik.errors.password)}
+            helperText={formik.touched.password && formik.errors.password}
             required
         />
 
