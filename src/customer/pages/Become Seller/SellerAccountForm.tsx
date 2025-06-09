@@ -3,6 +3,7 @@ import React, { act, useState } from 'react'
 import BecomeSellerFormStep1 from './BecomeSellerFormStep1';
 import { useFormik } from 'formik';
 import { m } from 'framer-motion';
+import BecomeSellerFormStep2 from './BecomeSellerFormStep2';
 
 const steps = [
     "Tax Details & Mobile",
@@ -74,7 +75,7 @@ const SellerAccountForm = () => {
             </Stepper>
             <section>
                 {activeStep === 0 && <BecomeSellerFormStep1 formik={formik} />}
-                {activeStep === 1 && <p>Step 2: Pickup Address</p>}
+                {activeStep === 1 && <BecomeSellerFormStep2 formik={formik} />}
                 {activeStep === 2 && <p>Step 3: Bank Details</p>}
                 {activeStep === 3 && <p>Step 4: Business Details</p>}
             </section>
