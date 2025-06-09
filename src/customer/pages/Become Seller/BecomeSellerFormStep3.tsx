@@ -31,6 +31,17 @@ const BecomeSellerFormStep3:React.FC<BecomeSellerFormStep2Props> = ({formik}) =>
           helperText={formik.touched.bankDetails?.ifscCode && formik.errors.bankDetails?.ifscCode}
           required
             />
+        <TextField
+          fullWidth
+          label="Account Holder Name"
+          name="bankDetails.accountHolderName"
+          value={formik.values.bankDetails.accountHolderName}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          error={formik.touched.bankDetails?.accountHolderName && Boolean(formik.errors.bankDetails?.accountHolderName)}
+          helperText={formik.touched.bankDetails?.accountHolderName && formik.errors.bankDetails?.accountHolderName}
+          required
+            />
 
     </div>
   )
