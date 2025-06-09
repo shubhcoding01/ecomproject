@@ -3,7 +3,7 @@ import { Box, Grid, TextField, Button } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-const Addressform = () => {
+const BecomeSellerFormStep2 = () => {
   
 
   return (
@@ -121,4 +121,4 @@ const Addressform = () => {
   );
 };
 
-export default Addressform;
+export default BecomeSellerFormStep2;
