@@ -1,6 +1,10 @@
 import React from 'react'
 
-function BecomeSellerFormStep4() {
+interface BecomeSellerFormStep2Props {
+    formik: any;
+}
+
+const BecomeSellerFormStep4 =() => {
   return (
     <div>BecomeSellerFormStep4</div>
   )
