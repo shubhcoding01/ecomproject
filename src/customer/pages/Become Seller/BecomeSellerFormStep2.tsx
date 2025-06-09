@@ -4,29 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 const Addressform = () => {
-  const formik = useFormik({
-    initialValues: {
-      name: '',
-      mobile: '',
-      pincode: '',
-      address: '',
-      city: '',
-      state: '',
-      locality: ''
-    },
-    validationSchema: Yup.object({
-      name: Yup.string().required('Required'),
-      mobile: Yup.string().matches(/^\d{10}$/, 'Must be 10 digits').required('Required'),
-      pincode: Yup.string().matches(/^\d{6}$/, 'Must be 6 digits').required('Required'),
-      address: Yup.string().required('Required'),
-      city: Yup.string().required('Required'),
-      state: Yup.string().required('Required'),
-      locality: Yup.string().required('Required'),
-    }),
-    onSubmit: (values) => {
-      console.log('Form submitted:', values);
-    },
-  });
+  
 
   return (
     <Box sx={{ maxWidth: 600, mx: 'auto', p: 3 }}>
