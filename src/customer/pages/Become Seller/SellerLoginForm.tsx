@@ -1,6 +1,18 @@
-import React from 'react'
+import { TextField } from '@mui/material';
+import { useFormik } from 'formik'
+import React, { use } from 'react'
 
 const SellerLoginForm = () => {
+  const formik = useFormik({
+    initialValues:{
+      email: '',
+      otp: '',
+    },
+    onSubmit: (values) => {
+      // Logic to handle login goes here
+      console.log("Login values:", values);
+    },
+  })
   return (
     <div>
       <div className='spyace-y-9'>
