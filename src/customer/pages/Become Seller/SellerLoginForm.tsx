@@ -31,7 +31,9 @@ const SellerLoginForm = () => {
           required
         />
 
-        {true && <TextField
+        {true && <div>
+          <p>Enter Otp Sent to your Email.</p>
+          <TextField
           fullWidth
           label="OTP"
           name="otp"
@@ -42,7 +44,8 @@ const SellerLoginForm = () => {
           error={formik.touched.otp && Boolean(formik.errors.otp)}
           helperText={formik.touched.otp && formik.errors.otp}
           required
-        />}
+        />
+          </div>}
 
         <Button
           fullWidth
