@@ -9,7 +9,7 @@ const SellerDashboard = () => {
                 SellerDrawerList
             </section>
             <section className="p-10 w-full lg:w-[80%] overflow-y-auto">
-                
+                Seller Routes
             </section>
 
         </div>
