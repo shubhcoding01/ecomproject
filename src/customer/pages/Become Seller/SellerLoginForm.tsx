@@ -29,18 +29,18 @@ const SellerLoginForm = () => {
           required
         />
 
-        <TextField
+        {true && <TextField
           fullWidth
-          label="Email"
-          name="email"
-          type="email"
-          value={formik.values.email}
+          label="Otp"
+          name="otp"
+          type="otp"
+          value={formik.values.otp}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          error={formik.touched.email && Boolean(formik.errors.email)}
-          helperText={formik.touched.email && formik.errors.email}
+          error={formik.touched.otp && Boolean(formik.errors.otp)}
+          helperText={formik.touched.otp && formik.errors.otp}
           required
-        />
+        />}
 
       </div>
     </div>
