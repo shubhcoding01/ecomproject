@@ -1,24 +1,23 @@
-import { TextField } from '@mui/material';
-import { useFormik } from 'formik'
-import React, { use } from 'react'
+import { Box, TextField, Button } from '@mui/material';
+import React from 'react';
+import { useFormik } from 'formik';
 
 const SellerLoginForm = () => {
   const formik = useFormik({
-    initialValues:{
+    initialValues: {
       email: '',
       otp: '',
     },
     onSubmit: (values) => {
-      // Logic to handle login goes here
       console.log("Login values:", values);
     },
-  })
+  });
+
   return (
-    <div>
-      <h1 className="text-center font-bold text-xl text-primary-color pb-5">
-        Login As Seller
-      </h1>
-      <div className='spyace-y-9'>
+    <Box className="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+      <p className="text-xl font-bold text-center pb-9 text-primary-color">Login As Seller</p>
+
+      <form onSubmit={formik.handleSubmit} className="space-y-9">
         <TextField
           fullWidth
           label="Email"
@@ -32,24 +31,31 @@ const SellerLoginForm = () => {
           required
         />
 
-        {true && <div className='space-y-2'>
-          <TextField
+        true && {<TextField
           fullWidth
-          label="Otp"
+          label="OTP"
           name="otp"
-          type="otp"
+          type="text"
           value={formik.values.otp}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.touched.otp && Boolean(formik.errors.otp)}
           helperText={formik.touched.otp && formik.errors.otp}
           required
-        />
-          </div>}
+        />}
 
-      </div>
-    </div>
-  )
-}
+        <Button
+          fullWidth
+          type="submit"
+          variant="contained"
+          color="primary"
+          className="rounded-md"
+        >
+          Submit
+        </Button>
+      </form>
+    </Box>
+  );
+};
 
-export default SellerLoginForm
+export default SellerLoginForm;
