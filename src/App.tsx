@@ -42,6 +42,8 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/account/*" element={<Account />} />
             <Route path="/become-seller" element={<BecomeSeller/>} />
+            <Route path="/seller/*" element={<Account/>} />
+
             {/* Add more routes as needed */}
           </Routes>
         </div>
