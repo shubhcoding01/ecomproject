@@ -29,7 +29,8 @@ const SellerLoginForm = () => {
           required
         />
 
-        {true && <TextField
+        {true && <div className='space-y-2'>
+          <TextField
           fullWidth
           label="Otp"
           name="otp"
@@ -40,7 +41,8 @@ const SellerLoginForm = () => {
           error={formik.touched.otp && Boolean(formik.errors.otp)}
           helperText={formik.touched.otp && formik.errors.otp}
           required
-        />}
+        />
+          </div>}
 
       </div>
     </div>
