@@ -15,6 +15,9 @@ const SellerLoginForm = () => {
   })
   return (
     <div>
+      <h1 className="text-center font-bold text-xl text-primary-color pb-5">
+        Login As Seller
+      </h1>
       <div className='spyace-y-9'>
         <TextField
           fullWidth
