@@ -31,7 +31,7 @@ const SellerLoginForm = () => {
           required
         />
 
-        true && {<TextField
+        {true && <TextField
           fullWidth
           label="OTP"
           name="otp"
