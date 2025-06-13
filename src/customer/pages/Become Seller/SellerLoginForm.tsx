@@ -32,7 +32,7 @@ const SellerLoginForm = () => {
         />
 
         {true && <div>
-          <p>Enter Otp Sent to your Email.</p>
+          <p className='font-medium text-sm opacity-55'>Enter Otp Sent to your Email.</p>
           <TextField
           fullWidth
           label="OTP"
