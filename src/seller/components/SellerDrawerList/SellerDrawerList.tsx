@@ -1,4 +1,4 @@
-import { AccountBalanceWallet, Add, Dashboard, Inventory, Receipt, ShoppingBag } from '@mui/icons-material'
+import { AccountBalanceWallet, AccountBox, Add, Dashboard, Inventory, Receipt, ShoppingBag } from '@mui/icons-material'
 import React from 'react'
 
 const menu = [
@@ -45,6 +45,20 @@ const menu = [
   //   activeIcon:<MailIcon className='text-white'/>
   // },
 
+];
+
+
+
+
+
+
+const menu2 = [
+  {
+    name:"Account",
+    path:"/seller/account",
+    icon:<AccountBox className='text-primary-color'/>,
+    activeIcon:<AccountBox className='text-white'/>
+  },
 ]
 
 const SellerDrawerList = () => {
