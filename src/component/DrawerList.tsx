@@ -23,7 +23,11 @@ const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
             <div className='space-y-2'>
                 {
                   menu.map((item:any,index:number)=>
-                    <div></div>
+                    <div key={index}>
+                      <p>
+                        
+                      </p>
+                    </div>
                   )
                 }
             </div>
