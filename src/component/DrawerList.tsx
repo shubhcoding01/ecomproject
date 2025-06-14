@@ -1,8 +1,8 @@
 import React from 'react'
 
 interface DrawerListProps {
-  menu:[],
-  menu2:[],
+  menu:any[],
+  menu2:any[],
   toggleDrawer:()=>void
 }
 
