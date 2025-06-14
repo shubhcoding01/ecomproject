@@ -1,4 +1,4 @@
-import { Dashboard } from '@mui/icons-material'
+import { Dashboard, ShoppingBag } from '@mui/icons-material'
 import React from 'react'
 
 const menu = [
@@ -7,7 +7,14 @@ const menu = [
     path:"/seller",
     icon:<Dashboard className='text-primary-color'/>,
     activeIcon:<Dashboard className='text-white'/>
-  }
+  },
+  {
+    name:"Orders",
+    path:"/seller/orders",
+    icon:<ShoppingBag className='text-primary-color' />,
+    activeIcon:<ShoppingBag className='text-white'/>
+  },
+
 ]
 
 const SellerDrawerList = () => {
