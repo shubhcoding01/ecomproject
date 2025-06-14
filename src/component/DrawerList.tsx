@@ -4,7 +4,7 @@ interface menuItem{
   
       name:string,
       path:string,
-      icon:<Dashboard className='text-primary-color'/>,
+      icon:any
       activeIcon:<Dashboard className='text-white'/>
     
 }
