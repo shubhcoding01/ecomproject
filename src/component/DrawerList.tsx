@@ -1,6 +1,12 @@
 import React from 'react'
 
-const DrawerList = () => {
+const DrawerListProps={
+  menu:[],
+  menu2:[],
+  toggleDrawer:()=>void
+}
+
+const DrawerList = ({menu,menu2,toggleDrawer}) => {
   return (
     <div className='h-full'>
       <div className='flex flex-col justify-between h-full w-[300px] border-r py-5'>
