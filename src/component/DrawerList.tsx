@@ -2,7 +2,7 @@ import React from 'react'
 
 interface menuItem{
   
-      name:"Dashboard",
+      name:string,
       path:"/seller",
       icon:<Dashboard className='text-primary-color'/>,
       activeIcon:<Dashboard className='text-white'/>
