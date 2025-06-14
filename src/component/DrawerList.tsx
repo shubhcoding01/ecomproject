@@ -1,5 +1,14 @@
 import React from 'react'
 
+interface menuItem{
+  {
+      name:"Dashboard",
+      path:"/seller",
+      icon:<Dashboard className='text-primary-color'/>,
+      activeIcon:<Dashboard className='text-white'/>
+    },
+}
+
 interface DrawerListProps {
   menu:any[],
   menu2:any[],
