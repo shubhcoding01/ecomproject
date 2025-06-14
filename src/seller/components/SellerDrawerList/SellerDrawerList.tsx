@@ -1,5 +1,6 @@
 import { AccountBalanceWallet, AccountBox, Add, Dashboard, Inventory, Logout, Receipt, ShoppingBag } from '@mui/icons-material'
 import React from 'react'
+import DrawerList from '../../../component/DrawerList';
 
 const menu = [
   {
@@ -69,7 +70,9 @@ const menu2 = [
 
 const SellerDrawerList = () => {
   return (
-    <div>SellerDrawerList</div>
+    <div>
+      <DrawerList menu={menu} menu2={menu2} toggleDrawer={} />
+    </div>
   )
 }
 
