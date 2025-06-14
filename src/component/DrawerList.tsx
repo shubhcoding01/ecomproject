@@ -21,7 +21,11 @@ const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
       <div className='flex flex-col justify-between h-full w-[300px] border-r py-5'>
           <div>
             <div className='space-y-2'>
-
+                {
+                  menu.map((item:any,index:number)=>
+                    <div></div>
+                  )
+                }
             </div>
           </div>
       </div>
