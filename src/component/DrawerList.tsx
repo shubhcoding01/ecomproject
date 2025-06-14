@@ -10,8 +10,8 @@ interface menuItem{
 }
 
 interface DrawerListProps {
-  menu:any[],
-  menu2:any[],
+  menu:menuItem[],
+  menu2:menuItem[],
   toggleDrawer:()=>void
 }
 
