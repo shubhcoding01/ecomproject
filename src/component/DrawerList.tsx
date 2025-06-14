@@ -1,3 +1,4 @@
+import { ListItemIcon } from '@mui/material'
 import React from 'react'
 
 interface menuItem{
@@ -25,7 +26,9 @@ const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
                   menu.map((item:any,index:number)=>
                     <div key={index}>
                       <p>
-                        
+                        <ListItemIcon>
+                          
+                        </ListItemIcon>
                       </p>
                     </div>
                   )
