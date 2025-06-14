@@ -38,6 +38,12 @@ const menu = [
     icon:<Receipt className='text-primary-color'/>,
     activeIcon:<Receipt className='text-white'/>
   },
+  // {
+  //   name:"Inventory",
+  //   path:"/seller/inventory",
+  //   icon:<MailIcon className='text-primary-color'/>,
+  //   activeIcon:<MailIcon className='text-white'/>
+  // },
 
 ]
 
