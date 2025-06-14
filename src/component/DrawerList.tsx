@@ -66,7 +66,7 @@ const DrawerList: React.FC<DrawerListProps> = ({ menu, menu2, toggleDrawer }) =>
       <div className='flex flex-col justify-between h-full w-[300px] border-r py-5'>
         <List>
           {menu.map((item, index) => (
-            <ListItem button key={index} onClick={toggleDrawer}>
+            <ListItem key={index} onClick={toggleDrawer} style={{ cursor: 'pointer' }}>
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.name} />
             </ListItem>
@@ -74,7 +74,7 @@ const DrawerList: React.FC<DrawerListProps> = ({ menu, menu2, toggleDrawer }) =>
         </List>
         <List>
           {menu2.map((item, index) => (
-            <ListItem button key={index} onClick={toggleDrawer}>
+            <ListItem key={index} onClick={toggleDrawer} style={{ cursor: 'pointer' }}>
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.name} />
             </ListItem>
