@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface DrawerListProps={
+interface DrawerListProps {
   menu:[],
   menu2:[],
   toggleDrawer:()=>void
