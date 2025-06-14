@@ -6,7 +6,7 @@ interface DrawerListProps {
   toggleDrawer:()=>void
 }
 
-const DrawerList = ({menu,menu2,toggleDrawer}) => {
+const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
   return (
     <div className='h-full'>
       <div className='flex flex-col justify-between h-full w-[300px] border-r py-5'>
