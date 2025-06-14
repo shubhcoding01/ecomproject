@@ -3,7 +3,7 @@ import React from 'react'
 interface menuItem{
   
       name:string,
-      path:"/seller",
+      path:string,
       icon:<Dashboard className='text-primary-color'/>,
       activeIcon:<Dashboard className='text-white'/>
     
