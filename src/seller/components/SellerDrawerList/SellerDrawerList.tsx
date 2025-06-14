@@ -1,4 +1,4 @@
-import { Add, Dashboard, Inventory, Receipt, ShoppingBag } from '@mui/icons-material'
+import { AccountBalanceWallet, Add, Dashboard, Inventory, Receipt, ShoppingBag } from '@mui/icons-material'
 import React from 'react'
 
 const menu = [
@@ -29,6 +29,12 @@ const menu = [
   {
     name:"Payment",
     path:"/seller/payment",
+    icon:<AccountBalanceWallet className='text-primary-color'/>,
+    activeIcon:<AccountBalanceWallet className='text-white'/>
+  },
+  {
+    name:"Transaction",
+    path:"/seller/transaction",
     icon:<Receipt className='text-primary-color'/>,
     activeIcon:<Receipt className='text-white'/>
   },
