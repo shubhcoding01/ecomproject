@@ -27,8 +27,9 @@ const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
                     <div key={index}>
                       <p>
                         <ListItemIcon>
-                          
+                          {item.icon}
                         </ListItemIcon>
+                        <ListItemIcon primary={item.name}/>
                       </p>
                     </div>
                   )
