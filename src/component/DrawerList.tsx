@@ -27,7 +27,7 @@ const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
                 {
                   menu.map((item:any,index:number)=>
                     <div  className='pr-9 cursor-pointer' key={index}>
-                      <p className={``}>
+                      <p className={`${item.path==location.pathname}`}>
                         <ListItemIcon>
                           {item.icon}
                         </ListItemIcon>
