@@ -24,8 +24,8 @@ const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
             <div className='space-y-2'>
                 {
                   menu.map((item:any,index:number)=>
-                    <div className='pr-9' key={index}>
-                      <p>
+                    <div  className='pr-9 cursor-pointer' key={index}>
+                      <p className={``}>
                         <ListItemIcon>
                           {item.icon}
                         </ListItemIcon>
