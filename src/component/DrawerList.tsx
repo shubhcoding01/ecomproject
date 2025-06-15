@@ -1,4 +1,4 @@
-import { ListItemIcon, ListItemText } from '@mui/material'
+import { Divider, ListItemIcon, ListItemText } from '@mui/material'
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
@@ -39,6 +39,7 @@ const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
                 }
             </div>
 
+                <Divider/>
             <div className='space-y-2'>
                 {
                   menu.map((item:any,index:number)=>
