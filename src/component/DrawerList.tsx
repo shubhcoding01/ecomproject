@@ -1,5 +1,6 @@
 import { ListItemIcon, ListItemText } from '@mui/material'
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 
 interface menuItem{
   
@@ -17,6 +18,7 @@ interface DrawerListProps {
 }
 
 const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
+  const location = useLocation();
   return (
     <div className='h-full'>
       <div className='flex flex-col justify-between h-full w-[300px] border-r py-5'>
