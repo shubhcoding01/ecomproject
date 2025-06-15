@@ -29,7 +29,7 @@ const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
                     <div  className='pr-9 cursor-pointer' key={index}>
                       <p className={`${item.path==location.pathname ? "bg-primary-color text-white":"text-primary-color"}`}>
                         <ListItemIcon>
-                          {item.icon}
+                          {item.icon==location.pathname?item.activeIcon:item.icon}
                         </ListItemIcon>
                         <ListItemText primary={item.name}/>
                       </p>
