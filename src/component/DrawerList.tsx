@@ -29,7 +29,7 @@ const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
                     <div  className='pr-9 cursor-pointer' key={index}>
                       <p className={`${item.path==location.pathname ? "bg-primary-color text-white":"text-primary-color"} flex items-center px-5 py-3 rounded-r-full`}>
                         <ListItemIcon>
-                          {item.icon==location.pathname?item.activeIcon:item.icon}
+                          {item.path==location.pathname?item.activeIcon:item.icon}
                         </ListItemIcon>
                         <ListItemText primary={item.name}/>
                       </p>
