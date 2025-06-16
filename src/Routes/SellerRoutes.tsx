@@ -1,8 +1,13 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
 
 const SellerRoutes = () => {
   return (
-    <div>SellerRoutes</div>
+    <div>
+        <Routes>
+            <Route/>
+        </Routes>
+    </div>
   )
 }
 
