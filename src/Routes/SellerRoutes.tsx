@@ -13,7 +13,7 @@ const SellerRoutes = () => {
     <div>
         <Routes>
             <Route path='/' element={<Dashboard/>}/>
-            <Route path='/product' element={<Products/>}/>
+            <Route path='/products' element={<Products/>}/>
             <Route path='/add-product' element={<AddProduct/>}/>
             <Route path='/orders' element={<Orders/>}/>
             <Route path='/account' element={<Profile/>}/>
