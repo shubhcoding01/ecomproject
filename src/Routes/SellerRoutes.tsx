@@ -11,6 +11,7 @@ import Products from '../seller/pages/Products/Products'
 const SellerRoutes = () => {
   return (
     <div>
+        
         <Routes>
             <Route path='/' element={<Dashboard/>}/>
             <Route path='/products' element={<Products/>}/>

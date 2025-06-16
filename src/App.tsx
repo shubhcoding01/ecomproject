@@ -21,7 +21,7 @@ import SellerDashboard from './seller/pages/SellerDashboard/SellerDashboard';
 function App() {
   return (
     
-
+      
       <ThemeProvider theme={customeTheme}>
         <div>
           
