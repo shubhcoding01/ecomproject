@@ -5,7 +5,7 @@ const SellerRoutes = () => {
   return (
     <div>
         <Routes>
-            <Route/>
+            <Route path='/*' element/>
         </Routes>
     </div>
   )
