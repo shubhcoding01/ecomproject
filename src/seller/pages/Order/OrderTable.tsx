@@ -54,10 +54,9 @@ export default function OrderTable() {
           <TableRow>
             <StyledTableCell>Order Id</StyledTableCell>
             <StyledTableCell>Products</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+            <StyledTableCell align="right">Shiping Address</StyledTableCell>
+            <StyledTableCell align="right">Order Status</StyledTableCell>
+            <StyledTableCell align="right">Update</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
