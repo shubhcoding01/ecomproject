@@ -52,11 +52,10 @@ export default function ProductTable() {
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Order Id</StyledTableCell>
-            <StyledTableCell>Products</StyledTableCell>
-            <StyledTableCell align="right">Shiping Address</StyledTableCell>
-            <StyledTableCell align="right">Order Status</StyledTableCell>
-            <StyledTableCell align="right">Update</StyledTableCell>
+            <StyledTableCell>Images</StyledTableCell>
+            <StyledTableCell align="right">Title</StyledTableCell>
+            <StyledTableCell align="right">Mrp</StyledTableCell>
+            <StyledTableCell align="right">Selling Price</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
