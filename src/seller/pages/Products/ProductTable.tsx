@@ -56,6 +56,9 @@ export default function ProductTable() {
             <StyledTableCell align="right">Title</StyledTableCell>
             <StyledTableCell align="right">Mrp</StyledTableCell>
             <StyledTableCell align="right">Selling Price</StyledTableCell>
+            <StyledTableCell align="right">Color</StyledTableCell>
+            <StyledTableCell align="right">Update Stock</StyledTableCell>
+            <StyledTableCell align="right">Update</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
