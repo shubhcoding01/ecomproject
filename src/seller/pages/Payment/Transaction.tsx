@@ -52,11 +52,11 @@ export default function TransactionTable() {
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Order Id</StyledTableCell>
-            <StyledTableCell>Products</StyledTableCell>
-            <StyledTableCell align="right">Shiping Address</StyledTableCell>
-            <StyledTableCell align="right">Order Status</StyledTableCell>
-            <StyledTableCell align="right">Update</StyledTableCell>
+            <StyledTableCell>Date</StyledTableCell>
+            
+            <StyledTableCell align="right">Customer Details</StyledTableCell>
+            <StyledTableCell align="right">Order</StyledTableCell>
+            <StyledTableCell align="right">Amount</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
