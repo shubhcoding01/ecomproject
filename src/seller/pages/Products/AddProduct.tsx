@@ -428,9 +428,9 @@ const AddProduct = () => {
               helperText={formik.touched.category2 && formik.errors.category2}
               required
             >
-              {categorytwo[formik.values.category].map((item) => (
-                <MenuItem key={item} value={item}>{item}</MenuItem>
-              ))}
+              {categorytwo[formik.values.category]?.map((item) => (
+  <MenuItem key={item} value={item}>{item}</MenuItem>
+))}
             </TextField>
           </Grid>
 
@@ -447,9 +447,9 @@ const AddProduct = () => {
               helperText={formik.touched.category3 && formik.errors.category3}
               required
             >
-              {categorythree[formik.values.category2].map((item) => (
-                <MenuItem key={item} value={item}>{item}</MenuItem>
-              ))}
+              {categorythree[formik.values.category2]?.map((item) => (
+  <MenuItem key={item} value={item}>{item}</MenuItem>
+))}
             </TextField>
           </Grid>
 
