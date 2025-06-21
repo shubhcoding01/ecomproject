@@ -453,6 +453,25 @@ const AddProduct = () => {
             </TextField>
           </Grid>
 
+          <Grid size={{xs:12, sm:6}}>
+            <TextField
+              fullWidth
+              id='sizes'
+              name='sizes'
+              label="Sizes"
+              select
+              value={formik.values.sizes}
+              onChange={formik.handleChange}
+              error={formik.touched.sizes && Boolean(formik.errors.sizes)}
+              helperText={formik.touched.sizes && formik.errors.sizes}
+              required
+            >
+              {sizes.map((size) => (
+                <MenuItem key={size} value={size}>{size}</MenuItem>
+              ))}
+            </TextField>
+          </Grid>
+
           <Grid size={{xs:12}}>
             <Button type="submit" variant="contained" color="primary">
               Add Product
