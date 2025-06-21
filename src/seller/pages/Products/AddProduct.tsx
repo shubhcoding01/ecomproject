@@ -434,6 +434,25 @@ const AddProduct = () => {
             </TextField>
           </Grid>
 
+          <Grid size={{xs:12, sm:6}}>
+            <TextField
+              fullWidth
+              id='category3'
+              name='category3'
+              label="Sub-subcategory"
+              select
+              value={formik.values.category3}
+              onChange={formik.handleChange}
+              error={formik.touched.category3 && Boolean(formik.errors.category3)}
+              helperText={formik.touched.category3 && formik.errors.category3}
+              required
+            >
+              {categorythree[formik.values.category2].map((item) => (
+                <MenuItem key={item} value={item}>{item}</MenuItem>
+              ))}
+            </TextField>
+          </Grid>
+
           <Grid size={{xs:12}}>
             <Button type="submit" variant="contained" color="primary">
               Add Product
