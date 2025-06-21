@@ -183,7 +183,7 @@ import { womenLevelThree } from '../../../data/category/level three/womenLevelTh
 import { furnitureLevelThree } from '../../../data/category/level three/furnitureLevelThree';
 import { electronicsLevelThree } from '../../../data/category/level three/electronicsLevelThree';
 
-const categorytwo = {
+const categorytwo:{[key: string]: any[]} = {
   men: menLevelTwo,
   women: womenLevelTwo,
   kids: [],
@@ -192,7 +192,7 @@ const categorytwo = {
   electronics: electronicsLevelTwo,
 };
 
-const categorythree = {
+const categorythree: { [key: string]: any[] } = {
   men: menLevelThree,
   women: womenLevelThree,
   kids: [],
@@ -229,7 +229,7 @@ const AddProduct = () => {
     }),
     onSubmit: (values) => {
       console.log("Form Values", values);
-      setSnackbar(true);
+      // setSnackbar(true);
     },
   });
 
@@ -247,6 +247,12 @@ const AddProduct = () => {
     formik.setFieldValue('images', updatedImages);
   };
 
+  const childCategory  = (category:any, parentCateforyId: any) => {
+    return category.filter((child:any) =>{
+      //console.log("Category", parentCateforyId, child);
+      return child.parentCategory === parentCateforyId;
+    });
+  };
   const handleCloseSnackbar = () => {
     setSnackbar(false);
   };

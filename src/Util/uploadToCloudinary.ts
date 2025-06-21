@@ -15,7 +15,9 @@ export const uploadToCloudinary = async (pics:any)=> {
             })
 
             const fileData = await res.json();
-            return fileData.url;
+            console.log("Cloudinary Response:", fileData); // ✅ Check what you receive
+            return fileData.secure_url;
+
         }
         else{
             console.log("Error: No image provided");
