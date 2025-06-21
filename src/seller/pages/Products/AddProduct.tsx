@@ -169,7 +169,7 @@
 // export default AddProduct
 
 import { AddPhotoAlternate, Close } from '@mui/icons-material';
-import { CircularProgress, Grid, IconButton, TextField, Button, Snackbar } from '@mui/material';
+import { CircularProgress, Grid, IconButton, TextField, Button, Snackbar, MenuItem } from '@mui/material';
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup';
 import React, { useState } from 'react';
@@ -394,6 +394,25 @@ const AddProduct = () => {
               helperText={formik.touched.color && formik.errors.color}
               required
             />
+          </Grid>
+
+          <Grid size={{xs:12, sm:6}}>
+            <TextField
+              fullWidth
+              id='category'
+              name='category'
+              label="Category"
+              select
+              value={formik.values.category}
+              onChange={formik.handleChange}
+              error={formik.touched.category && Boolean(formik.errors.category)}
+              helperText={formik.touched.category && formik.errors.category}
+              required
+            >
+              {Object.keys(categorytwo).map((key) => (
+                <MenuItem key={key} value={key}>{key}</MenuItem>
+              ))}
+            </TextField>
           </Grid>
 
           <Grid size={{xs:12}}>
