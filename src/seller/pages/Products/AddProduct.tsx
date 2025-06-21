@@ -169,7 +169,7 @@
 // export default AddProduct
 
 import { AddPhotoAlternate, Close } from '@mui/icons-material';
-import { CircularProgress, Grid, IconButton, TextField, Button, Snackbar, MenuItem } from '@mui/material';
+import { CircularProgress, Grid, IconButton, TextField, Button, Snackbar, MenuItem, FormControl, InputLabel, Select } from '@mui/material';
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup';
 import React, { useState } from 'react';
@@ -182,6 +182,7 @@ import { menLevelThree } from '../../../data/category/level three/menLevelThree'
 import { womenLevelThree } from '../../../data/category/level three/womenLevelThree';
 import { furnitureLevelThree } from '../../../data/category/level three/furnitureLevelThree';
 import { electronicsLevelThree } from '../../../data/category/level three/electronicsLevelThree';
+import { colors } from '../../../data/Filter/color';
 
 const categorytwo:{[key: string]: any[]} = {
   men: menLevelTwo,
@@ -382,7 +383,7 @@ const AddProduct = () => {
             />
           </Grid>
 
-          <Grid size={{xs:12, sm:6}}>
+          {/* <Grid size={{xs:12, sm:6}}>
             <TextField
               fullWidth
               id='color'
@@ -394,7 +395,38 @@ const AddProduct = () => {
               helperText={formik.touched.color && formik.errors.color}
               required
             />
-          </Grid>
+          </Grid> */}
+<Grid size={{ xs: 12, sm: 6 }}>
+  <FormControl
+    fullWidth
+    error={formik.touched.color && Boolean(formik.errors.color)}
+    required
+  >
+    <InputLabel id='color-label'>Color</InputLabel>
+    <Select 
+      labelId='color-label'
+      id='color'
+      name='color'
+      value={formik.values.color}
+      onChange={formik.handleChange}
+      label="Color"
+    >
+      <MenuItem value=""><em>None</em></MenuItem>
+      {colors.map((color, index) => (
+        <MenuItem key={index} value={color.name}>
+          <div className='flex gap-3'>
+            <span 
+              style={{ backgroundColor: color.hex }} 
+              className={`h-5 w-5 rounded-full ${color.name === 'white' ? 'border' : ''}`}
+            ></span>
+            {color.name} {/* Optional: Display the name of the color */}
+          </div>
+        </MenuItem>
+      ))}
+    </Select>
+  </FormControl>
+</Grid>
+
 
           <Grid size={{xs:12, sm:6}}>
             <TextField
