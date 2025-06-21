@@ -228,6 +228,10 @@ const AddProduct = () => {
       sellingPrice: Yup.number().required('Selling Price is required').positive('Must be a positive number'),
       quantity: Yup.number().required('Quantity is required').integer('Must be an integer').positive('Must be a positive number'),
       color: Yup.string().required('Color is required'),
+      category: Yup.string().required('Category is required'),
+      category2: Yup.string().required('Subcategory is required'),
+      category3: Yup.string().required('Sub-subcategory is required'),
+      sizes: Yup.string().required('Size is required'),
     }),
     onSubmit: (values) => {
       console.log("Form Values", values);
