@@ -169,7 +169,7 @@
 // export default AddProduct
 
 import { AddPhotoAlternate, Close } from '@mui/icons-material';
-import { CircularProgress, Grid, IconButton, TextField, Button, Snackbar, MenuItem, FormControl, InputLabel, Select } from '@mui/material';
+import { CircularProgress, Grid, IconButton, TextField, Button, Snackbar, MenuItem, FormControl, InputLabel, Select, FormHelperText } from '@mui/material';
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup';
 import React, { useState } from 'react';
@@ -424,6 +424,8 @@ const AddProduct = () => {
         </MenuItem>
       ))}
     </Select>
+    {formik.touched.color && formik.errors.color && (
+      <FormHelperText>{formik.errors.color}</FormHelperText>)}
   </FormControl>
 </Grid>
 
