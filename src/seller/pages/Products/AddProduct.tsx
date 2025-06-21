@@ -201,6 +201,8 @@ const categorythree: { [key: string]: any[] } = {
   electronics: electronicsLevelThree,
 };
 
+const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+
 const AddProduct = () => {
   const [uploadImage, setUploadingImage] = useState(false);
   const [snackbar, setSnackbar] = useState(false);
