@@ -1,4 +1,4 @@
-import { LocalizationProvider } from '@mui/x-date-pickers'
+import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers'
 import { Dayjs } from 'dayjs'
 import { useFormik } from 'formik'
 import React from 'react'
@@ -73,6 +73,45 @@ const AddNewCouponForm = () => {
             />
 
             </Grid>
+            <Grid size={{xs:12,sm:6}}>
+
+                <DatePicker
+                  sx={{ width: '100%' }}
+                  label="Validity Start Date"
+                  name="validityStartDate"
+                  value={formik.values.validityStartDate}
+                  onChange={(value) => formik.setFieldValue('validityStartDate', value)}
+                />
+
+            </Grid>
+
+            <Grid size={{xs:12,sm:6}}>
+
+                <DatePicker
+                  sx={{ width: '100%' }}
+                  label="Validity End Date"
+                  name="validityEndDate"
+                  value={formik.values.validityEndDate}
+                  onChange={(value) => formik.setFieldValue('validityEndDate', value)}
+                />
+                </Grid>
+
+                <Grid size={{xs:12,sm:6}}>
+
+              <TextField
+              fullWidth
+              label="Minumum Order Value"
+              name="minimumOrderValue"
+              value={formik.values.minimumOrderValue}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.minimumOrderValue && Boolean(formik.errors.minimumOrderValue)}
+              helperText={formik.touched.minimumOrderValue && formik.errors.minimumOrderValue}
+              required
+            />
+
+            </Grid>
+
           </Grid>
 
         </Box>
