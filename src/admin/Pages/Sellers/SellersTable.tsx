@@ -1,4 +1,4 @@
-import { FormControl, InputLabel, MenuItem, Paper, Select, styled, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow } from '@mui/material'
+import { Button, FormControl, InputLabel, MenuItem, Paper, Select, styled, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow } from '@mui/material'
 import { title } from 'process'
 import React, { useState } from 'react'
 
@@ -103,11 +103,13 @@ const SellersTable = () => {
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Order Id</StyledTableCell>
-            <StyledTableCell>Products</StyledTableCell>
-            <StyledTableCell align="right">Shiping Address</StyledTableCell>
-            <StyledTableCell align="right">Order Status</StyledTableCell>
-            <StyledTableCell align="right">Update</StyledTableCell>
+            <StyledTableCell>Seller Name</StyledTableCell>
+            <StyledTableCell>Email</StyledTableCell>
+            <StyledTableCell align="right">Mobile</StyledTableCell>
+            <StyledTableCell align="right">GSTIN</StyledTableCell>
+            <StyledTableCell align="right">Business Name</StyledTableCell>
+            <StyledTableCell align="right">Account Status</StyledTableCell>
+            <StyledTableCell align="right">Change Status</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -120,6 +122,10 @@ const SellersTable = () => {
               <StyledTableCell align="right">{row.fat}</StyledTableCell>
               <StyledTableCell align="right">{row.carbs}</StyledTableCell>
               <StyledTableCell align="right">{row.protein}</StyledTableCell>
+              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
+              <StyledTableCell align="right">
+                <Button>Change</Button>
+              </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
