@@ -17,7 +17,7 @@ const Deal = () => {
       <div className='flex gap-4'>
         {tabs.map((item) => <Button onClick={()=>setActiveTab(item)} variant={activeTab==item?"contained":"outlined"}>{item}</Button>)}
       </div>
-      <div className=''>
+      <div className='mt-5'>
         {activeTab == "Deals" ? (<DealTable/>) : activeTab == "Category" ? (
           <DealCategoryTable/>):(
             <div>
