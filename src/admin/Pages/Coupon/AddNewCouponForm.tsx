@@ -3,7 +3,7 @@ import { Dayjs } from 'dayjs'
 import { useFormik } from 'formik'
 import React from 'react'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { Box, Grid, TextField } from '@mui/material';
+import { Box, Button, Grid, TextField } from '@mui/material';
 
 interface CouponFormValues {
   code: string,
@@ -37,9 +37,12 @@ const AddNewCouponForm = () => {
 
   return (
     <div>
+      <h1 className='text-2xl font-bold text-primary-color pb-5 text-center'>
+        Create New Coupon
+      </h1>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
 
-        <Box component={"form"} onSubmit={formik.handleSubmit} sx={{ maxWidth: 600, margin: 'auto', padding: 2 }}>
+        <Box component={"form"} onSubmit={formik.handleSubmit} sx={{ mt:3 }}>
 
           <Grid container spacing={2}>
             <Grid size={{xs:12,sm:6}}>
@@ -110,6 +113,12 @@ const AddNewCouponForm = () => {
               required
             />
 
+            </Grid>
+
+            <Grid size={{xs:12}}>
+              <Button variant='contained' fullWidth sx={{py:".8rem"}}>
+                Create Coupon
+              </Button>
             </Grid>
 
           </Grid>
