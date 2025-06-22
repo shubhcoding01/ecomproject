@@ -1,5 +1,14 @@
+import { Dayjs } from 'dayjs'
 import { useFormik } from 'formik'
 import React from 'react'
+
+interface CouponFormValues {
+  code: string,
+  discountPercentage: number,
+  validityStartDate: Dayjs | null,
+  validityEndDate: Dayjs | null,
+  minimumOrderValue: number 
+}
 
 const AddNewCouponForm = () => {
 
