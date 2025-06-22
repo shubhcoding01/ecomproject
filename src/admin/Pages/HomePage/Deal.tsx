@@ -12,7 +12,7 @@ const Deal = () => {
   return (
     <div>
       <div className='flex gap-4'>
-        {tabs.map((item) => <Button variant={activeTab==item?"contained":"outlined"}>{item}</Button>)}
+        {tabs.map((item) => <Button onClick={()=>setActiveTab(item)} variant={activeTab==item?"contained":"outlined"}>{item}</Button>)}
       </div>
       <div className=''></div>
     </div>
