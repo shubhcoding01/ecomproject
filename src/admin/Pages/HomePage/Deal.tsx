@@ -20,7 +20,7 @@ const Deal = () => {
       <div className='mt-5'>
         {activeTab == "Deals" ? (<DealTable/>) : activeTab == "Category" ? (
           <DealCategoryTable/>):(
-            <div>
+            <div className='mt-5 flex flex-col justify-center items-center h-[70vh]'>
               <CreateDealForm/>
             </div>
           )}
