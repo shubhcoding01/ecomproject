@@ -1,3 +1,4 @@
+import { Delete } from '@mui/icons-material';
 import { Button, FormControl, InputLabel, MenuItem, Paper, Select, styled, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow } from '@mui/material'
 import { title } from 'process'
 import React, { useState } from 'react'
@@ -81,35 +82,19 @@ const Coupon = () => {
     }
   return (
     <>
-    <div className='pb-5 w-60'>
-        <FormControl fullWidth>
-  <InputLabel id="demo-simple-select-label">Age</InputLabel>
-  <Select
-    labelId="demo-simple-select-label"
-    id="demo-simple-select"
-    value={accountStatus}
-    label="Account Status"
-    onChange={handleChange}
-  >
-    {accountStatusOptions.map((item)=> <MenuItem value={item.status}>{item.title}</MenuItem>)}
-    
-  </Select>
-</FormControl>
-    </div>
-    
-    
+     
 
      <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Seller Name</StyledTableCell>
-            <StyledTableCell>Email</StyledTableCell>
-            <StyledTableCell align="right">Mobile</StyledTableCell>
-            <StyledTableCell align="right">GSTIN</StyledTableCell>
-            <StyledTableCell align="right">Business Name</StyledTableCell>
-            <StyledTableCell align="right">Account Status</StyledTableCell>
-            <StyledTableCell align="right">Change Status</StyledTableCell>
+            <StyledTableCell>Coupon Code</StyledTableCell>
+            <StyledTableCell>Start Date</StyledTableCell>
+            <StyledTableCell>End Date</StyledTableCell>
+            <StyledTableCell align="right">Minimun Order Value</StyledTableCell>
+            <StyledTableCell align="right">Discount</StyledTableCell>
+            <StyledTableCell align="right">Delete</StyledTableCell>
+            
           </TableRow>
         </TableHead>
         <TableBody>
@@ -122,9 +107,10 @@ const Coupon = () => {
               <StyledTableCell align="right">{row.fat}</StyledTableCell>
               <StyledTableCell align="right">{row.carbs}</StyledTableCell>
               <StyledTableCell align="right">{row.protein}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
               <StyledTableCell align="right">
-                <Button>Change</Button>
+                <Button>
+                  <Delete/>
+                  </Button>
               </StyledTableCell>
             </StyledTableRow>
           ))}
