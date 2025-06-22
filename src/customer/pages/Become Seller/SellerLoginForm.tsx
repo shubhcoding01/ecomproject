@@ -68,8 +68,13 @@ import React from 'react';
 import { useFormik } from 'formik';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
+import { useAppDispatch } from '../../../State/Store';
+import { send } from 'process';
+import { sendLoginSignupOtp, signin } from '../../../State/AuthSlice';
+import { sellerLogin } from '../../../State/seller/sellerSliceAuth';
 
 const SellerLoginForm = () => {
+  const dispatch  = useAppDispatch();
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -77,8 +82,17 @@ const SellerLoginForm = () => {
     },
     onSubmit: (values) => {
       console.log("Login values:", values);
+      dispatch(sellerLogin(values));
     },
   });
+
+  const handleSendOtp = () =>{
+    dispatch(sendLoginSignupOtp({email:formik.values.email}))
+  }
+
+  const handleLogin = () => {
+    // dispatch(signin)
+  }
 
   return (
     <Box className="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow-md font-sans">
@@ -128,14 +142,26 @@ const SellerLoginForm = () => {
           />
         </div>}
 
-        <Button
+            <Button
+          onClick={handleSendOtp}
           fullWidth
           type="submit"
           variant="contained"
           color="primary"
           className="rounded-md"
         >
-          Submit
+          Send Otp
+        </Button>
+
+        <Button
+        onClick={()=>formik.handleSubmit()}
+          fullWidth
+          type="submit"
+          variant="contained"
+          color="primary"
+          className="rounded-md"
+        >
+          Login
         </Button>
       </form>
     </Box>
