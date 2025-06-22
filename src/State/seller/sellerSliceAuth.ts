@@ -7,7 +7,7 @@ export const sellerLogin = createAsyncThunk(
         const response = await api.post("/sellers/login",loginRequest);
         console.log("Login OTP : ", response.data);
         const jwt = response.data.jwt;
-        localStorage.setItem("sellerJwt", jwt);
+        localStorage.setItem("jwt", jwt);
     }   catch (error) {
       console.error("Error fetching seller profile:", error); 
     }

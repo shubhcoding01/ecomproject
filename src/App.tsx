@@ -13,17 +13,30 @@ import Cart from './customer/pages/Cart/Cart';
 import { Check } from '@mui/icons-material';
 import Checkout from './customer/pages/checkout/Checkout';
 import Account from './customer/pages/Account/Account';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import BecomeSeller from './customer/pages/Become Seller/BecomeSeller';
 import SellerDashboard from './seller/pages/SellerDashboard/SellerDashboard';
 import AdminDashboard from './admin/Pages/Dashboard/AdminDashboard';
 import { fetchProduct } from './State/fetchProduct';
+import store, { useAppDispatch, useAppSelector } from './State/Store';
+import { fetchSellerProfile } from './State/seller/sellerSlice';
 
 
 function App() {
+  const dispatch = useAppDispatch();
+  const {seller} = useAppSelector(store =>store)
+  const navigate = useNavigate();
   useEffect(() => {
-    fetchProduct()
+    dispatch(fetchSellerProfile(localStorage.getItem('jwt') || ''));
+    // fetchProduct()
   }, []);
+
+  useEffect(() => {
+    if (seller.profle) {
+      navigate('/seller');
+    }
+  }, [seller.profle]);
+
   return (
     
       
