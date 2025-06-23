@@ -585,6 +585,9 @@ import { furnitureLevelThree } from '../../../data/category/level three/furnitur
 import { electronicsLevelThree } from '../../../data/category/level three/electronicsLevelThree';
 import { colors } from '../../../data/Filter/color';
 import { mainCategory } from '../../../data/category/mainCategory';
+import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../../State/Store';
+import { createProduct } from '../../../State/seller/sellerProductSlice';
 
 const categorytwo: Record<string, string[]> = {
   men: menLevelTwo.map((i) => i.name),
@@ -609,6 +612,8 @@ const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
 const AddProduct = () => {
   const [uploadImage, setUploadingImage] = useState(false);
   const [snackbar, setSnackbar] = useState(false);
+
+  const dispatch = useAppDispatch();
 
   const formik = useFormik({
     initialValues: {
@@ -638,6 +643,7 @@ const AddProduct = () => {
     }),
     onSubmit: (values) => {
       console.log('Form Values', values);
+      dispatch(createProduct({request:values,jwt:localStorage.getItem('jwt')}));
       setSnackbar(true);
     }
   });
@@ -776,7 +782,7 @@ const AddProduct = () => {
             <InputLabel id="category3-label">Sub-subcategory</InputLabel>
             <Select labelId="category3-label" id="category3" name="category3" value={formik.values.category3}
               onChange={formik.handleChange}>
-              {categorythree[formik.values.category2]?.map((item) => (
+              {categorythree[formik.values.category]?.map((item) => (
                 <MenuItem key={item} value={item}>{item}</MenuItem>
               ))}
             </Select>
