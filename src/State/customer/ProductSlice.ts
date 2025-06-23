@@ -1,5 +1,7 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { api } from "../../config/Api";
+import { Product } from "../../types/ProductTypes";
+import { create } from "domain";
 
 const API_URL = "http://localhost:5454/";
  export const fetchProductById = createAsyncThunk(
@@ -62,3 +64,67 @@ const API_URL = "http://localhost:5454/";
     }
 );
 
+interface ProductState {
+    product: Product | null;
+    products: Product[] | null;
+    totalPages: number;
+    loading: boolean;
+    error: string | null;
+    searchProducts: Product[] | null;
+}
+
+const initialState: ProductState = {
+    product: null,
+    products: null,
+    totalPages: 1,
+    loading: false,
+    error: null,
+    searchProducts: [],
+};
+
+const ProductSlice = createSlice({
+    name: "products",
+    initialState,
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchProductById.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(fetchProductById.fulfilled, (state, action) => {
+                state.loading = false;
+                state.product = action.payload;
+            })
+            .addCase(fetchProductById.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload as string;
+            })
+            .addCase(searchProduct.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(searchProduct.fulfilled, (state, action) => {
+                state.loading = false;
+                state.searchProducts = action.payload;
+            })
+            .addCase(searchProduct.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload as string;
+            })
+            .addCase(fetchAllProducts.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(fetchAllProducts.fulfilled, (state, action) => {
+                state.loading = false;
+                state.products = action.payload.products;
+                state.totalPages = action.payload.totalPages || 1; // Ensure totalPages is set correctly
+            })
+            .addCase(fetchAllProducts.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload as string;
+            });
+    }
+});
+export default ProductSlice.reducer;
