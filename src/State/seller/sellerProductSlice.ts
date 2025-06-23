@@ -82,3 +82,5 @@ const sellerProductSlice = createSlice({
             });
     },
     });
+
+    export default sellerProductSlice.reducer;
