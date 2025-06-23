@@ -4,8 +4,8 @@ export interface Product {
 id: number;
 title: string;
 description: string;
-mrpPrice: number;
-sellingPrice: number;
+mrpprice: number;
+sellingprice: number;
 discountPercent: number;
 quantity: number;
 color: string;
