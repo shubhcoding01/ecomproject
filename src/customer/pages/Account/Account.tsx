@@ -56,7 +56,7 @@ const Account = () => {
                 {/* <UserDetails /> */}
                 {/* <SavedCards /> */}
                 {/* <Address /> */}
-                <Wishlist />
+                {/* <Wishlist /> */}
             </section>
         </div>
     </div>
