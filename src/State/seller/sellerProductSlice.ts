@@ -12,6 +12,9 @@ export const fetchSellerProducts = createAsyncThunk<Product[],any>(
             Authorization: `Bearer ${jwt}`,
             },
         });
+        console.log("Seller products fetched successfully:", response.data);
+         // Optionally, you can return the products
+         // to update the state in the slice.
         return response.data;
         } catch (error) {
         console.error("Error fetching seller products:", error);
@@ -31,6 +34,9 @@ export const createProduct = createAsyncThunk<Product,
             Authorization: `Bearer ${jwt}`,
             },
         });
+        console.log("Product created successfully:", response.data);
+         // Optionally, you can return the created product
+         // to update the state in the slice.
         return response.data;
         } catch (error) {
         console.error("Error creating product:", error);
