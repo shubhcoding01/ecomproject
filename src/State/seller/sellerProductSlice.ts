@@ -3,7 +3,7 @@ import { api } from "../../config/Api";
 import { Product } from "../../types/ProductTypes";
 
 export const fetchSellerProducts = createAsyncThunk<Product[],any>(
-  "/seller/fetchSellerProducts",
+  "/sellerProduct/fetchSellerProducts",
     async (jwt: string, { rejectWithValue }) => {
         try {
         const response = await api.get("/sellers/products", {
@@ -18,3 +18,22 @@ export const fetchSellerProducts = createAsyncThunk<Product[],any>(
         }
     }
 )
+
+export const createProduct = createAsyncThunk<Product,
+ { request:any,jwt: string |null}>(
+    "/sellerProduct/createProduct",
+    async (args, { rejectWithValue }) => {
+        const { request, jwt } = args;
+        try {
+        const response = await api.post("/sellers/products", request, {
+            headers: {
+            Authorization: `Bearer ${jwt}`,
+            },
+        });
+        return response.data;
+        } catch (error) {
+        console.error("Error creating product:", error);
+        return rejectWithValue(error);
+        }
+    }
+ )
