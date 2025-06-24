@@ -66,7 +66,7 @@ const API_URL = "/products";
 
 interface ProductState {
     product: Product | null;
-    products: Product[] | null;
+    products: Product[] ;
     totalPages: number;
     loading: boolean;
     error: string | null;
@@ -75,7 +75,7 @@ interface ProductState {
 
 const initialState: ProductState = {
     product: null,
-    products: null,
+    products: [],
     totalPages: 1,
     loading: false,
     error: null,
@@ -118,7 +118,7 @@ const ProductSlice = createSlice({
             })
             .addCase(fetchAllProducts.fulfilled, (state, action) => {
                 state.loading = false;
-                state.products = action.payload.products;
+                state.products = action.payload.content;
                 state.totalPages = action.payload.totalPages || 1; // Ensure totalPages is set correctly
             })
             .addCase(fetchAllProducts.rejected, (state, action) => {

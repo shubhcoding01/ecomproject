@@ -14,9 +14,10 @@ import {
   useTheme,
 } from "@mui/material";
 import { FilterAlt } from "@mui/icons-material";
-import { useAppDispatch } from "../../../State/Store";
+import { useAppDispatch, useAppSelector } from "../../../State/Store";
 import { useParams, useSearchParams } from "react-router-dom";
 import { fetchAllProducts } from "../../../State/customer/ProductSlice";
+// import { Product } from "../../../types/ProductTypes";
 
 const Product = () => {
   const theme = useTheme();
@@ -26,6 +27,7 @@ const Product = () => {
   const dispatch = useAppDispatch();
   const [searchParam, setSearchParam] = useSearchParams("");
   const {categoryId}= useParams();
+  const {product}=useAppSelector(store => store)
 
   const handleSortChange = (event: any) => {
     setSort(event.target.value);
@@ -91,7 +93,7 @@ const Product = () => {
           <Divider />
           <section className="products_section grid sm:grid-cols-2 
           md:grid-cols-3 lg:grid-cols-4  gap-y-5 px-5 justify-center">
-            {[1,1,1,1,1,,1,1,1,1,1,1,1,1].map((item)=><ProductCard />)}
+            {product.products.map((item)=><ProductCard item={item}/>)}
           </section>
           <div className="flex justify-center py-10">
                 <Pagination 

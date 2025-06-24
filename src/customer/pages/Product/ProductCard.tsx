@@ -4,16 +4,17 @@ import { Button } from '@mui/material';
 import { Favorite, ModeComment } from '@mui/icons-material';
 import { pink, teal } from '@mui/material/colors';
 import { dark } from '@mui/material/styles/createPalette';
+import { Product } from '../../../types/ProductTypes';
 
-const images = [
-        "https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg",
-        "https://m.media-amazon.com/images/I/61XSVitox-L._SY741_.jpg",
-        "https://m.media-amazon.com/images/I/51P1YW2yAGL._SY741_.jpg",
-        "https://m.media-amazon.com/images/I/61OgwPCLMsL._SY741_.jpg",
-        "https://m.media-amazon.com/images/I/61U0B7tRy+L._SY741_.jpg"
-    ];
+// const images = [
+//         "https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg",
+//         "https://m.media-amazon.com/images/I/61XSVitox-L._SY741_.jpg",
+//         "https://m.media-amazon.com/images/I/51P1YW2yAGL._SY741_.jpg",
+//         "https://m.media-amazon.com/images/I/61OgwPCLMsL._SY741_.jpg",
+//         "https://m.media-amazon.com/images/I/61U0B7tRy+L._SY741_.jpg"
+//     ];
 
-const ProductCard = () => {
+const ProductCard = ({item}:{item:Product}) => {
     const [currentImage, setCurrentImage] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
     // const intervalRef = useRef<any>(null);
@@ -26,7 +27,7 @@ const ProductCard = () => {
         {
             interval = setInterval(() => 
             {
-                setCurrentImage((prev) => (prev + 1) % images.length);
+                setCurrentImage((prev) => (prev + 1) % item.images.length);
             }, 1000); 
         }
             else if(interval) 
@@ -44,7 +45,7 @@ const ProductCard = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
 
-                {images.map((item,index) => <img 
+                {item.images.map((item,index) => <img 
                 className='card-media object-top'
                     src={item}
                     alt=""
