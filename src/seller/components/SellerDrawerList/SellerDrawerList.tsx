@@ -64,7 +64,8 @@ const menu2 = [
     name:"Logout",
     path:"/",
     icon:<Logout className='text-primary-color'/>,
-    activeIcon:<Logout className='text-white'/>
+    activeIcon:<Logout className='text-white'/>,
+    logout: true // ✅ added
   },
 ]
 

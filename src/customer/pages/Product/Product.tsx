@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FilterSection from "./FilterSection";
 import ProductCard from "./ProductCard";
 import {
@@ -14,12 +14,19 @@ import {
   useTheme,
 } from "@mui/material";
 import { FilterAlt } from "@mui/icons-material";
+import { useAppDispatch } from "../../../State/Store";
+import { useParams, useSearchParams } from "react-router-dom";
+import { fetchAllProducts } from "../../../State/customer/ProductSlice";
 
 const Product = () => {
   const theme = useTheme();
   const isLarge = useMediaQuery(theme.breakpoints.up("lg"));
   const [sort, setSort] = useState();
   const [page,setPage]=useState(1);
+  const dispatch = useAppDispatch();
+  const [searchParam, setSearchParam] = useSearchParams("");
+  const {categoryId}= useParams();
+
   const handleSortChange = (event: any) => {
     setSort(event.target.value);
   };
@@ -27,6 +34,14 @@ const Product = () => {
   const handlePageChange = (value:number) => {
     setPage(value)
   }
+
+  useEffect(() => {
+    const [minPrice, maxPrice] = searchParam.get("price")?.split("-") || [];
+    // Fetch products based on sort and page
+    dispatch(fetchAllProducts({ categoryId }));
+  }
+  , [categoryId]);
+
   return (
     <div className="-z-10 mt-10">
       <div>

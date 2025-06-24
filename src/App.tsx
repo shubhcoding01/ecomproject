@@ -26,16 +26,47 @@ function App() {
   const dispatch = useAppDispatch();
   const {seller} = useAppSelector(store =>store)
   const navigate = useNavigate();
+
+//   useEffect(() => {
+//   const jwt = localStorage.getItem("jwt");
+//   if (jwt) {
+//     dispatch(fetchSellerProfile(jwt));
+//   }
+// }, []);
+
+// useEffect(() => {
+//   if (seller.profle) {
+//     navigate("/seller");
+//   }
+// }, [seller.profle]);
+
+// useEffect(() => {
+//   const jwt = localStorage.getItem("jwt");
+//   if (!jwt && window.location.pathname.startsWith("/seller")) {
+//     navigate("/");
+//   }
+// }, []);
+
+
+
   useEffect(() => {
     dispatch(fetchSellerProfile(localStorage.getItem('jwt') || ''));
     // fetchProduct()
   }, []);
 
-  useEffect(() => {
-    if (seller.profle) {
-      navigate('/seller');
-    }
-  }, [seller.profle]);
+//   useEffect(() => {
+//   const jwt = localStorage.getItem("jwt");
+//   if (jwt) {
+//     dispatch(fetchSellerProfile(jwt));
+//   }
+// }, []);
+
+
+  // useEffect(() => {
+  //   if (seller.profle) {
+  //     navigate('/seller');
+  //   }
+  // }, [seller.profle]);
 
   return (
     

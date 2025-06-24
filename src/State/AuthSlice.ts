@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { api } from "../config/Api";
+// import { resetSeller } from "./seller/sellerSlice";
 
 
 export const sendLoginSignupOtp = createAsyncThunk(
@@ -23,3 +24,29 @@ export const signin = createAsyncThunk(
     }
 }
 )
+
+export const logout = createAsyncThunk<any,any>(
+  "seller/logout",async(navigate, {rejectWithValue}) => {
+    try{
+        localStorage.clear();
+        console.log("Logout Success: ");
+        navigate("/");
+    }   catch (error) {
+      console.error("Error Logout", error); 
+    }
+}
+)
+
+// export const logout = createAsyncThunk<any, any>(
+//   "seller/logout",
+//   async (navigate, { dispatch }) => {
+//     try {
+//       localStorage.clear();
+//       dispatch(resetSeller());  // Clear redux seller state
+//       navigate("/");
+//     } catch (error) {
+//       console.error("Error Logout", error);
+//     }
+//   }
+// );
+

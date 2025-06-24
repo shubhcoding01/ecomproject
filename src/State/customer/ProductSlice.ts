@@ -3,9 +3,9 @@ import { api } from "../../config/Api";
 import { Product } from "../../types/ProductTypes";
 import { create } from "domain";
 
-const API_URL = "http://localhost:5454/";
+const API_URL = "/products";
  export const fetchProductById = createAsyncThunk(
-    "product/fetchProductById", async (productId,{rejectWithValue}) => {
+    "products/fetchProductById", async (productId,{rejectWithValue}) => {
         try {
             const response = await api.get(`${API_URL}/${productId}`);
             
@@ -20,7 +20,7 @@ const API_URL = "http://localhost:5454/";
 );
 
  export const searchProduct = createAsyncThunk(
-    "product/searchProduct", 
+    "products/searchProduct", 
     async (query, {rejectWithValue}) => {
         try {
             const response = await api.get(`${API_URL}/search`, {
@@ -40,7 +40,7 @@ const API_URL = "http://localhost:5454/";
 );
 
  export const fetchAllProducts = createAsyncThunk<any,any>(
-    "product/fetchAllProducts", 
+    "products/fetchAllProducts", 
     async (params,{rejectWithValue}) => {
         try {
             const response = await api.get(`${API_URL}`,

@@ -5,9 +5,12 @@ import { Button, Divider } from "@mui/material";
 import { Add, AddShoppingCart, FavoriteBorder, LocalShipping, Remove, Shield, Wallet, WorkspacePremium } from "@mui/icons-material";
 import SimilarProduct from "./SimilarProduct";
 import ReviewCard from "../Review/ReviewCard";
+import { useAppDispatch } from "../../../State/Store";
 
 const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
+  const dispatch = useAppDispatch();
+  
   const images = [
     "https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg",
     "https://m.media-amazon.com/images/I/61XSVitox-L._SY741_.jpg",

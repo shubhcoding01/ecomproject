@@ -37,10 +37,18 @@ const initialState:SellerState={
   error: null,
 }
 
+
+
 const sellerSlice=createSlice({
   name: "sellers",
   initialState,
-  reducers: {},
+  reducers: {
+  //  clearSellerProfile: (state) => {
+  //     state.profle = null;
+  //     state.loading = false;
+  //     state.error = null;
+    // },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchSellerProfile.pending, (state) => {
       state.loading = true;
@@ -59,4 +67,8 @@ const sellerSlice=createSlice({
   },
 });
 
+
 export default sellerSlice.reducer;
+
+// export const { clearSellerProfile } = sellerSlice.actions;
+// export const { resetSeller } = sellerSlice.actions;

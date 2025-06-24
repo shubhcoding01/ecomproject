@@ -116,6 +116,26 @@ public class SellerController {
         return new ResponseEntity<>(seller, HttpStatus.OK);
     }
 
+//    @GetMapping("/profile")
+//    public ResponseEntity<Seller> getSellerByJwt(
+//            @RequestHeader(value = "Authorization", required = false) String jwt) throws Exception {
+//
+//        if (jwt == null || !jwt.startsWith("Bearer ")) {
+//            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+//        }
+//
+//        String token = jwt.substring(7); // remove "Bearer "
+//
+//        Seller seller = sellerService.getSellerProfile(token);
+//
+//        if (seller == null) {
+//            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+//        }
+//
+//        return new ResponseEntity<>(seller, HttpStatus.OK);
+//    }
+
+
     @GetMapping("/report")
     public ResponseEntity<SellerReport> getSellerReport(
             @RequestHeader("Authorization") String jwt) throws Exception {
