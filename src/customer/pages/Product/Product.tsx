@@ -51,7 +51,8 @@ const Product = () => {
           className="text-3xl text-center font-bold text-gray-600 pb-5 px-9
             uppercase space-x-2"
         >
-          Women Saree
+          <span className="text-primary-color">Products</span>
+          <span className="text-gray-700 font-serif">List</span>
         </h1>
       </div>
 
