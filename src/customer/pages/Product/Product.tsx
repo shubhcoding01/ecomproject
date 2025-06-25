@@ -40,9 +40,26 @@ const Product = () => {
   useEffect(() => {
     const [minPrice, maxPrice] = searchParam.get("price")?.split("-") || [];
     // Fetch products based on sort and page
+
+    const color = searchParam.get("color") || "";
+    const size = searchParam.get("size") || "";
+    const minDiscount= searchParam.get("discount") ?Number(searchParam.get("discount")) : 0;
+
+    const pageNumber = page - 1; 
+
+    const newFilter = {
+      color: color,
+      size: size,
+      minPrice: minPrice ? Number(minPrice) : undefined,
+      maxPrice: maxPrice ? Number(maxPrice) : undefined,
+      minDiscount,
+      pageNumber,
+      category: categoryId ,
+    }
+    dispatch(fetchAllProducts(newFilter));
     dispatch(fetchAllProducts({ categoryId }));
   }
-  , [categoryId]);
+  , [categoryId,searchParam]);
 
   return (
     <div className="-z-10 mt-10">
