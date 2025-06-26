@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import './ProductCard.css'; // Assuming you have a CSS file for styling
 import { Button } from '@mui/material';
 import { Favorite, ModeComment } from '@mui/icons-material';
 import { pink, teal } from '@mui/material/colors';
 import { dark } from '@mui/material/styles/createPalette';
 import { Product } from '../../../types/ProductTypes';
+import { useNavigate } from 'react-router-dom';
 
 // const images = [
 //         "https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg",
@@ -17,6 +18,7 @@ import { Product } from '../../../types/ProductTypes';
 const ProductCard = ({item}:{item:Product}) => {
     const [currentImage, setCurrentImage] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
+    const navigate = useNavigate();
     // const intervalRef = useRef<any>(null);
 
     useEffect(() => {
@@ -40,7 +42,7 @@ const ProductCard = ({item}:{item:Product}) => {
 
   return (
     <>
-        <div className="group px-4 relative">
+        <div onClick={()=>navigate(`/product-details/${item.category?.categoryId}/${item.title}/${item.id}`)} className="group px-4 relative">
             <div className='card'
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
