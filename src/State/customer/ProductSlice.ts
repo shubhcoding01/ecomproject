@@ -26,7 +26,7 @@ const API_URL = "/products";
             const response = await api.get(`${API_URL}/search`, {
                 params: { 
                      query 
-                    }
+                    },
                 });
             
             const data = response.data;
@@ -69,7 +69,7 @@ interface ProductState {
     products: Product[] ;
     totalPages: number;
     loading: boolean;
-    error: string | null;
+    error: string | null | undefined;
     searchProducts: Product[] | null;
 }
 

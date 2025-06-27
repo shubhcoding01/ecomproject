@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StarIcon from "@mui/icons-material/Star";
 import { teal } from "@mui/material/colors";
 import { Button, Divider } from "@mui/material";
@@ -6,11 +6,18 @@ import { Add, AddShoppingCart, FavoriteBorder, LocalShipping, Remove, Shield, Wa
 import SimilarProduct from "./SimilarProduct";
 import ReviewCard from "../Review/ReviewCard";
 import { useAppDispatch } from "../../../State/Store";
+import { useParams } from "react-router-dom";
+import { fetchProductById } from "../../../State/customer/ProductSlice";
 
 const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const dispatch = useAppDispatch();
+  const {productId} = useParams();
   
+  useEffect(()=>{
+    dispatch(fetchProductById(Number(productId)))
+  },[productId])
+
   const images = [
     "https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg",
     "https://m.media-amazon.com/images/I/61XSVitox-L._SY741_.jpg",
