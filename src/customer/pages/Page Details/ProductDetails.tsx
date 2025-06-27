@@ -14,9 +14,9 @@ const ProductDetails = () => {
   const dispatch = useAppDispatch();
   const {productId} = useParams();
   
-  useEffect(()=>{
-    dispatch(fetchProductById(Number(productId)))
-  },[productId])
+  // useEffect(()=>{
+  //   dispatch(fetchProductById(Number(productId)))
+  // },[productId])
 
   const images = [
     "https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg",

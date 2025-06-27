@@ -70,7 +70,7 @@ interface ProductState {
     totalPages: number;
     loading: boolean;
     error: string | null | undefined;
-    searchProducts: Product[] | null;
+    searchProduct: Product[];
 }
 
 const initialState: ProductState = {
@@ -79,7 +79,7 @@ const initialState: ProductState = {
     totalPages: 1,
     loading: false,
     error: null,
-    searchProducts: [],
+    searchProduct: [],
 };
 
 const ProductSlice = createSlice({
@@ -106,7 +106,7 @@ const ProductSlice = createSlice({
             })
             .addCase(searchProduct.fulfilled, (state, action) => {
                 state.loading = false;
-                state.searchProducts = action.payload;
+                state.searchProduct = action.payload;
             })
             .addCase(searchProduct.rejected, (state, action) => {
                 state.loading = false;
