@@ -26,7 +26,7 @@ export const signin = createAsyncThunk(
 )
 
 export const logout = createAsyncThunk<any,any>(
-  "seller/logout",async(navigate, {rejectWithValue}) => {
+  "/auth/logout",async(navigate, {rejectWithValue}) => {
     try{
         localStorage.clear();
         console.log("Logout Success: ");
@@ -37,16 +37,5 @@ export const logout = createAsyncThunk<any,any>(
 }
 )
 
-// export const logout = createAsyncThunk<any, any>(
-//   "seller/logout",
-//   async (navigate, { dispatch }) => {
-//     try {
-//       localStorage.clear();
-//       dispatch(resetSeller());  // Clear redux seller state
-//       navigate("/");
-//     } catch (error) {
-//       console.error("Error Logout", error);
-//     }
-//   }
-// );
+
 
