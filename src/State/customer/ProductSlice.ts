@@ -69,7 +69,7 @@ interface ProductState {
     products: Product[] ;
     totalPages: number;
     loading: boolean;
-    error: string | null | undefined;
+    error: string | null | undefined | any;
     searchProduct: Product[];
 }
 
@@ -90,7 +90,7 @@ const ProductSlice = createSlice({
         builder
             .addCase(fetchProductById.pending, (state) => {
                 state.loading = true;
-                state.error = null;
+                
             })
             .addCase(fetchProductById.fulfilled, (state, action) => {
                 state.loading = false;
@@ -102,7 +102,7 @@ const ProductSlice = createSlice({
             })
             .addCase(searchProduct.pending, (state) => {
                 state.loading = true;
-                state.error = null;
+                
             })
             .addCase(searchProduct.fulfilled, (state, action) => {
                 state.loading = false;
@@ -110,16 +110,16 @@ const ProductSlice = createSlice({
             })
             .addCase(searchProduct.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload as string;
+                state.error = action.payload ;
             })
             .addCase(fetchAllProducts.pending, (state) => {
                 state.loading = true;
-                state.error = null;
+                
             })
             .addCase(fetchAllProducts.fulfilled, (state, action) => {
                 state.loading = false;
                 state.products = action.payload.content;
-                state.totalPages = action.payload.totalPages || 1; // Ensure totalPages is set correctly
+               
             })
             .addCase(fetchAllProducts.rejected, (state, action) => {
                 state.loading = false;
