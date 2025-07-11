@@ -17,17 +17,17 @@ import { FilterAlt } from "@mui/icons-material";
 import { useAppDispatch, useAppSelector } from "../../../State/Store";
 import { useParams, useSearchParams } from "react-router-dom";
 import { fetchAllProducts } from "../../../State/customer/ProductSlice";
-// import { Product } from "../../../types/ProductTypes";
+import { Product } from "../../../types/ProductTypes";
 
-const Product = () => {
+const Products = () => {
   const theme = useTheme();
   const isLarge = useMediaQuery(theme.breakpoints.up("lg"));
-  const [sort, setSort] = useState();
+  const [sort, setSort] = useState<string>();
   const [page,setPage]=useState(1);
   const dispatch = useAppDispatch();
   const [searchParam, setSearchParam] = useSearchParams("");
-  const {categoryId}= useParams();
-  const {product}=useAppSelector(store => store)
+  const {category}= useParams();
+  const {product}=useAppSelector(store => store);
 
   const handleSortChange = (event: any) => {
     setSort(event.target.value);
@@ -48,18 +48,18 @@ const Product = () => {
     const pageNumber = page - 1; 
 
     const newFilter = {
-      color: color,
+      color: color ||"",
       size: size,
       minPrice: minPrice ? Number(minPrice) : undefined,
       maxPrice: maxPrice ? Number(maxPrice) : undefined,
       minDiscount,
       pageNumber,
-      category: categoryId ,
+      category: category,
     }
     dispatch(fetchAllProducts(newFilter));
-    dispatch(fetchAllProducts({ categoryId }));
+    dispatch(fetchAllProducts({}));
   }
-  , [categoryId,searchParam]);
+  , [category,searchParam,dispatch,page]);
 
   return (
     <div className="-z-10 mt-10">
@@ -128,4 +128,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default Products;

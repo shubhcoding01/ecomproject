@@ -25,11 +25,7 @@ const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-//   const handleLogout = () => {
-//   localStorage.removeItem("jwt");
-//   dispatch(clearSellerProfile());
-//   navigate("/"); // Redirect to home page
-// };
+
   const handleLogout = () => {
     dispatch(logout(navigate))
   };

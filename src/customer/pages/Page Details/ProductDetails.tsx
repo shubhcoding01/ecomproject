@@ -5,25 +5,33 @@ import { Button, Divider } from "@mui/material";
 import { Add, AddShoppingCart, FavoriteBorder, LocalShipping, Remove, Shield, Wallet, WorkspacePremium } from "@mui/icons-material";
 import SimilarProduct from "./SimilarProduct";
 import ReviewCard from "../Review/ReviewCard";
-import { useAppDispatch } from "../../../State/Store";
+import { useAppDispatch, useAppSelector } from "../../../State/Store";
 import { useParams } from "react-router-dom";
 import { fetchProductById } from "../../../State/customer/ProductSlice";
 
 const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const dispatch = useAppDispatch();
-  const {productId} = useParams();
+  const {productId} = useParams<{productId: string}>();
+  const {product} = useAppSelector(store => store)
+  const [activeImage, setActiveImage] = useState(0);
   
-  // useEffect(()=>{
-  //   dispatch(fetchProductById(Number(productId)))
-  // },[productId])
+  useEffect(()=>{
+    if (productId) {
+    dispatch(fetchProductById(Number(productId)))
+    }
+  },[productId, dispatch])
 
-  const images = [
-    "https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg",
-    "https://m.media-amazon.com/images/I/61XSVitox-L._SY741_.jpg",
-    "https://m.media-amazon.com/images/I/61U0B7tRy+L._SY741_.jpg",
-    "https://m.media-amazon.com/images/I/51P1YW2yAGL._SY741_.jpg",
-  ];
+  const handleActiveImage = (value:number)=>()=>{
+    setActiveImage(value)
+  }
+
+  // const images = [
+  //   "https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg",
+  //   "https://m.media-amazon.com/images/I/61XSVitox-L._SY741_.jpg",
+  //   "https://m.media-amazon.com/images/I/61U0B7tRy+L._SY741_.jpg",
+  //   "https://m.media-amazon.com/images/I/51P1YW2yAGL._SY741_.jpg",
+  // ];
   return (
     <div className="px-5 lg:px-20 pt-20">
 
@@ -33,27 +41,33 @@ const ProductDetails = () => {
             {/* {[1,1,1,1].map((item)=><img 
               className='lg:w-full w-[50px] cursor-pointer rounded-md'
               src='https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg' alt=''/>)} */}
-            {images.map((item, i) => (
-              <img
-                key={i}
+            {product.product?.images.map((item,index) => (
+              <img 
+                onClick={handleActiveImage(index)}
                 className="lg:w-full w-[50px] cursor-pointer rounded-md"
                 src={item}
-                alt={`Product thumbnail ${i + 1}`}
+                alt=""
               />
             ))}
           </div>
           <div className="w-full lg:w-[85%]">
             <img
               className="w-full rounded-md"
-              src="https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg"
+              // src="https://m.media-amazon.com/images/I/61HS4sTDnPL._SY741_.jpg"
+              src={product.product?.images[activeImage]}
               alt=""
             />
           </div>
         </section>
 
         <section>
-          <h1 className="font-bold text-lg text-primary-color">R Clothing</h1>
-          <p className="text-gray-600 font-bold a-size-large">Men's Irregular Geometric Pattern and Alphabet Print Sports Collar Tshirt (Rizim Temu Print Polo-Blue)</p>
+          <h1 className="font-bold text-lg text-primary-color">
+            {/* R Clothing */}{product.product?.seller?.businessDetails.businessName}
+            </h1>
+          <p className="text-gray-600 font-bold a-size-large">
+            {/* Men's Irregular Geometric Pattern and Alphabet Print Sports Collar Tshirt (Rizim Temu Print Polo-Blue) */}
+            {product.product?.title}
+            </p>
           <div className="flex justify-between items-center py-2 border w-[180px] px-3 mt-5">
             <div className="flex gap-1 items-center">
               <span>4</span>
@@ -64,9 +78,17 @@ const ProductDetails = () => {
           </div>
           <div>
             <div className="price flex items-center gap-3 mt-5 text-2xl">
-            <span className="font-sans text-gray-800">₹ 400</span>
-            <span className="line-through text-gray-400">₹ 999</span>
-            <span className="text-primary-color font-semibold">60% off</span>
+            <span className="font-sans text-gray-800">
+              {/* ₹ 400 */}
+              ₹ {product.product?.sellingprice}
+              </span>
+            <span className="line-through text-gray-400">
+              ₹ {product.product?.mrpprice}
+              {/* 999 */}
+              </span>
+            <span className="text-primary-color font-semibold">
+              {/* 60 */} {product.product?.discountPercent}
+              % off</span>
           </div>
           <p className="text-sm">Inclusive of all taxes. Free Shipping above ₹1500</p>
           </div>
@@ -100,7 +122,7 @@ const ProductDetails = () => {
                   Quantity
                 </h1>
                 <div className="flex items-center gap-2 w-[140px] justify-between">
-                    <Button disabled={quantity==1} onClick={()=>setQuantity(quantity-1)}>
+                    <Button disabled={quantity===1} onClick={()=>setQuantity(quantity-1)}>
                       <Remove/>
                     </Button>
                     <span>{quantity}</span>

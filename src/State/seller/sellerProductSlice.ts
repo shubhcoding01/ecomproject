@@ -5,7 +5,7 @@ import { create } from "domain";
 
 export const fetchSellerProducts = createAsyncThunk<Product[],any>(
   "/sellerProduct/fetchSellerProducts",
-    async (jwt: string, { rejectWithValue }) => {
+    async (jwt, { rejectWithValue }) => {
         try {
         const response = await api.get("/sellers/products", {
             headers: {
@@ -13,8 +13,7 @@ export const fetchSellerProducts = createAsyncThunk<Product[],any>(
             },
         });
         console.log("Seller products fetched successfully:", response.data);
-         // Optionally, you can return the products
-         // to update the state in the slice.
+        
         return response.data;
         } catch (error) {
         console.error("Error fetching seller products:", error);
@@ -48,7 +47,7 @@ export const createProduct = createAsyncThunk<Product,
  interface SellerProductState {
     products: Product[];
     loading: boolean;
-    error: string | null;
+    error: string | null | undefined;
 }
 
 const initialState: SellerProductState = {

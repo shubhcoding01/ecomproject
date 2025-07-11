@@ -5,7 +5,7 @@ import { create } from "domain";
 
 const API_URL = "/products";
  export const fetchProductById = createAsyncThunk(
-    "products/fetchProductById", async (productId,{rejectWithValue}) => {
+    "products/fetchProductById", async (productId:number,{rejectWithValue}) => {
         try {
             const response = await api.get(`${API_URL}/${productId}`);
             
@@ -18,6 +18,19 @@ const API_URL = "/products";
         }
     }
 );
+
+// Async thunk
+// export const fetchProductById = createAsyncThunk(
+//   'products/fetchProductById',
+//   async (productId: number, { rejectWithValue }) => {
+//     try {
+//       const response = await api.get(`/products/${productId}`);
+//       return response.data;
+//     } catch (error:any) {
+//       return rejectWithValue(error.response.data);
+//     }
+//   }
+// );
 
  export const searchProduct = createAsyncThunk(
     "products/searchProduct", 

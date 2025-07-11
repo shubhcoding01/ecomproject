@@ -3,7 +3,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import sellerSlice from "./seller/sellerSlice";
 import sellerProductSlice from "./seller/sellerProductSlice";
 import ProductSlice from "./customer/ProductSlice";
-// import { thunk } from "redux-thunk";
+import { thunk } from "redux-thunk";
 
 const rootReducer = combineReducers({
   seller:sellerSlice,
@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
 const store=configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware()// .concat(thunk),
+    getDefaultMiddleware()//.concat(thunk)
 
 });
 

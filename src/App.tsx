@@ -51,7 +51,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchSellerProfile(localStorage.getItem('jwt') || ''));
-    // fetchProduct()
+    fetchProduct()
   }, []);
 
 //   useEffect(() => {
@@ -62,11 +62,11 @@ function App() {
 // }, []);
 
 
-  // useEffect(() => {
-  //   if (seller.profle) {
-  //     navigate('/seller');
-  //   }
-  // }, [seller.profle]);
+  useEffect(() => {
+    if (seller.profle) {
+      navigate('/seller');
+    }
+  }, [seller.profle]);
 
   return (
     
@@ -94,6 +94,7 @@ function App() {
             <Route path="/become-seller" element={<BecomeSeller/>} />
             <Route path="/seller/*" element={<SellerDashboard/>} />
             <Route path="/admin/*" element={<AdminDashboard/>} />
+            {/* <Route path="/product-details/:category/:title/:productId" element={<ProductDetails />} /> */}
 
             {/* Add more routes as needed */}
           </Routes>
