@@ -1,4 +1,4 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { api } from "../config/Api";
 // import { resetSeller } from "./seller/sellerSlice";
 
@@ -14,8 +14,8 @@ export const sendLoginSignupOtp = createAsyncThunk(
 }
 )
 
-export const signin = createAsyncThunk(
-  "seller/signin",async(loginRequest:{email:string},{rejectWithValue}) => {
+export const signin = createAsyncThunk<any,any>(
+  "auth/signin",async(loginRequest:{email:string},{rejectWithValue}) => {
     try{
         const response = await api.post("/auth/signing",loginRequest);
         console.log("Login OTP : ", response.data);
@@ -27,12 +27,29 @@ export const signin = createAsyncThunk(
 }
 )
 
-export const signup = createAsyncThunk(
-  "seller/signup",async(signupRequest:{email:string},{rejectWithValue}) => {
+export const signup = createAsyncThunk<any,any>(
+  "auth/signup",async(signupRequest:{email:string},{rejectWithValue}) => {
     try{
         const response = await api.post("/auth/signup",signupRequest);
         console.log("Login OTP : ", response.data);
         localStorage.setItem("jwt", response.data.jwt);
+        return response.data.jwt;
+    }   catch (error) {
+      console.error("Error fetching seller profile:", error); 
+    }
+}
+)
+
+export const fetchUserProfile = createAsyncThunk<any,any>(
+  "/api/users/profile",async({jwt},{rejectWithValue}) => {
+    try{
+        const response = await api.post("/auth/signup",
+         { headers:{
+            Authorization: `Bearer ${jwt}`,
+          },
+          });
+        console.log("User Profile : ", response.data);
+        
         return response.data.jwt;
     }   catch (error) {
       console.error("Error fetching seller profile:", error); 
@@ -52,5 +69,50 @@ export const logout = createAsyncThunk<any,any>(
 }
 )
 
+interface AuthState {
+  jwt: string | null;
+  otpSent: boolean;
+  isLoggedIn: boolean;
+  user: any; // Adjust type as needed
+}
 
+const initialState:AuthState = {
+  jwt: localStorage.getItem("jwt") || null,
+  otpSent: false,
+  isLoggedIn: false,
+  user: null,
+};
+
+const authSlice = createSlice({
+  name:"auth",
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(sendLoginSignupOtp.fulfilled, (state, action) => {
+        state.otpSent = true;
+      })
+      .addCase(signin.fulfilled, (state, action) => {
+        state.jwt = action.payload;
+        state.isLoggedIn = true;
+      })
+      .addCase(signup.fulfilled, (state, action) => {
+        state.jwt = action.payload;
+        state.isLoggedIn = true;
+      })
+      .addCase(logout.fulfilled, (state) => {
+        state.jwt = null;
+        state.isLoggedIn = false;
+        state.user = null;
+      })
+      
+      builder.addCase(fetchUserProfile.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoggedIn = true;
+      })
+  },
+
+})
+
+export default authSlice.reducer;
 
