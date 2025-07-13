@@ -35,8 +35,13 @@
 import React from 'react';
 import ProfileFieldCard from '../../../component/ProfileFieldCard';
 import { Divider } from '@mui/material';
+import Auth from '../Auth/Auth';
+import { useAppSelector } from '../../../State/Store';
+
+
 
 const UserDetails = () => {
+      const {auth} = useAppSelector(store => store);
   return (
     <div className="flex justify-center py-10 bg-gray-100 min-h-screen">
       <div className="w-full lg:w-[70%] bg-white p-6 rounded-2xl shadow-lg space-y-6">
@@ -45,10 +50,10 @@ const UserDetails = () => {
         </div>
 
         <div className="space-y-4">
-          <ProfileFieldCard keys="Name" value="Aarav Sharma" />
-          <ProfileFieldCard keys="Email" value="aarav.sharma@mail.com" />
-          <ProfileFieldCard keys="Phone" value="+91 9876543210" />
-          <ProfileFieldCard keys="Alternate Phone" value="+91 9988776655" />
+          <ProfileFieldCard keys="Name" value={auth.user?.fullName ?? ""} />
+          <ProfileFieldCard keys="Email" value={auth.user?.email ?? ""} />
+          <ProfileFieldCard keys="Phone" value={auth.user?.mobile ?? ""}/>
+          <ProfileFieldCard keys="Alternate Phone" value={auth.user?.mobile ?? ""} />
           <ProfileFieldCard keys="Address" value="501, Green Park Apartments, Mumbai, India" />
           <ProfileFieldCard keys="Date of Birth" value="15 Aug 1994" />
           <ProfileFieldCard keys="Gender" value="Male" />
