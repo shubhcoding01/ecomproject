@@ -149,6 +149,32 @@ const cartSlice = createSlice({
             .addCase(deleteCartItem.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload as string;
-            });
+            })
+            .addCase(updateCartItem.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(updateCartItem.fulfilled, (state, action) => {
+                state.loading = false;
+                if (state.cart) {
+                    const updatedItem = action.payload.cartItems.find(item => item.id === action.payload.id);
+                    if (updatedItem) {
+                        const index = state.cart.cartItems.findIndex(item => item.id === updatedItem.id);
+                        if (index !== -1) {
+                            state.cart.cartItems[index] = updatedItem;
+                        }
+                    }
+                }
+            })
+            .addCase(updateCartItem.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload as string;
+            })
+            // .addCase(applyCoupon.fulfilled, (state, action) => {
+            //     state.loading = false;
+            //     state.cart = action.payload;
+                
+            // })
+            
     },
 });
