@@ -8,6 +8,9 @@ import UserDetails from './UserDetails'
 import SavedCards from './SavedCards'
 import Address from './Address'
 import Wishlist from './Wishlist'
+import { useAppDispatch } from '../../../State/Store'
+import { logout } from '../../../State/AuthSlice'
+import Home from '../Home/Home'
 
 const menu = [
     
@@ -18,13 +21,18 @@ const menu = [
         {name: "Wishlist", path: "/account/wishlist"},
         {name: "Payment Methods", path: "/account/payment-methods"},
         {name: "Settings", path: "/account/settings"},
-        {name: "Logout", path: "/account/logout"},
+        {name: "Logout", path: "/"},
 ]
 
 const Account = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const handleClick = (item:any) => navigate(item.path);
+    const dispatch = useAppDispatch();
+    const handleClick = (item:any) => {
+        if(item.path === "/") {
+            dispatch(logout(navigate))
+        }
+        navigate(item.path)};
   return (
     <div className='pt-10 px-5 sm:px-10 md:px-60 min-h-screen'>
         <div>
@@ -50,6 +58,7 @@ const Account = () => {
                     <Route path='/address' element={<Address />} />
                     <Route path='/saved-cards' element={<SavedCards />} />
                     <Route path='/wishlist' element={<Wishlist />} />
+                    {/* <Route path='/account/logout' element={<Home/>}/> */}
                 </Routes>
                 {/* <Orders /> */}
                 {/* <OrderDetails /> */}

@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { api } from "../config/Api";
+import { log } from "console";
+import { User } from "../types/userTypes";
 // import { resetSeller } from "./seller/sellerSlice";
 
 
@@ -50,7 +52,7 @@ export const fetchUserProfile = createAsyncThunk<any,any>(
           });
         console.log("User Profile : ", response.data);
         
-        return response.data.jwt;
+        return response.data;
     }   catch (error) {
       console.error("Error fetching seller profile:", error); 
     }
@@ -73,7 +75,7 @@ interface AuthState {
   jwt: string | null;
   otpSent: boolean;
   isLoggedIn: boolean;
-  user: any; 
+  user: User | null; 
   loading: boolean;
 }
 
@@ -123,6 +125,8 @@ const authSlice = createSlice({
         state.user = action.payload;
         state.isLoggedIn = true;
       })
+
+      
   },
 
 })

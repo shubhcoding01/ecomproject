@@ -7,6 +7,7 @@ import { AddShoppingCart, Category, FavoriteBorder, Storefront } from '@mui/icon
 import CategorySheet from './CategorySheet';
 import { mainCategory } from '../../../data/category/mainCategory';
 import { useNavigate } from 'react-router-dom';
+import { useAppSelector } from '../../../State/Store';
 
 const Navbar = () => {
     const theme = useTheme();
@@ -14,6 +15,7 @@ const Navbar = () => {
     const [selectedCategory, setSelectedCategory] = useState("men");
     const [showCategorySheet, setShowCategorySheet] = useState(false);
     const navigate = useNavigate();
+    const {auth} = useAppSelector(store => store);
   return (
     <>
         <Box className="sticky top-0 left-0 right-0 bg-white" sx={{zIndex: 2}}>
@@ -50,12 +52,12 @@ const Navbar = () => {
                         <SearchIcon />
                     </IconButton>
                     {
-                        false ? <Button onClick={()=>navigate("/account/")} className='flex items-center gap-2' >
+                        auth.user ? <Button onClick={()=>navigate("/account/")} className='flex items-center gap-2' >
                             <Avatar
                             sx={{ width: 30, height: 30 }}
                             src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40simo_sultan%2Fa-rough-guide-to-create-a-css-avatar-bb9888011887&psig=AOvVaw1xRSffZbsw0GBV7xbUz2Lb&ust=1748364569229000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCID3iN7LwY0DFQAAAAAdAAAAABAE'/>
                             <h1 className='font-semibold hidden lg:block'>
-                                Bazaar
+                                {auth.user?.fullName }
                                 </h1>
                         </Button> : <Button onClick={()=> navigate("/login")} variant='contained'>Login</Button>
                     }
