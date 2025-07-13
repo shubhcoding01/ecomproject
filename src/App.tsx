@@ -52,17 +52,18 @@ function App() {
 
 
 
-  useEffect(() => {
-    dispatch(fetchSellerProfile(localStorage.getItem('jwt') || ''));
-    fetchProduct()
-  }, []);
+  // useEffect(() => {
+  //   dispatch(fetchSellerProfile(localStorage.getItem('jwt') || ''));
+  //   fetchProduct()
+  // }, []);
 
-//   useEffect(() => {
-//   const jwt = localStorage.getItem("jwt");
+// useEffect(() => {
+//   const jwt = localStorage.getItem('jwt');
 //   if (jwt) {
 //     dispatch(fetchSellerProfile(jwt));
 //   }
 // }, []);
+
 
 
   useEffect(() => {
@@ -70,6 +71,16 @@ function App() {
       navigate('/seller');
     }
   }, [seller.profle]);
+
+//   useEffect(() => {
+//   const jwt = localStorage.getItem('jwt');
+//   if (seller.profle && jwt) {
+//     navigate('/seller');
+//   }
+// }, [seller.profle]);
+
+
+
 
   useEffect(()=>{
     dispatch(fetchUserProfile({jwt: auth.jwt || localStorage.getItem('jwt') }));

@@ -4,7 +4,7 @@ import { report } from "process";
 import { create } from "domain";
 
 export const fetchSellerProfile = createAsyncThunk(
-  "seller/fetchSellerProfile",async(jwt: string,{rejectWithValue}) => {
+  "/seller/fetchSellerProfile",async(jwt: string,{rejectWithValue}) => {
     try{
         const response = await api.get("/sellers/profile", {
 headers: {
@@ -20,17 +20,31 @@ headers: {
 )
 
 //logout 13th jul
-export const logout = createAsyncThunk<any,any>(
-  "/seller/logout",async(navigate, {rejectWithValue}) => {
-    try{
-        localStorage.clear();
-        console.log("Logout Success: ");
-        navigate("/");
-    }   catch (error) {
-      console.error("Error Logout", error); 
+// export const logout = createAsyncThunk<any,any>(
+//   "/seller/logout",async(navigate, {rejectWithValue}) => {
+//     try{
+//         localStorage.clear();
+//         console.log("Logout Success: ");
+//         navigate("/");
+//     }   catch (error) {
+//       console.error("Error Logout", error); 
+//     }
+// }
+// )
+
+export const logout = createAsyncThunk(
+  "/seller/logout",
+  async (navigate: (path: string) => void, { rejectWithValue }) => {
+    try {
+      localStorage.removeItem("jwt");
+      navigate("/");
+      return true;
+    } catch (error: any) {
+      return rejectWithValue("Logout failed");
     }
-}
-)
+  }
+);
+
 
 interface SellerState {
   sellers: any[],
@@ -55,13 +69,17 @@ const initialState:SellerState={
 const sellerSlice=createSlice({
   name: "sellers",
   initialState,
-  reducers: {
+  // reducers: {
   //  clearSellerProfile: (state) => {
   //     state.profle = null;
   //     state.loading = false;
   //     state.error = null;
     // },
-  },
+  // },
+  reducers: {
+  resetSeller: () => initialState, // resets seller slice on logout
+},
+
   extraReducers: (builder) => {
     builder.addCase(fetchSellerProfile.pending, (state) => {
       state.loading = true;
@@ -96,4 +114,4 @@ const sellerSlice=createSlice({
 export default sellerSlice.reducer;
 
 // export const { clearSellerProfile } = sellerSlice.actions;
-// export const { resetSeller } = sellerSlice.actions;
+export const { resetSeller } = sellerSlice.actions;

@@ -3,6 +3,7 @@ import React, { use } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAppDispatch } from '../State/Store'
 import { logout } from '../State/AuthSlice'
+import { resetSeller } from '../State/seller/sellerSlice'
 // import { clearSellerProfile } from '../State/seller/sellerSlice'
 
 interface menuItem{
@@ -26,9 +27,17 @@ const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const handleLogout = () => {
-    dispatch(logout(navigate))
-  };
+  // const handleLogout = () => {
+  //   dispatch(logout(navigate))
+  // };
+
+  // import { logout, resetSeller } from '../State/seller/sellerSlice';
+
+const handleLogout = () => {
+  dispatch(logout(navigate));
+  dispatch(resetSeller()); // ✅ clear seller profile from Redux
+};
+
 
   return (
     <div className='h-full'>
@@ -37,21 +46,32 @@ const DrawerList = ({menu,menu2,toggleDrawer}:DrawerListProps) => {
             <div className='space-y-2'>
                 {
                   menu.map((item:any,index:number)=>
-                    <div onClick={()=>{
+                    <div 
+  //                 onClick={()=>{
 
-                      // if (item.logout)
-                        //  {
-  //     handleLogout(); 
-  //   } else {
-  //     navigate(item.path); 
-  //   }
-  //   toggleDrawer(); 
-  // }
-                      {
-                      navigate(item.path)
-                    if(item.path=="/") handleLogout()}}
+  //                     // if (item.logout)
+  //                       //  {
+  // //     handleLogout(); 
+  // //   } else {
+  // //     navigate(item.path); 
+  // //   }
+  // //   toggleDrawer(); 
+  // // }
+  //                     {
+  //                     navigate(item.path)
+  //                   if(item.path=="/") handleLogout()}}
                       
-                    } className='pr-9 cursor-pointer' key={index}>
+  //                   } 
+  onClick={() => {
+  toggleDrawer();
+  if (item.logout) {
+    handleLogout(); // calls dispatch(logout())
+  } else {
+    navigate(item.path);
+  }
+}}
+
+                    className='pr-9 cursor-pointer' key={index}>
                       <p className={`${item.path==location.pathname ? "bg-primary-color text-white":"text-primary-color"} flex items-center px-5 py-3 rounded-r-full`}>
                         <ListItemIcon>
                           {item.path==location.pathname?item.activeIcon:item.icon}
