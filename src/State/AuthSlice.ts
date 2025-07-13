@@ -19,6 +19,8 @@ export const signin = createAsyncThunk(
     try{
         const response = await api.post("/auth/signing",loginRequest);
         console.log("Login OTP : ", response.data);
+        localStorage.setItem("jwt", response.data.jwt);
+        return response.data.jwt;
     }   catch (error) {
       console.error("Error fetching seller profile:", error); 
     }
