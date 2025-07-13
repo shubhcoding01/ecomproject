@@ -27,6 +27,19 @@ export const signin = createAsyncThunk(
 }
 )
 
+export const signup = createAsyncThunk(
+  "seller/signup",async(signupRequest:{email:string},{rejectWithValue}) => {
+    try{
+        const response = await api.post("/auth/signup",signupRequest);
+        console.log("Login OTP : ", response.data);
+        localStorage.setItem("jwt", response.data.jwt);
+        return response.data.jwt;
+    }   catch (error) {
+      console.error("Error fetching seller profile:", error); 
+    }
+}
+)
+
 export const logout = createAsyncThunk<any,any>(
   "/auth/logout",async(navigate, {rejectWithValue}) => {
     try{
