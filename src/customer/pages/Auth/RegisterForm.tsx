@@ -143,9 +143,9 @@ const RegisterForm = () => {
       <TextField fullWidth label="Full Name" variant="filled" name="fullName" value={formik.values.fullName} onChange={formik.handleChange} />
       <TextField fullWidth label="Email" variant="filled" name="email" value={formik.values.email} onChange={formik.handleChange} />
       <TextField fullWidth label="OTP" variant="filled" name="otp" value={formik.values.otp} onChange={formik.handleChange} />
-      <Button onClick={handleSendOtp} fullWidth variant="contained" color="primary">
+      {false && <Button onClick={handleSendOtp} fullWidth variant="contained" color="primary">
         Send OTP
-      </Button>
+      </Button>}
       <Button type="submit" fullWidth variant="contained" color="success">
         Signup
       </Button>

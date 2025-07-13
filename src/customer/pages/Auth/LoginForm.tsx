@@ -100,7 +100,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import { Button, TextField } from '@mui/material';
 import { useAppDispatch } from '../../../State/Store';
-import { sendLoginSignupOtp } from '../../../State/AuthSlice';
+import { sendLoginSignupOtp, signin } from '../../../State/AuthSlice';
 
 const LoginForm = () => {
   const dispatch = useAppDispatch();
@@ -111,6 +111,7 @@ const LoginForm = () => {
     },
     onSubmit: (values) => {
       console.log('Login values:', values);
+      dispatch(signin(values))
     },
   });
 
