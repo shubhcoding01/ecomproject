@@ -41,9 +41,9 @@ export const signup = createAsyncThunk<any,any>(
 )
 
 export const fetchUserProfile = createAsyncThunk<any,any>(
-  "/api/users/profile",async({jwt},{rejectWithValue}) => {
+  "/auth/fetchUserProfile",async({jwt},{rejectWithValue}) => {
     try{
-        const response = await api.post("/auth/signup",
+        const response = await api.get("/users/profile",
          { headers:{
             Authorization: `Bearer ${jwt}`,
           },
@@ -73,7 +73,8 @@ interface AuthState {
   jwt: string | null;
   otpSent: boolean;
   isLoggedIn: boolean;
-  user: any; // Adjust type as needed
+  user: any; 
+  loading: boolean;
 }
 
 const initialState:AuthState = {
@@ -81,6 +82,7 @@ const initialState:AuthState = {
   otpSent: false,
   isLoggedIn: false,
   user: null,
+  loading: false,
 };
 
 const authSlice = createSlice({
@@ -88,9 +90,20 @@ const authSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
+
+    builder.addCase(sendLoginSignupOtp.pending, (state) => {
+      state.loading = true;
+    })
+    
+
     builder
       .addCase(sendLoginSignupOtp.fulfilled, (state, action) => {
+        state.loading = false;
         state.otpSent = true;
+      })
+      .addCase(sendLoginSignupOtp.rejected, (state) => {
+        state.loading = false;
+        state.otpSent = false;
       })
       .addCase(signin.fulfilled, (state, action) => {
         state.jwt = action.payload;

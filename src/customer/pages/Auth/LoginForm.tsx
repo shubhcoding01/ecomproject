@@ -98,12 +98,13 @@
 
 import React from 'react';
 import { useFormik } from 'formik';
-import { Button, TextField } from '@mui/material';
-import { useAppDispatch } from '../../../State/Store';
+import { Button, CircularProgress, TextField } from '@mui/material';
+import store, { useAppDispatch, useAppSelector } from '../../../State/Store';
 import { sendLoginSignupOtp, signin } from '../../../State/AuthSlice';
 
 const LoginForm = () => {
   const dispatch = useAppDispatch();
+  const{auth}=useAppSelector(store => store);
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -129,20 +130,23 @@ const LoginForm = () => {
         value={formik.values.email}
         onChange={formik.handleChange}
       />
-      <TextField
+      {auth.otpSent && <TextField
         fullWidth
         label="OTP"
         variant="filled"
         name="otp"
         value={formik.values.otp}
         onChange={formik.handleChange}
-      />
-      <Button onClick={handleSendOtp} fullWidth variant="contained" color="primary">
-        Send OTP
-      </Button>
+      />}
+      {auth.otpSent?
       <Button type="submit" fullWidth variant="contained" color="success">
         Login
-      </Button>
+      </Button> :
+      <Button onClick={handleSendOtp} fullWidth variant="contained" color="primary">
+        {auth.loading?<CircularProgress/>:""}
+        Send OTP
+      </Button> 
+      }
     </form>
   );
 };
