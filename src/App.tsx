@@ -21,6 +21,7 @@ import { fetchProduct } from './State/fetchProduct';
 import store, { useAppDispatch, useAppSelector } from './State/Store';
 import { fetchSellerProfile } from './State/seller/sellerSlice';
 import Auth from './customer/pages/Auth/Auth';
+import Wishlist from './customer/pages/Account/Wishlist';
 
 
 function App() {
@@ -86,6 +87,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/login" element={<Auth />} />
             <Route path="/product/:category" element={<Product />} />
             <Route path="/product-details/:id" element={<ProductDetails />} />

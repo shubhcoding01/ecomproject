@@ -65,7 +65,7 @@ const Home = () => {
       {/* Hero Section */}
       <Box sx={{ position: 'relative', height: { xs: 300, lg: 500 }, mb: 10 }}>
         <img
-          src="https://images.unsplash.com/photo-1580910051070-97f7303ed6e1"
+          src="https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/fa3ed0ec6739b47a1db1c8fbf91a316415a8fdfe"
           alt="Hero"
           style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 12 }}
         />
@@ -84,7 +84,7 @@ const Home = () => {
         >
           <Typography variant="h3" fontWeight="bold">Your One-Stop Marketplace</Typography>
           <Typography variant="h6" sx={{ my: 2, maxWidth: 500 }}>Discover top deals, trending categories, and premium quality.</Typography>
-          <Button variant="contained" color="primary" size="large">Shop Now</Button>
+          <Button variant="contained" color="primary" size="large" >Shop Now</Button>
         </Box>
       </Box>
 
