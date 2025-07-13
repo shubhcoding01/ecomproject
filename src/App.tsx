@@ -22,11 +22,12 @@ import store, { useAppDispatch, useAppSelector } from './State/Store';
 import { fetchSellerProfile } from './State/seller/sellerSlice';
 import Auth from './customer/pages/Auth/Auth';
 import Wishlist from './customer/pages/Account/Wishlist';
+import { fetchUserProfile } from './State/AuthSlice';
 
 
 function App() {
   const dispatch = useAppDispatch();
-  const {seller} = useAppSelector(store =>store)
+  const {seller,auth} = useAppSelector(store =>store)
   const navigate = useNavigate();
 
 //   useEffect(() => {
@@ -69,6 +70,11 @@ function App() {
       navigate('/seller');
     }
   }, [seller.profle]);
+
+  useEffect(()=>{
+    dispatch(fetchUserProfile({jwt: auth.jwt || localStorage.getItem('jwt') }));
+  },[auth.jwt])
+  
 
   return (
     
