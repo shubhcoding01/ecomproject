@@ -19,6 +19,19 @@ headers: {
 }
 )
 
+//logout 13th jul
+export const logout = createAsyncThunk<any,any>(
+  "/seller/logout",async(navigate, {rejectWithValue}) => {
+    try{
+        localStorage.clear();
+        console.log("Logout Success: ");
+        navigate("/");
+    }   catch (error) {
+      console.error("Error Logout", error); 
+    }
+}
+)
+
 interface SellerState {
   sellers: any[],
   selectedSeller: any | null,
@@ -63,7 +76,19 @@ const sellerSlice=createSlice({
       state.loading = false;
       state.error = action.payload as string;
     }
-    );
+    )
+    //logout
+    .addCase(logout.fulfilled, (state) => {
+      state.profle = null;
+      state.loading = false;
+      state.error = null;
+    } 
+    )
+    .addCase(logout.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.payload as string;
+    }
+    )
   },
 });
 
