@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CartItem from './CartItem'
 import { Close, LocalOffer } from '@mui/icons-material'
 import { teal } from '@mui/material/colors'
@@ -6,6 +6,8 @@ import { Button, IconButton, TextField } from '@mui/material'
 import PricingCard from './PricingCard'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { u } from 'framer-motion/dist/types.d-CtuPurYT'
+import { useAppDispatch } from '../../../State/Store'
+import { fetchUserCart } from '../../../State/customer/cartSlice'
 
 const Cart = () => {
   const [couponCode, setCouponCode] = useState("")
@@ -13,6 +15,13 @@ const Cart = () => {
     setCouponCode(e.target.value)
   }
   const navigate = useNavigate();
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchUserCart(localStorage.getItem("jwt") || ""));
+  }, [dispatch]);
+
   return (
     <div className='pt-10 px-5 sm:px-10 md:px-60  min-h-screen'>
 
