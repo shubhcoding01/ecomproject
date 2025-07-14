@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import CartItem from './CartItem'
+import CartItemCard from './CartItemCard'
 import { Close, LocalOffer } from '@mui/icons-material'
 import { teal } from '@mui/material/colors'
 import { Button, IconButton, TextField } from '@mui/material'
@@ -29,7 +29,7 @@ const Cart = () => {
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
 
             <div className='cartItemSection lg:col-span-2 space-y-3'>
-                {cart.cart?.cartItems.map((item) => <CartItem item={item}/> )}
+                {cart.cart?.cartItems.map((item) => <CartItemCard item={item}/> )}
             </div>
             <div className='col-span-1 text-sm space-y-3 '>
 
