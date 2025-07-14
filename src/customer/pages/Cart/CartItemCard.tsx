@@ -2,10 +2,22 @@ import { Add, Close, Remove } from "@mui/icons-material";
 import { Button, Divider, IconButton } from "@mui/material";
 import React from "react";
 import type { CartItem } from "../../../types/cartTypes";
+import { useAppDispatch } from "../../../State/Store";
+import { updateCartItem } from "../../../State/customer/cartSlice";
+import { u } from "framer-motion/dist/types.d-CtuPurYT";
 
 const CartItemCard = ({item}:{item:CartItem}) => {
-  const handleUpdateQuantity = () => {
-    // Logic to update the quantity of the item in the cart
+
+  const dispatch = useAppDispatch();
+
+
+  const handleUpdateQuantity = (value:number) => () => {
+    dispatch(updateCartItem({
+      jwt: localStorage.getItem("jwt"),
+      cartItemId: item.id,
+      cartItem:
+      {quantity:item.quantity + value}
+    }));
     console.log("Update quantity");
   }
   return (
@@ -42,14 +54,13 @@ const CartItemCard = ({item}:{item:CartItem}) => {
       <div className="flex justify-between items-center ">
         <div className="px-5 py-3 flex justify-between items-center">
         <div className="flex items-center gap-3 w-[140px]">
-          <Button
-            disabled={true}
+          <Button onClick={handleUpdateQuantity(-1)}
             
           >
             <Remove />
           </Button>
-          <span>{5}</span>
-          <Button onClick={handleUpdateQuantity}>
+          <span>{item.quantity}</span>
+          <Button onClick={handleUpdateQuantity(1)}>
             <Add />
           </Button>
         </div>

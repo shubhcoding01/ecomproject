@@ -78,9 +78,9 @@ export const deleteCartItem  = createAsyncThunk
     }
 );
 
-export const updateCartItem = createAsyncThunk<Cart, { jwt: string | null; cartItemId: number; quantity: number }>(
+export const updateCartItem = createAsyncThunk<Cart, { jwt: string | null; cartItemId: number; cartItem:{quantity:number} }>(
     "cart/updateCartItem",
-    async ({ jwt, cartItemId }, { rejectWithValue }) => {
+    async ({ jwt, cartItemId,cartItem }, { rejectWithValue }) => {
         try {
             const response = await api.put(`${API_URL}/item/${cartItemId}`, {
                 headers: {
