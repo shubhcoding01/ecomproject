@@ -39,7 +39,7 @@ const Products = () => {
 
   useEffect(() => {
     const [minPrice, maxPrice] = searchParam.get("price")?.split("-") || [];
-    // Fetch products based on sort and page
+   
 
     const color = searchParam.get("color") || "";
     const size = searchParam.get("size") || "";

@@ -143,8 +143,11 @@ import React from 'react';
 import { Box, Grid, TextField, Button } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useAppDispatch } from '../../../State/Store';
+import { createOrder } from '../../../State/customer/orderSlice';
 
-const Addressform = () => {
+const Addressform = ({paymentGateway}:any) => {
+  const dispatch = useAppDispatch();
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -166,6 +169,10 @@ const Addressform = () => {
     }),
     onSubmit: (values) => {
       console.log('Form submitted:', values);
+      dispatch(createOrder({
+         address:values,
+         jwt: localStorage.getItem("jwt") || "",
+         paymentGateway})); // Dispatch the createOrder action
     },
   });
 

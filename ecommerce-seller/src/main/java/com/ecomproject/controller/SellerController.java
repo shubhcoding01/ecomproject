@@ -35,19 +35,7 @@ public class SellerController {
     private final JwtProvider jwtProvider;
     private final SellerReportService sellerReportService;
 
-//    @PostMapping("/sent/loginotp")
-//    public ResponseEntity<ApiResponse> sentOtpHandler(
-//            @RequestBody VerificationCode req) throws Exception {
-//
-//        authService.sentLoginOtp(req.getEmail());
-//
-//        ApiResponse res=new ApiResponse();
-//
-//        res.setMessage("Otp Sent successfully");
-//
-//
-//        return ResponseEntity.ok(res);
-//    }
+
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> loginSeller(
@@ -57,10 +45,7 @@ public class SellerController {
         String otp = req.getOtp();
         String email = req.getEmail();
 
-//        VerificationCode verificationCode = verificationCodeRepository.findByEmail(email);
-//        if (verificationCode == null || !verificationCode.getOtp().equals(req.getOtp())) {
-//            throw new Exception("Wrong Otp...!!!");
-//        }
+
 
         req.setEmail("Seller"+email );
         AuthResponse authResponse = authService.signing(req);
@@ -116,30 +101,11 @@ public class SellerController {
         return new ResponseEntity<>(seller, HttpStatus.OK);
     }
 
-//    @GetMapping("/profile")
-//    public ResponseEntity<Seller> getSellerByJwt(
-//            @RequestHeader(value = "Authorization", required = false) String jwt) throws Exception {
-//
-//        if (jwt == null || !jwt.startsWith("Bearer ")) {
-//            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-//        }
-//
-//        String token = jwt.substring(7); // remove "Bearer "
-//
-//        Seller seller = sellerService.getSellerProfile(token);
-//
-//        if (seller == null) {
-//            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-//        }
-//
-//        return new ResponseEntity<>(seller, HttpStatus.OK);
-//    }
 
 
     @GetMapping("/report")
     public ResponseEntity<SellerReport> getSellerReport(
             @RequestHeader("Authorization") String jwt) throws Exception {
-//        String email = jwtProvider.getEmailFromToken(jwt);
         Seller seller = sellerService.getSellerProfile(jwt);
         SellerReport sellerReport = sellerReportService.getSellerReport(seller);
         return new ResponseEntity<>(sellerReport, HttpStatus.OK);

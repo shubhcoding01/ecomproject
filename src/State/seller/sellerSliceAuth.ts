@@ -13,3 +13,17 @@ export const sellerLogin = createAsyncThunk(
     }
 }
 )
+
+export const createSellerAccount = createAsyncThunk(
+  "seller/create",
+  async (sellerData: any, { rejectWithValue }) => {
+    try {
+      const response = await api.post("/sellers", sellerData);
+      console.log("Account created successfully:", response.data);
+      return response.data;
+    } catch (error: any) {
+      console.error("Failed to create seller account", error);
+      return rejectWithValue("Failed to create account");
+    }
+  }
+);

@@ -6,6 +6,8 @@ import { m } from 'framer-motion';
 import BecomeSellerFormStep2 from './BecomeSellerFormStep2';
 import BecomeSellerFormStep3 from './BecomeSellerFormStep3';
 import BecomeSellerFormStep4 from './BecomeSellerFormStep4';
+import { useAppDispatch } from '../../../State/Store';
+import { createSellerAccount } from '../../../State/seller/sellerSliceAuth';
 
 const steps = [
     "Tax Details & Mobile",
@@ -22,10 +24,19 @@ const SellerAccountForm = () => {
         console.log("Current Step:", activeStep);
     }
 
-    const handleCreateAccount = () => {
-        // Logic to create account goes here
-        console.log("Account created");
-    }
+    // const handleCreateAccount = () => {
+    //     // Logic to create account goes here
+    //     console.log("Account created");
+    // }
+
+    const dispatch = useAppDispatch();
+
+const handleCreateAccount = () => {
+  formik.handleSubmit();
+};
+
+
+
 
     const formik = useFormik({
         initialValues: {
@@ -59,6 +70,7 @@ const SellerAccountForm = () => {
             password: '',
         },
         onSubmit: (values) => {
+            dispatch(createSellerAccount(values));
             console.log(values, "Form Submitted");
         },
     });

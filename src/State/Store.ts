@@ -6,6 +6,9 @@ import ProductSlice from "./customer/ProductSlice";
 import { thunk } from "redux-thunk";
 import AuthSlice from "./AuthSlice";
 import cartSlice from "./customer/cartSlice";
+import orderSlice from "./customer/orderSlice";
+import { couponSlice } from "./customer/couponSlice";
+import sellerOrderSlice from "./customer/sellerOrderSlice";
 
 const rootReducer = combineReducers({
   seller:sellerSlice,
@@ -13,6 +16,9 @@ const rootReducer = combineReducers({
   product:ProductSlice,
   auth:AuthSlice,
   cart:cartSlice,
+  order:orderSlice,
+  sellerOrder:sellerOrderSlice,
+  // coupon:couponSlice,
 })
 
 const store=configureStore({
