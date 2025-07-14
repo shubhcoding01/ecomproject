@@ -6,7 +6,7 @@ import { Button, IconButton, TextField } from '@mui/material'
 import PricingCard from './PricingCard'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { u } from 'framer-motion/dist/types.d-CtuPurYT'
-import { useAppDispatch } from '../../../State/Store'
+import store, { useAppDispatch, useAppSelector } from '../../../State/Store'
 import { fetchUserCart } from '../../../State/customer/cartSlice'
 
 const Cart = () => {
@@ -17,6 +17,7 @@ const Cart = () => {
   const navigate = useNavigate();
 
   const dispatch = useAppDispatch();
+  const { cart } = useAppSelector(store => store);
 
   useEffect(() => {
     dispatch(fetchUserCart(localStorage.getItem("jwt") || ""));
@@ -28,7 +29,7 @@ const Cart = () => {
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
 
             <div className='cartItemSection lg:col-span-2 space-y-3'>
-                {[1,1,1,1,1,1].map((item) => <CartItem/> )}
+                {cart.cart?.cartItems.map((item) => <CartItem item={item}/> )}
             </div>
             <div className='col-span-1 text-sm space-y-3 '>
 
