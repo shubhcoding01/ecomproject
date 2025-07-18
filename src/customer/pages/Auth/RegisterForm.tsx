@@ -119,7 +119,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import { Button, TextField } from '@mui/material';
 import { useAppDispatch } from '../../../State/Store';
-import { sendLoginSignupOtp } from '../../../State/AuthSlice';
+import { sendLoginSignupOtp, signup } from '../../../State/AuthSlice';
 
 const RegisterForm = () => {
   const dispatch = useAppDispatch();
@@ -130,6 +130,11 @@ const RegisterForm = () => {
       fullName: '',
     },
     onSubmit: (values) => {
+      dispatch(signup({
+        email: values.email,
+        fullName: values.fullName,
+        otp: values.otp,
+      }))
       console.log('Register values:', values);
     },
   });
