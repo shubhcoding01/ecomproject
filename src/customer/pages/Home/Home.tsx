@@ -52,7 +52,7 @@ const Home = () => {
 
       {/* Deals Section */}
       <Box sx={{ py: 10, background: 'linear-gradient(to right, #ffe4e6, #e0e7ff)' }}>
-        <Typography variant="h4" textAlign="center" color="secondary" fontWeight="bold" mb={4}>🔥 Today's Deals</Typography>
+        <Typography variant="h4" textAlign="center" color="primary" fontWeight="bold" mb={4}>🔥 Today's Deals</Typography>
         <Container>
           <Deal />
         </Container>

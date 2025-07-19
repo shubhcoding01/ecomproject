@@ -18,20 +18,59 @@
 
 // export default DealCard
 
+// import React from 'react';
+// import { Card, CardMedia, CardContent, Typography } from '@mui/material';
+
+// const DealCard = () => (
+//   <Card sx={{ width: 192 }} elevation={5}>
+//     <CardMedia
+//       component="img"
+//       height="180"
+//       image="https://m.media-amazon.com/images/I/61-vRq2ulOL._AC_UY327_FMwebp_QL65_.jpg"
+//       alt="Smart Watch"
+//     />
+//     <CardContent sx={{ bgcolor: 'black', color: 'white', textAlign: 'center' }}>
+//       <Typography variant="subtitle1" fontWeight={600}>Smart Watch</Typography>
+//       <Typography variant="h6" fontWeight="bold">20% Off</Typography>
+//       <Typography variant="body2">Shop Now</Typography>
+//     </CardContent>
+//   </Card>
+// );
+
+// export default DealCard;
+
 import React from 'react';
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
 
-const DealCard = () => (
-  <Card sx={{ width: 192 }} elevation={5}>
+type DealCardProps = {
+  image: string;
+  title: string;
+  discount: string;
+};
+
+const DealCard: React.FC<DealCardProps> = ({ image, title, discount }) => (
+  <Card
+    sx={{
+      width: 200,
+      transition: 'transform 0.3s, box-shadow 0.3s',
+      boxShadow: '8px 8px 15px rgba(0,0,0,0.2)',
+      '&:hover': {
+        transform: 'scale(1.05)',
+        boxShadow: '4px 4px 20px rgba(0,0,0,0.3)',
+      },
+      borderRadius: 3,
+    }}
+  >
     <CardMedia
       component="img"
       height="180"
-      image="https://m.media-amazon.com/images/I/61-vRq2ulOL._AC_UY327_FMwebp_QL65_.jpg"
-      alt="Smart Watch"
+      image={image}
+      alt={title}
+      sx={{ objectFit: 'cover' }}
     />
     <CardContent sx={{ bgcolor: 'black', color: 'white', textAlign: 'center' }}>
-      <Typography variant="subtitle1" fontWeight={600}>Smart Watch</Typography>
-      <Typography variant="h6" fontWeight="bold">20% Off</Typography>
+      <Typography variant="subtitle1" fontWeight={600}>{title}</Typography>
+      <Typography variant="h6" fontWeight="bold">{discount} Off</Typography>
       <Typography variant="body2">Shop Now</Typography>
     </CardContent>
   </Card>

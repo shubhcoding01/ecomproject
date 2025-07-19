@@ -10,7 +10,7 @@ import Product from './customer/pages/Product/Product';
 import ProductDetails from './customer/pages/Page Details/ProductDetails';
 import Review from './customer/pages/Review/Review';
 import Cart from './customer/pages/Cart/Cart';
-import { Check } from '@mui/icons-material';
+import { Check, Dashboard } from '@mui/icons-material';
 import Checkout from './customer/pages/checkout/Checkout';
 import Account from './customer/pages/Account/Account';
 import { Route, Routes, useNavigate } from 'react-router-dom';
@@ -23,6 +23,12 @@ import { fetchSellerProfile } from './State/seller/sellerSlice';
 import Auth from './customer/pages/Auth/Auth';
 import Wishlist from './customer/pages/Account/Wishlist';
 import { fetchUserProfile } from './State/AuthSlice';
+import Products from './seller/pages/Products/Products';
+import AddProduct from './seller/pages/Products/AddProduct';
+import Orders from './seller/pages/Order/Orders';
+import Profile from './seller/pages/Account/Profile';
+import Payment from './seller/pages/Payment/Payment';
+import Transaction from './seller/pages/Payment/Transaction';
 
 
 function App() {
@@ -114,6 +120,8 @@ function App() {
             <Route path="/account/*" element={<Account />} />
             <Route path="/become-seller" element={<BecomeSeller/>} />
             <Route path="/seller/*" element={<SellerDashboard/>} />
+
+
             <Route path="/admin/*" element={<AdminDashboard/>} />
             {/* <Route path="/product-details/:category/:title/:productId" element={<ProductDetails />} /> */}
 

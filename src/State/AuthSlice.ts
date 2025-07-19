@@ -59,6 +59,21 @@ export const fetchUserProfile = createAsyncThunk<any,any>(
 }
 )
 
+export const verifyOtpAndRegisterSeller = createAsyncThunk(
+  "auth/verifyOtpAndRegisterSeller",
+  async ({ otp, sellerData }: { otp: string, sellerData: any }, { rejectWithValue }) => {
+    try {
+      const response = await api.post(`/sellers/verify/${otp}`, sellerData);
+      localStorage.setItem("jwt", response.data.jwt);
+      return response.data.jwt;
+    } catch (error) {
+      console.error("Error verifying OTP:", error);
+      return rejectWithValue(error);
+    }
+  }
+);
+
+
 export const logout = createAsyncThunk<any,any>(
   "/auth/logout",async(navigate, {rejectWithValue}) => {
     try{
@@ -120,6 +135,12 @@ const authSlice = createSlice({
         state.isLoggedIn = false;
         state.user = null;
       })
+
+      .addCase(verifyOtpAndRegisterSeller.fulfilled, (state, action) => {
+  state.jwt = action.payload;
+  state.isLoggedIn = true;
+})
+
       
       builder.addCase(fetchUserProfile.fulfilled, (state, action) => {
         state.user = action.payload;

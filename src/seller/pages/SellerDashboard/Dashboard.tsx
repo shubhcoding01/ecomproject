@@ -52,7 +52,7 @@ const SellerDashboard = () => {
           <Card
             key={i}
             className="bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl transition-transform hover:scale-105"
-            sx={{ color: "white" }}
+            sx={{ color: "black" }}
           >
             <CardContent className="flex items-center gap-4">
               <div className="bg-white/20 p-3 rounded-full">{stat.icon}</div>
