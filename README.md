@@ -1,54 +1,91 @@
-# Getting Started with Create React App
+# 🛒 Ecommerce Management System – A Full-Stack Multi-Vendor E-Commerce Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-featured multi-vendor ecommerce platform built with **💻 Spring Boot (Java)** and **⚛️ React (TypeScript)**. This platform supports multiple roles – **buyers**, **sellers**, and **admins**, and includes secure **🔐 JWT-based authentication**, dynamic product listing, order tracking, and more.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Tech Stack
 
-### `npm start`
+### 🖥️ Frontend
+- ⚛️ React.js (TypeScript)
+- 🧠 Redux Toolkit
+- 🎨 Tailwind CSS + Material UI
+- 🔁 React Router
+- 📦 Axios
+- ✍️ Formik + Yup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 🛠 Backend
+- ☕ Spring Boot (Java)
+- 🔐 Spring Security + JWT
+- 📚 Spring Data JPA
+- 🐬 MySQL
+- ⚙️ Maven
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## 📚 Features Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 👤 Buyer
+- 🔐 Register/Login
+- 🛍️ Browse & search products by category
+- 🖼️ Product detail view with image slideshow
+- 🛒 Add to cart, checkout, and track orders
+- 🧾 Manage profile, addresses & saved cards
 
-### `npm run build`
+### 🛍️ Seller
+- 🔑 OTP-based registration (multi-step form)
+- 🛠️ Add/manage products (image, stock, category)
+- 📦 View & update incoming orders
+- 📊 Seller dashboard with product stats
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🛡️ Admin
+- 🔐 Secure admin login
+- 👥 Manage users & sellers
+- 🚫 Block or verify sellers
+- 🗂️ Category management
+- 📈 Monitor activity and reports
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📦 Installation & Setup
 
-### `npm run eject`
+### ✅ Prerequisites
+- ✅ Node.js & npm
+- ✅ Java 17+
+- ✅ MySQL
+- ✅ Maven
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔧 Backend Setup (`Spring Boot`)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 1. 🔽 Clone the Repository
+```bash
+git clone https://github.com/shubhcoding01/ecommerce-management-system.git
+cd ecommerce-management-system
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+CREATE DATABASE ecomprojectdb;
 
-## Learn More
+In backend/src/main/resources/application.properties:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+server.port=5454
+spring.application.name=ecommerce-seller
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+spring.datasource.url=jdbc:mysql://localhost:3306/ecomprojectdb
+spring.datasource.username=your_mysql_username
+spring.datasource.password=your_mysql_password
 
-# 👨‍💻 GitHub Contribution Graph for Shubham Raj
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=shubhcoding01&show_icons=true&theme=radical)
+spring.mail.username=your_email@gmail.com
+spring.mail.password=your_email_app_password
 
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=shubhcoding01&theme=radical)
+cd backend
+./mvnw spring-boot:run
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=shubhcoding01&layout=compact&theme=radical)
+###🌐 Frontend Setup (React + TypeScript)
+
+npm install
+
+npm start
